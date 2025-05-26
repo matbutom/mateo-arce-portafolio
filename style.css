@@ -1,0 +1,169 @@
+/* Fuente base */
+body {
+  margin: 0;
+  font-family: "varietta-variable", sans-serif;
+  font-variation-settings: "wght" 100, "wdth" 50, "CBOT" 0, "CTOP" 0;
+  background: #fff;
+  color: #111;
+}
+
+/* Sidebar fija con nombre arriba */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 250px;
+  background: white;
+  border-right: 1px solid #eee;
+  padding-top: 30px;
+  z-index: 15;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sidebar-title {
+  font-size: 28px;
+  font-family: "varietta-variable", sans-serif;
+  font-variation-settings: "wght" 900, "wdth" 120, "CBOT" 100, "CTOP" 100; /* Muy bold */
+  margin-left: 20px;
+  margin-bottom: 40px;
+  color: #000; /* Contraste máximo */
+}
+
+.sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 20px;
+  width: 100%;
+}
+
+.sidebar li {
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.sidebar a {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  color: #111;
+  font-family: "varietta-variable", sans-serif;
+  font-variation-settings: "wght" 140, "wdth" 120, "CBOT" 0, "CTOP" 0; /* Regular y más extendido */
+  transition: color 0.3s ease;
+}
+
+.sidebar a:hover {
+  color: #666;
+}
+
+/* Botón info arriba derecha */
+.top-right {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  font-size: 18px;
+  padding: 10px;
+  cursor: pointer;
+  font-family: "varietta-variable", sans-serif;
+  font-variation-settings: "wght" 130, "wdth" 50, "CBOT" 0, "CTOP" 0;
+}
+
+/* Contenedor vertical de proyectos */
+.project-list {
+  margin-left: 180px;
+  padding: 0;
+}
+
+.project {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+/* INFO PROYECTOS en Helvetica para legibilidad */
+.project-info {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  margin: 20px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  text-align: right;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: normal;
+}
+
+.project-info h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.project-info p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: normal;
+}
+
+/* Panel desplegable Info */
+.info-panel {
+  position: fixed;
+  inset: 0;
+  background: white;
+  z-index: 20;
+  display: none;
+  padding: 2rem;
+  overflow-y: auto;
+  font-family: "varietta-variable", sans-serif;
+  font-variation-settings: "wght" 100, "wdth" 150, "CBOT" 0, "CTOP" 0; /* Más extendido */
+  color: #111;
+}
+
+.info-panel.active {
+  display: block;
+}
+
+.info-content {
+  max-width: 800px;
+  margin: auto;
+}
+
+.info-content h2 {
+  font-size: 2rem;
+  font-family: "varietta-variable", sans-serif;
+  font-variation-settings: "wght" 180, "wdth" 150, "CBOT" 0, "CTOP" 0;
+}
+
+.info-content h3 {
+  font-size: 1.3rem;
+  margin-top: 2rem;
+  font-family: "varietta-variable", sans-serif;
+  font-variation-settings: "wght" 140, "wdth" 150, "CBOT" 0, "CTOP" 0;
+}
+
+.info-content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.info-content li {
+  margin-bottom: 0.5rem;
+}
+
+.info-content button {
+  margin-top: 2rem;
+  padding: 10px 20px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-family: "varietta-variable", sans-serif;
+  font-variation-settings: "wght" 130, "wdth" 150, "CBOT" 0, "CTOP" 0;
+  border-radius: 5px;
+}
