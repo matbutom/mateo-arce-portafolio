@@ -1,91 +1,99 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mateo Arce</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mateo Arce</title>
+    <link rel="stylesheet" href="https://use.typekit.net/lhe1ara.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/android-chrome-192x192.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="assets/android-chrome-192x192.png" />
 
-  <!-- Adobe Fonts -->
-  <link rel="stylesheet" href="https://use.typekit.net/lhe1ara.css" />
+  </head>
+  <body>
+    <!-- Sidebar fija -->
+    <div class="sidebar">
+      <div class="sidebar-title">
+        <a href="index.html">
+          <img src="assets/mateo_arce_logo.png" alt="Mateo Arce Logo" />
+        </a>
+      </div>
 
-  <!-- Estilos -->
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+      <p class="sidebar-about">
+        Based in Chile, Mateo Arce is a designer, illustrator, and programmer,
+        co-founder of Rafita Studio, with interests in brand design, generative
+        code & design, and passionate about the fusion between dogs and
+        illustration. Rafita Studio is a space where these illustrations take
+        shape.
+      </p>
 
-  <!-- Barra lateral con nombre arriba -->
-  <nav class="sidebar">
-    <div class="sidebar-title">Mateo Arce</div>
-    <ul>
-      <li><a href="#branding">Branding</a></li>
-      <li><a href="#illustrations">Illustrations</a></li>
-      <li><a href="#coding">Coding</a></li>
-      <li><a href="#" onclick="toggleInfo()">Info</a></li>
-      <li><a href="#about">About me</a></li>
-      <li><a href="#contact">Contact me</a></li>
-    </ul>
-  </nav>
-
-  <!-- Botón Info -->
-  <div class="top-right" onclick="toggleInfo()">Info</div>
-
-  <!-- Panel Info -->
-  <div id="infoPanel" class="info-panel">
-    <div class="info-content">
-      <h2>Sobre mí</h2>
-      <p>Soy diseñador y desarrollador con enfoque en experiencias visuales únicas.</p>
-      <h3>Clientes</h3>
       <ul>
-        <li>Cliente 1</li>
-        <li>Cliente 2</li>
+        <div class="separator"></div>
+        
+        <li><a href="about.html">About</a></li>
+         <li>
+          <a
+            href="https://www.instagram.com/matbutom"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="highlight-link"
+          >
+            @matbutom
+            
+          </a>
+        </li>
+    
+        <li>
+          <a
+            href="https://www.instagram.com/rafita.studio"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="highlight-link"
+          >
+            @rafita.studio
+            
+          </a>
+        </li>
       </ul>
-      <button onclick="toggleInfo()">Cerrar</button>
     </div>
-  </div>
 
-  <!-- Contenido de proyectos en scroll vertical -->
-  <main class="project-list">
-    <section class="project" id="branding" style="background-image: url('proyecto1.jpg')">
-      <div class="project-info">
-        <h3>Proyecto 1</h3>
-        <p>Branding</p>
-      </div>
-    </section>
+    <!-- Galería de proyectos -->
+    <main class="project-list">
+      <section class="project" style="background-image: url('proyecto1.jpg')">
+        <div class="project-info">
+          <h3>Proyecto 1</h3>
+        </div>
+      </section>
 
-    <section class="project" id="illustrations" style="background-image: url('proyecto2.jpg')">
-      <div class="project-info">
-        <h3>Proyecto 2</h3>
-        <p>Illustrations</p>
-      </div>
-    </section>
+      <section class="project" style="background-image: url('proyecto2.jpg')">
+        <div class="project-info">
+          <h3>Proyecto 2</h3>
+        </div>
+      </section>
 
-    <section class="project" id="coding" style="background-image: url('proyecto3.jpg')">
-      <div class="project-info">
-        <h3>Proyecto 3</h3>
-        <p>Coding</p>
-      </div>
-    </section>
+      <section class="project" style="background-image: url('proyecto3.jpg')">
+        <div class="project-info">
+          <h3>Proyecto 3</h3>
+        </div>
+      </section>
 
-    <section class="project" id="about" style="background-color: #eee;">
-      <div class="project-info">
-        <h3>Sobre mí</h3>
-        <p>Breve biografía o formación.</p>
-      </div>
-    </section>
+      <section class="project" style="background-color: #eee">
+        <div class="project-info">
+          <h3>Proyecto 4</h3>
+        </div>
+      </section>
 
-    <section class="project" id="contact" style="background-color: #ddd;">
-      <div class="project-info">
-        <h3>Contacto</h3>
-        <p>mateo@correo.com</p>
-      </div>
-    </section>
-  </main>
+      <section class="project" style="background-color: #ddd">
+        <div class="project-info">
+          <h3>Proyecto 5</h3>
+        </div>
+      </section>
 
-  <script>
-    function toggleInfo() {
-      document.getElementById('infoPanel').classList.toggle('active');
-    }
-  </script>
-
-</body>
+      <section class="project" style="background-color: #ddd">
+        <div class="project-info">
+          <h3>Proyecto 6</h3>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
