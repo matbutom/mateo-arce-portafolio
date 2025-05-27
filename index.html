@@ -6,9 +6,25 @@
     <title>Mateo Arce</title>
     <link rel="stylesheet" href="https://use.typekit.net/lhe1ara.css" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/android-chrome-192x192.png" />
-    <link rel="apple-touch-icon" sizes="192x192" href="assets/android-chrome-192x192.png" />
 
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="assets/android-chrome-192x192.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="192x192"
+      href="assets/android-chrome-192x192.png"
+    />
+
+    <!-- Lightbox CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
+    />
   </head>
   <body>
     <!-- Sidebar fija -->
@@ -29,9 +45,8 @@
 
       <ul>
         <div class="separator"></div>
-        
         <li><a href="about.html">About</a></li>
-         <li>
+        <li>
           <a
             href="https://www.instagram.com/matbutom"
             target="_blank"
@@ -39,10 +54,8 @@
             class="highlight-link"
           >
             @matbutom
-            
           </a>
         </li>
-    
         <li>
           <a
             href="https://www.instagram.com/rafita.studio"
@@ -51,49 +64,82 @@
             class="highlight-link"
           >
             @rafita.studio
-            
           </a>
         </li>
       </ul>
     </div>
 
-    <!-- Galería de proyectos -->
-    <main class="project-list">
-      <section class="project" style="background-image: url('proyecto1.jpg')">
-        <div class="project-info">
-          <h3>Proyecto 1</h3>
-        </div>
-      </section>
+    <!-- Galería tipo masonry -->
+    <main class="gallery">
+      <!-- Proyecto 1 -->
+      <a
+        href="assets/Lateral Image Editor/Imagenes con efectos/blendColors-2024-09-23-18-08 (1).png"
+        class="glightbox"
+        data-gallery="proyecto1"
+      >
+        <img
+          src="assets/Lateral Image Editor/Logo/LIE_logo.png"
+          alt="Proyecto 1"
+        />
+      </a>
 
-      <section class="project" style="background-image: url('proyecto2.jpg')">
-        <div class="project-info">
-          <h3>Proyecto 2</h3>
-        </div>
-      </section>
+      <a
+        href="assets/Lateral Image Editor/Imagenes con efectos/halftonePruebas-2024-09-23-18-08 (1).png"
+        class="glightbox"
+        data-gallery="proyecto1"
+      ></a>
 
-      <section class="project" style="background-image: url('proyecto3.jpg')">
-        <div class="project-info">
-          <h3>Proyecto 3</h3>
-        </div>
-      </section>
+      <a
+        href="assets/Lateral Image Editor/Imagenes con efectos/imagen-bitmap (1).png"
+        class="glightbox"
+        data-gallery="proyecto1"
+      ></a>
 
-      <section class="project" style="background-color: #eee">
-        <div class="project-info">
-          <h3>Proyecto 4</h3>
-        </div>
-      </section>
+      <!-- Proyecto 2 -->
+      <a
+        href="assets/GoSkateDay/assets/GSD_IG_Mesa de trabajo 1.jpg"
+        class="glightbox"
+        data-gallery="proyecto2"
+      ></a>
+      <a
+        href="assets/GoSkateDay/thumb/GSD_IG-02.jpg"
+        class="glightbox"
+        data-gallery="proyecto2"
+      ></a>
+      <a
+        href="assets/GoSkateDay/assets/GSD_IG-03.jpg"
+        class="glightbox"
+        data-gallery="proyecto2"
+      ></a>
+      <a
+        href="assets/GoSkateDay/assets/GSD_IG-06.jpg"
+        class="glightbox"
+        data-gallery="proyecto2"
+      >
+        <img src="assets/GoSkateDay/assets/GSD_IG-03.jpg" alt="Proyecto 2" />
+      </a>
 
-      <section class="project" style="background-color: #ddd">
-        <div class="project-info">
-          <h3>Proyecto 5</h3>
-        </div>
-      </section>
+      <a
+        href="assets/GoSkateDay/assets/GSD_IG-04.jpg"
+        class="glightbox"
+        data-gallery="proyecto2"
+      ></a>
 
-      <section class="project" style="background-color: #ddd">
-        <div class="project-info">
-          <h3>Proyecto 6</h3>
-        </div>
-      </section>
+      <a
+        href="assets/GoSkateDay/assets/GSD_IG-05.jpg"
+        class="glightbox"
+        data-gallery="proyecto2"
+      ></a>
     </main>
+
+    <!-- Lightbox JS -->
+    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script>
+      const lightbox = GLightbox({
+        touchNavigation: true,
+        loop: true,
+        slideEffect: "fade",
+      });
+    </script>
   </body>
 </html>
