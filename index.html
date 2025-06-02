@@ -6,8 +6,6 @@
     <title>Mateo Arce</title>
     <link rel="stylesheet" href="https://use.typekit.net/lhe1ara.css" />
     <link rel="stylesheet" href="style.css" />
-
-    <!-- Favicon -->
     <link
       rel="icon"
       type="image/png"
@@ -19,83 +17,77 @@
       sizes="192x192"
       href="assets/android-chrome-192x192.png"
     />
-
-    <!-- Lightbox CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css"
-    />
   </head>
   <body>
-    <!-- Sidebar fija -->
-    <div class="sidebar">
-      <div class="sidebar-title">
-        <a href="index.html">
-          <img src="assets/mateo_arce_logo.png" alt="Mateo Arce Logo" />
-        </a>
+    <!-- Header principal -->
+    <header class="main-header">
+      <div class="header-content">
+        <img
+          class="logo"
+          src="assets/mateoarce_logo.png"
+          alt="Logo Mateo Arce"
+        />
+        <div class="header-text">
+          <p>
+            Hi! I’m
+            <a
+              href="https://www.instagram.com/matbutom"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="insta-link mateo-arce"
+              >Mateo Arce</a
+            >
+            — a designer, illustrator, and programmer based in Chile. I
+            co-founded
+            <a
+              href="https://www.instagram.com/rafita.studio"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="insta-link rafita-studio"
+              >Rafita Studio</a
+            >, where I mix brand design, generative code, and way too many dog
+            drawings. I’m passionate about turning pixels into personality, code
+            into creativity, and dogs into... well, even cooler dogs.
+          </p>
+        </div>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="about.html">About</a></li>
+          </ul>
+        </nav>
       </div>
+    </header>
 
-      <p class="sidebar-about">
-        Based in Chile, Mateo Arce is a designer, illustrator, and programmer,
-        co-founder of Rafita Studio, with interests in brand design, generative
-        code & design, and passionate about the fusion between dogs and
-        illustration. Rafita Studio is a space where these illustrations take
-        shape.
-      </p>
-
-      <ul>
-        <div class="separator"></div>
-        <li><a href="about.html">About</a></li>
-        <li>
-          <a
-            href="https://www.instagram.com/matbutom"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="highlight-link"
-          >
-            @matbutom
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.instagram.com/rafita.studio"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="highlight-link"
-          >
-            @rafita.studio
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Galería tipo masonry -->
+    <!-- Galería de proyectos -->
     <main class="gallery">
-      <!-- Proyecto 1 -->
-      <a href="projects/lateral-image-editor.html">
+      <a href="projects/interactive-letters.html" class="gallery-item vert">
+        <video
+          src="assets/interactive-letters/interactive_letters01.mp4"
+          autoplay
+          loop
+          muted
+          playsinline
+          poster="assets/interactive_letters01.jpg"
+        ></video>
+      </a>
+      <a href="projects/lateral-image-editor.html" class="gallery-item square">
         <img
           src="assets/Lateral Image Editor/Logo/LIE_logo.png"
           alt="Lateral Image Editor"
         />
       </a>
-      <!-- Proyecto 2 -->
-      <a href="projects/GoSkateDay.html">
-        <img src="assets/GoSkateDay/thumb/gsd thumb design.png" alt="GoSkateDay" />
+      <a href="projects/GoSkateDay.html" class="gallery-item square">
+        <img
+          src="assets/GoSkateDay/thumb/gsd thumb design.png"
+          alt="GoSkateDay"
+        />
       </a>
-      <!-- Proyecto 3 -->
-      <a href="projects/radioregalon.html">
+      <a href="projects/radioregalon.html" class="gallery-item square">
         <img src="assets/radio-regalon/logo_animado.gif" alt="Radio Regalon" />
       </a>
     </main>
-
-    <!-- Lightbox JS -->
-    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-    <script>
-      const lightbox = GLightbox({
-        touchNavigation: true,
-        loop: true,
-        slideEffect: "fade",
-      });
-    </script>
+    <footer class="site-footer">
+      © 2025 Designed by Mateo Arce. All rights reserved.
+    </footer>
   </body>
 </html>
