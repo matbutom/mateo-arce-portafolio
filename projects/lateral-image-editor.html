@@ -19,66 +19,25 @@
     />
   </head>
   <body>
-    <!-- Sidebar idéntico al index -->
-    <div class="sidebar">
-      <div class="sidebar-title">
-        <a href="../index.html">
-          <img src="../assets/mateo_arce_logo.png" alt="Mateo Arce Logo" />
-        </a>
-      </div>
-      <p class="sidebar-about">
-        Based in Chile, Mateo Arce is a designer, illustrator, and programmer,
-        co-founder of Rafita Studio, with interests in brand design, generative
-        code & design, and passionate about the fusion between dogs and
-        illustration. Rafita Studio is a space where these illustrations take
-        shape.
-      </p>
-      <ul>
-        <div class="separator"></div>
-        <li><a href="../about.html">About</a></li>
-        <li>
-          <a
-            href="https://www.instagram.com/matbutom"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="highlight-link"
-          >
-            @matbutom
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.instagram.com/rafita.studio"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="highlight-link"
-          >
-            @rafita.studio
-          </a>
-        </li>
-      </ul>
-    </div>
-
     <!-- Contenido del proyecto -->
     <main class="project-page">
-      <h1 class="project-title">Lateral Image Editor - Práctica profesional</h1>
-      <div class="project-subtitle">Agosto a Diciembre 2024</div>
-      <p class="project-description">
-        Proyecto realizado para criti.ca y su medio digital llamado Lateral. Se
-        programó una herramienta en mechanic.design, con el objetivo de editar
-        imágenes de forma fácil, diseñando una interfaz con filtros activables,
-        logrando ver los efectos en tiempo real.
-      </p>
-      <p>
-        Para más de este proyecto puedes revisar este
+      <h1 class="project-title">Lateral Image Editor</h1>
+      <div class="project-subtitle">Agosto – Diciembre 2024</div>
+      <div class="project-description">
+        Proyecto realizado para criti.ca y su medio digital Lateral.<br>
+        Se programó una herramienta en mechanic.design para editar imágenes de forma fácil, diseñando una interfaz con filtros activables para ver los efectos en tiempo real.
+      </div>
+      <div class="project-description" style="margin-bottom: 34px;">
+        Para más detalles puedes revisar este
         <a
           href="https://github.com/criticaLateral/practica-mateo-2024"
+          class="pink-link" 
           target="_blank"
           rel="noopener"
         >
           <strong>link</strong>
-        </a>
-      </p>
+        </a>.
+      </div>
       <div class="project-gallery">
         <img
           src="../assets/Lateral Image Editor/Imagenes con efectos/captura01.png"
@@ -106,5 +65,42 @@
         />
       </div>
     </main>
+
+    <!-- Lightbox HTML -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+      <span class="lightbox-close" id="lightboxClose">&times;</span>
+      <img src="" alt="" class="lightbox-img" id="lightboxImg" />
+    </div>
+
+    <!-- Lightbox JS -->
+    <script>
+      // Lightbox para imágenes en .project-gallery
+      document.querySelectorAll('.project-gallery img').forEach(img => {
+        img.style.cursor = "zoom-in";
+        img.addEventListener('click', function () {
+          const overlay = document.getElementById('lightboxOverlay');
+          const lightboxImg = document.getElementById('lightboxImg');
+          lightboxImg.src = this.src;
+          lightboxImg.alt = this.alt || "";
+          overlay.classList.add('active');
+        });
+      });
+
+      // Cerrar lightbox al hacer click en overlay o botón cerrar
+      document.getElementById('lightboxOverlay').addEventListener('click', function (e) {
+        if (e.target === this || e.target.id === 'lightboxClose') {
+          this.classList.remove('active');
+          document.getElementById('lightboxImg').src = "";
+        }
+      });
+
+      // Cerrar lightbox con Escape
+      document.addEventListener('keydown', function (e) {
+        if (e.key === "Escape") {
+          document.getElementById('lightboxOverlay').classList.remove('active');
+          document.getElementById('lightboxImg').src = "";
+        }
+      });
+    </script>
   </body>
 </html>

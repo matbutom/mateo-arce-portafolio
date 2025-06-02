@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>radio regalón | Mateo Arce</title>
+    <title>Radio Regalón | Mateo Arce</title>
     <link rel="stylesheet" href="https://use.typekit.net/lhe1ara.css" />
     <link rel="stylesheet" href="../style.css" />
     <link
@@ -19,70 +19,31 @@
     />
   </head>
   <body>
-    <!-- Sidebar idéntico al index -->
-    <div class="sidebar">
-      <div class="sidebar-title">
-        <a href="../index.html">
-          <img src="../assets/mateo_arce_logo.png" alt="Mateo Arce Logo" />
-        </a>
-      </div>
-      <p class="sidebar-about">
-        Based in Chile, Mateo Arce is a designer, illustrator, and programmer,
-        co-founder of Rafita Studio, with interests in brand design, generative
-        code & design, and passionate about the fusion between dogs and
-        illustration. Rafita Studio is a space where these illustrations take
-        shape.
-      </p>
-      <ul>
-        <div class="separator"></div>
-        <li><a href="../about.html">About</a></li>
-        <li>
-          <a
-            href="https://www.instagram.com/matbutom"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="highlight-link"
-          >
-            @matbutom
-          </a>
-        </li>
-        <li>
-          <a
-            href="https://www.instagram.com/rafita.studio"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="highlight-link"
-          >
-            @rafita.studio
-          </a>
-        </li>
-      </ul>
-    </div>
-
-    <!-- Contenido del proyecto -->
     <main class="project-page">
       <h1 class="project-title">Radio Regalón</h1>
-      <div class="project-subtitle">Enero - actualidad</div>
-      <p class="project-description">
-        Radio Regalón es un proyecto de aarón montoya-moraga desde santiago de
-        chile para el mundo. Brand design by Mateo Arce :)
-      </p>
-      <p class="project-description">
-        Este proyecto y diseño de marcas fue hecho completamente con código, la
-        diagramación y diseño fueron programados en p5.js. Además se
-        desarrollaron visuales pensadas para conciertos y pantallas interactivas
-        con sonido
-      </p>
-      <p>
+      <div class="project-subtitle">Enero 2025 – Actualidad</div>
+      <div class="project-description">
+        Radio Regalón es un proyecto de Aarón Montoya-Moraga desde Santiago de
+        Chile para el mundo.<br />
+        <strong>Brand design by Mateo Arce :)</strong>
+      </div>
+      <div class="project-description">
+        Este proyecto y diseño de marcas fue hecho completamente con código.<br />
+        La diagramación y diseño fueron programados en <strong>p5.js</strong>.
+        Además, se desarrollaron visuales pensadas para conciertos y pantallas
+        interactivas con sonido.
+      </div>
+      <div class="project-description" style="margin-bottom: 34px">
         Para ver las gráficas interactivas haz click
         <a
           href="https://github.com/matbutom/radioregalon.github.io"
+          class="pink-link" 
           target="_blank"
           rel="noopener"
         >
-          <strong>aquí</strong>
-        </a>
-      </p>
+          <strong>aquí</strong> </a
+        >.
+      </div>
       <div class="project-gallery gallery-2col">
         <img
           src="../assets/radio-regalon/LOGO DEMOS/radio_regalon_demo_Mesa de trabajo 1.jpg"
@@ -101,26 +62,61 @@
           alt="Logo demo 4 Radio Regalón"
         />
         <video
-          src="../assets/radio-regalon/LOGO DEMOS/Grabacion_de_pantalla_2025-06-01_18-23-54.mp4"
+          src="../assets/radio-regalon/LOGO DEMOS/grabacion01.mp4"
           controls
           loop
           muted
           playsinline
-          style="width: 100%; border-radius: 10px; display: block"
         >
           Tu navegador no soporta video HTML5.
         </video>
         <video
-          src="../assets/radio-regalon/LOGO DEMOS/Grabacion_de_pantalla_2025-06-01_18-26-13.mp4"
+          src="../assets/radio-regalon/LOGO DEMOS/grabacion02.mp4"
           controls
           loop
           muted
           playsinline
-          style="width: 100%; border-radius: 10px; display: block"
         >
           Tu navegador no soporta video HTML5.
         </video>
       </div>
     </main>
+
+    <!-- Lightbox HTML -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+      <span class="lightbox-close" id="lightboxClose">&times;</span>
+      <img src="" alt="" class="lightbox-img" id="lightboxImg" />
+    </div>
+
+    <!-- Lightbox JS -->
+    <script>
+      // Lightbox para imágenes en .project-gallery
+      document.querySelectorAll('.project-gallery img').forEach(img => {
+        img.style.cursor = "zoom-in";
+        img.addEventListener('click', function () {
+          const overlay = document.getElementById('lightboxOverlay');
+          const lightboxImg = document.getElementById('lightboxImg');
+          lightboxImg.src = this.src;
+          lightboxImg.alt = this.alt || "";
+          overlay.classList.add('active');
+        });
+      });
+
+      // Cerrar lightbox al hacer click en overlay o botón cerrar
+      document.getElementById('lightboxOverlay').addEventListener('click', function (e) {
+        if (e.target === this || e.target.id === 'lightboxClose') {
+          this.classList.remove('active');
+          document.getElementById('lightboxImg').src = "";
+        }
+      });
+
+      // Cerrar lightbox con Escape
+      document.addEventListener('keydown', function (e) {
+        if (e.key === "Escape") {
+          document.getElementById('lightboxOverlay').classList.remove('active');
+          document.getElementById('lightboxImg').src = "";
+        }
+      });
+    </script>
   </body>
 </html>
