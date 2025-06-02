@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: "bricolage-grotesque", sans-serif;
-  background: #fff;
+  background: #ffffff;
   color: #111;
   overflow-x: hidden;
 }
@@ -437,5 +437,32 @@ body {
     left: 10px;
     font-size: 1rem;
     padding: 6px 14px 6px 7px;
+  }
+}
+
+/* ==== ILUSTRACIONES DE FONDO ANIMADAS ==== */
+#bg-illustrations {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+.bg-illustration {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 1.2s, transform 1.2s;
+  will-change: opacity, transform;
+  max-width: 250px;
+  max-height: 250px;
+}
+@media (max-width: 600px) {
+  .bg-illustration {
+    max-width: 90px;
+    max-height: 90px;
   }
 }
