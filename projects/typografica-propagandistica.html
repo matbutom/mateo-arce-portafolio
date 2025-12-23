@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typo*gráfica Propagandística | Mateo Arce</title>
+    <link rel="stylesheet" href="https://use.typekit.net/lhe1ara.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="../assets/android-chrome-192x192.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="192x192"
+      href="../assets/android-chrome-192x192.png"
+    />
+  </head>
+  <body>
+    <main class="project-page">
+      <h1 class="project-title">Typo*gráfica Propagandística</h1>
+      <div class="project-subtitle">Proyecto de título - Diciembre 2025</div>
+      <div class="project-description">
+        Typográfica Propagandística investiga cómo la tipografía en afiches
+        políticos latinoamericanos comunica ideas y emociones, apropiándonos de
+        ella y dándole una nueva identidad generativa.
+
+        <div class="project-description"></div>
+        El proyecto explora la relación entre tipografía y propaganda,
+        utilizando algoritmos generativos para transformar letras icónicas de
+        afiches políticos en nuevas formas visuales. A través de este proceso,
+        se busca resaltar la capacidad de la tipografía para evocar sentimientos
+        y transmitir mensajes poderosos. 
+           <div class="project-description"></div>
+        Se curó un dataset de afiches políticos de América Latina, extrayendo las
+        tipografías más representativas. Luego, se desarrollaron algoritmos que
+        manipulan estas tipografías, generando nuevas formas que mantienen la
+        esencia de los diseños originales pero con una estética contemporánea y
+        dinámica. Estos afiches fueron extraidos mediante web scraping y
+        procesados para su posterior manipulación generativa con Python.
+   </div>
+      <div class="project-description" style="margin-bottom: 34px">
+        Para revisar el proyecto completo haz click
+        <a
+          href="https://matbutom.github.io/typ-web/"
+          class="pink-link" 
+          target="_blank"
+          rel="noopener"
+        >
+          <strong>aquí</strong> </a
+        >
+      </div>
+            <div class="project-description" style="margin-bottom: 34px">
+        Repostorio de GitHub con el desarrollo programático del proyecto
+        <a
+          href="https://github.com/matbutom/typo-grafica-propagandistica"
+          class="pink-link" 
+          target="_blank"
+          rel="noopener"
+        >
+          <strong>aquí</strong> </a
+        >
+      </div>
+      <div class="project-gallery gallery-2col">
+        <video
+          src="../assets/typografica-propagandistica/07.MOV"
+          autoplay
+          loop
+          muted
+          playsinline
+        >
+          Tu navegador no soporta video HTML5.
+        </video>
+        <video
+          src="../assets/typografica-propagandistica/08.MOV"
+          autoplay
+          loop
+          muted
+          playsinline
+        >
+          Tu navegador no soporta video HTML5.
+        </video>
+        <video
+          src="../assets/typografica-propagandistica/09.MOV"
+          autoplay
+          loop
+          muted
+          playsinline
+        >
+          Tu navegador no soporta video HTML5.
+        </video>
+        <video
+          src="../assets/typografica-propagandistica/10.mp4"
+          autoplay
+          loop
+          muted
+          playsinline
+        >
+          Tu navegador no soporta video HTML5.
+        </video> 
+        <video
+          src="../assets/typografica-propagandistica/11.mp4"
+          autoplay
+          loop
+          muted
+          playsinline
+        >
+          Tu navegador no soporta video HTML5.
+        </video>
+        <video
+          src="../assets/typografica-propagandistica/14.mp4"
+          autoplay
+          loop
+          muted
+          playsinline
+        >
+          Tu navegador no soporta video HTML5.
+        </video>
+        <video
+          src="../assets/typografica-propagandistica/06.mov"
+          autoplay
+          loop
+          muted
+          playsinline
+        >
+          Tu navegador no soporta video HTML5.
+        </video> 
+        <video
+          src="../assets/typografica-propagandistica/05.mov"
+          autoplay
+          loop
+          muted
+          playsinline
+        >
+          Tu navegador no soporta video HTML5.
+        </video>
+        <video
+          src="../assets/typografica-propagandistica/04.mov"  
+          autoplay
+          loop
+          muted
+          playsinline
+        >
+          Tu navegador no soporta video HTML5.
+        </video>
+        <video
+          src="../assets/typografica-propagandistica/03.mov"
+          autoplay
+          loop
+          muted
+          playsinline
+        >
+          Tu navegador no soporta video HTML5.
+        </video>
+        <video
+          src="../assets/typografica-propagandistica/02.mov"
+          autoplay
+          loop
+          muted
+          playsinline
+        >
+          Tu navegador no soporta video HTML5.
+        </video>
+        <video
+          src="../assets/typografica-propagandistica/01.mov"
+          autoplay
+          loop
+          muted
+          playsinline
+        >
+          Tu navegador no soporta video HTML5.
+        </video> 
+    </main>
+
+    <!-- Lightbox HTML -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+      <span class="lightbox-close" id="lightboxClose">&times;</span>
+      <img src="" alt="" class="lightbox-img" id="lightboxImg" />
+    </div>
+
+    <!-- Lightbox JS -->
+    <script>
+      // Lightbox para imágenes en .project-gallery
+      document.querySelectorAll(".project-gallery img").forEach((img) => {
+        img.style.cursor = "zoom-in";
+        img.addEventListener("click", function () {
+          const overlay = document.getElementById("lightboxOverlay");
+          const lightboxImg = document.getElementById("lightboxImg");
+          lightboxImg.src = this.src;
+          lightboxImg.alt = this.alt || "";
+          overlay.classList.add("active");
+        });
+      });
+
+      // Cerrar lightbox al hacer click en overlay o botón cerrar
+      document
+        .getElementById("lightboxOverlay")
+        .addEventListener("click", function (e) {
+          if (e.target === this || e.target.id === "lightboxClose") {
+            this.classList.remove("active");
+            document.getElementById("lightboxImg").src = "";
+          }
+        });
+
+      // Cerrar lightbox con Escape
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          document.getElementById("lightboxOverlay").classList.remove("active");
+          document.getElementById("lightboxImg").src = "";
+        }
+      });
+    </script>
+  </body>
+</html>
