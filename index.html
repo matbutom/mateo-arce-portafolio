@@ -20,45 +20,50 @@
   </head>
 
   <body>
+    <!-- ASCII Loading Overlay -->
+    <div class="ascii-overlay"><div class="ascii-grid"></div></div>
+
     <div id="bg-illustrations"></div>
-<!-- Header principal -->
-    <header class="main-header">
-      <div class="header-content">
-        <img
-          class="logo"
-          src="assets/mateoarce_logo.png"
-          alt="Logo Mateo Arce"
-        />
-        <div class="header-text">
-          <p>
-            Hi! I’m
-            <a
-              href="https://www.instagram.com/matbutom"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="insta-link mateo-arce"
-              >Mateo Arce</a
-            >
-            — a designer, illustrator, and programmer based in Chile. I
-            co-founded
-            <a
-              href="https://www.instagram.com/rafita.studio"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="insta-link rafita-studio"
-              >Rafita Studio</a
-            >, where I mix brand design, generative code, and way too many dog
-            drawings. I’m passionate about turning pixels into personality, code
-            into creativity, and dogs into... well, even cooler dogs.
-          </p>
+<!-- Hero section: header starts centered in viewport -->
+    <div class="hero-section">
+      <header class="main-header">
+        <div class="header-content">
+          <img
+            class="logo"
+            src="assets/mateoarce_logo.png"
+            alt="Logo Mateo Arce"
+          />
+          <div class="header-text">
+            <p>
+              Hi! I'm
+              <a
+                href="https://www.instagram.com/matbutom"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="insta-link mateo-arce"
+                >Mateo Arce</a
+              >
+              — a designer, illustrator, and programmer based in Chile. I
+              co-founded
+              <a
+                href="https://www.instagram.com/rafita.studio"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="insta-link rafita-studio"
+                >Rafita Studio</a
+              >, where I mix brand design, generative code, and way too many dog
+              drawings. I'm passionate about turning pixels into personality, code
+              into creativity, and dogs into... well, even cooler dogs.
+            </p>
+          </div>
+          <nav class="main-nav">
+            <ul>
+              <li><a href="about.html">About</a></li>
+            </ul>
+          </nav>
         </div>
-        <nav class="main-nav">
-          <ul>
-            <li><a href="about.html">About</a></li>
-          </ul>
-        </nav>
-      </div>
-    </header>
+      </header>
+    </div>
 
     <!-- Galería de proyectos -->
     <main>
@@ -159,8 +164,19 @@
     </main>
 
     <footer class="site-footer">
-      © 2025 Designed by Mateo Arce. All rights reserved.
+      hope to see you again :)
     </footer>
+
+    <!-- ==== SHUFFLE GALLERY ORDER ==== -->
+    <script>
+      const gallery = document.querySelector(".gallery");
+      const items = Array.from(gallery.children);
+      for (let i = items.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        gallery.appendChild(items[j]);
+        items[j] = items[i];
+      }
+    </script>
 
     <!-- ==== ILUSTRACIONES DE FONDO ANIMADAS ==== -->
     <script>
@@ -258,5 +274,32 @@ for(let i=0; i<8; i++) setTimeout(showRandomIllustration, i*200);
 // Lanza ilustraciones muy frecuentemente para mantener la pantalla llena
 setInterval(showRandomIllustration, 300); // cada 0.3 segundos
 </script>
+    <!-- ==== HERO SCROLL ANIMATION ==== -->
+    <script>
+      (function () {
+        // Always start at the top so the hero is visible
+        history.scrollRestoration = "manual";
+        window.scrollTo(0, 0);
+
+        const hero = document.querySelector(".hero-section");
+        if (!hero) return;
+
+        let ticking = false;
+        window.addEventListener("scroll", function () {
+          if (!ticking) {
+            window.requestAnimationFrame(function () {
+              if (window.scrollY > 50) {
+                hero.classList.add("collapsed");
+              } else {
+                hero.classList.remove("collapsed");
+              }
+              ticking = false;
+            });
+            ticking = true;
+          }
+        });
+      })();
+    </script>
+    <script src="transition.js"></script>
   </body>
 </html>
