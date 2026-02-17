@@ -7,8 +7,8 @@
 
   if (overlay && grid) {
     // Calculate grid size based on viewport
-    const charW = window.innerWidth < 600 ? 7 : 9;
-    const charH = window.innerWidth < 600 ? 12 : 16;
+    const charW = window.innerWidth < 600 ? 12 : 9;
+    const charH = window.innerWidth < 600 ? 22 : 16;
     const cols = Math.floor(window.innerWidth / charW);
     const rows = Math.floor(window.innerHeight / charH);
 

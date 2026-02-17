@@ -421,8 +421,12 @@ body {
 @media (max-width: 900px) {
   .header-content {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    text-align: center;
     gap: 20px;
+  }
+  .header-text p {
+    font-size: 1.5rem;
   }
   .main-nav {
     margin-left: 0;
@@ -439,11 +443,11 @@ body {
     height: 120px;
   }
   .about-title {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     margin-bottom: 8px;
   }
   .about-text-content p {
-    font-size: 1rem;
+    font-size: 1.3rem;
     margin-bottom: 12px;
   }
 }
@@ -496,13 +500,13 @@ body {
     align-items: flex-end;
   }
   .logo {
-    width: 70px;
+    width: 100px;
   }
   .header-text h1 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
   .header-text p {
-    font-size: 1rem;
+    font-size: 1.4rem;
   }
   .site-footer {
     font-size: 0.95rem;
@@ -599,7 +603,7 @@ body {
 }
 @media (max-width: 600px) {
   .ascii-grid {
-    font-size: 10px;
+    font-size: 18px;
   }
 }
 
