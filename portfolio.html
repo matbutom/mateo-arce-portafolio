@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Portfolio — Mateo Arce 2025</title>
+    <link rel="stylesheet" href="https://use.typekit.net/lhe1ara.css" />
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        font-family: "bricolage-grotesque", sans-serif;
+        background: #d8d8d8;
+        color: #111;
+      }
+
+      @page { size: A4; margin: 0; }
+
+      /* ===== PAGE BASE ===== */
+      .page {
+        width: 210mm;
+        height: 297mm;
+        padding: 12mm;
+        background: white;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        margin: 0 auto 16px auto;
+        page-break-after: always;
+      }
+
+      /* ===== COVER PAGE ===== */
+      .cover-page { justify-content: space-between; }
+
+      .cover-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      .cover-logo { width: 48mm; display: block; }
+
+      .cover-year {
+        font-size: 9pt;
+        color: #bbb;
+        font-weight: 400;
+        letter-spacing: 0.05em;
+      }
+
+      .cover-name {
+        font-size: 72pt;
+        font-weight: 800;
+        letter-spacing: -4px;
+        line-height: 0.88;
+        color: #111;
+      }
+
+      .cover-tagline {
+        font-size: 11pt;
+        font-weight: 300;
+        line-height: 1.65;
+        color: #555;
+        max-width: 135mm;
+      }
+
+      .cover-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        border-top: 1px solid #e8e8e8;
+        padding-top: 5mm;
+      }
+
+      .cover-contact { font-size: 8.5pt; color: #888; line-height: 1.9; }
+      .cover-contact span { color: #ff85ee; font-weight: 500; }
+
+      /* ===== PROJECT PAGE (STANDARD) ===== */
+      .project-page { gap: 6mm; }
+
+      .proj-cover {
+        width: 100%;
+        height: 90mm;
+        object-fit: cover;
+        display: block;
+        flex-shrink: 0;
+      }
+
+      /* Compact horizontal info bar */
+      .proj-info-bar {
+        display: flex;
+        gap: 8mm;
+        align-items: flex-start;
+        flex-shrink: 0;
+      }
+
+      .proj-info-bar-left {
+        flex: 0 0 75mm;
+      }
+
+      .proj-title {
+        font-size: 17pt;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+        line-height: 1.05;
+      }
+
+      .proj-date {
+        font-size: 7.5pt;
+        color: #bbb;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        margin-top: 1.5mm;
+      }
+
+      .proj-desc {
+        flex: 1;
+        font-size: 8pt;
+        color: #444;
+        line-height: 1.65;
+      }
+
+      /* ===== BENTO GALLERY ===== */
+      .proj-gallery {
+        flex: 1;
+        min-height: 0;
+        display: grid;
+        gap: 3mm;
+      }
+
+      .proj-gallery img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        min-height: 0;
+      }
+
+      /* 3 images: 2-col, 2-row | img1 tall left, imgs 2-3 stacked right */
+      .proj-gallery[data-count="3"] {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+      }
+      .proj-gallery[data-count="3"] img:nth-child(1) {
+        grid-row: span 2;
+      }
+
+      /* 5 images: wide-left col + 2 narrow cols, 2 rows | img1 tall left */
+      .proj-gallery[data-count="5"] {
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+      }
+      .proj-gallery[data-count="5"] img:nth-child(1) {
+        grid-row: span 2;
+      }
+
+      /* 6 images: 3-col 3-row | img1 spans 2×2 top-left */
+      .proj-gallery[data-count="6"] {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+      }
+      .proj-gallery[data-count="6"] img:nth-child(1) {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+
+      /* 7 images: 3-col 3-row | img1 spans full width (top row), 2 rows of 3 below */
+      .proj-gallery[data-count="7"] {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+      }
+      .proj-gallery[data-count="7"] img:nth-child(1) {
+        grid-column: span 3;
+      }
+
+      /* ===== PROJECT PAGE (TALL — cover fills most of page) ===== */
+      .project-page-tall { gap: 6mm; }
+
+      .proj-cover-tall {
+        width: 100%;
+        flex: 1;
+        object-fit: cover;
+        display: block;
+        min-height: 0;
+      }
+
+      .proj-info-bottom {
+        flex-shrink: 0;
+        height: 60mm;
+        display: flex;
+        gap: 6mm;
+        align-items: flex-start;
+      }
+
+      .proj-info-bottom .proj-info-bar-left { flex: 1; }
+
+      /* ===== PROJECT PAGE (TEXTO SOLO) ===== */
+      .project-page-text { justify-content: space-between; }
+
+      .proj-text-header {
+        border-bottom: 2px solid #111;
+        padding-bottom: 5mm;
+      }
+
+      .proj-text-title {
+        font-size: 36pt;
+        font-weight: 800;
+        letter-spacing: -1.5px;
+        line-height: 1;
+      }
+
+      .proj-text-date { font-size: 9pt; color: #bbb; margin-top: 3mm; }
+
+      .proj-text-body {
+        font-size: 10.5pt;
+        line-height: 1.8;
+        color: #333;
+        max-width: 150mm;
+      }
+
+      .proj-text-url {
+        font-size: 8.5pt;
+        color: #ff85ee;
+        font-weight: 500;
+        border-top: 1px solid #eee;
+        padding-top: 5mm;
+      }
+
+      .proj-text-label {
+        font-size: 7.5pt;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #aaa;
+        margin-bottom: 2mm;
+      }
+
+      /* ===== CV PAGE ===== */
+      .cv-page { gap: 7mm; }
+
+      .cv-page-title {
+        font-size: 30pt;
+        font-weight: 800;
+        letter-spacing: -1px;
+        flex-shrink: 0;
+      }
+
+      .cv-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 7mm 12mm;
+        flex: 1;
+        overflow: hidden;
+      }
+
+      .cv-block-title {
+        font-size: 7.5pt;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        border-bottom: 1.5px solid #111;
+        padding-bottom: 3mm;
+        margin-bottom: 4mm;
+      }
+
+      .cv-entry { margin-bottom: 5mm; }
+      .cv-entry-name { font-size: 8.5pt; font-weight: 700; color: #111; }
+      .cv-entry-date { font-size: 7.5pt; color: #bbb; margin: 1.5mm 0; }
+      .cv-entry-desc { font-size: 8pt; color: #555; line-height: 1.5; }
+
+      .cv-tools {
+        columns: 2;
+        column-gap: 5mm;
+        font-size: 8.5pt;
+        color: #333;
+        line-height: 2.1;
+      }
+
+      .cv-info-item { font-size: 8.5pt; color: #333; line-height: 2.1; }
+      .cv-info-item span { font-weight: 700; color: #111; margin-right: 2mm; }
+
+      .cv-links-row {
+        display: flex;
+        gap: 6mm;
+        flex-wrap: wrap;
+        margin-top: 3mm;
+      }
+
+      .cv-links-row a {
+        font-size: 8.5pt;
+        color: #ff85ee;
+        text-decoration: underline;
+        text-underline-offset: 2px;
+        font-weight: 500;
+      }
+
+      /* ===== PAGE NUMBER ===== */
+      .page-num {
+        position: absolute;
+        bottom: 8mm;
+        right: 12mm;
+        font-size: 7.5pt;
+        color: #ccc;
+        font-weight: 400;
+      }
+
+      @media print {
+        body { background: white; }
+        .page { margin: 0; }
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- ========================================
+         PORTADA
+    ========================================= -->
+    <div class="page cover-page">
+      <div class="cover-top">
+        <img class="cover-logo" src="assets/mateoarce_logo.png" alt="Mateo Arce" />
+        <span class="cover-year">2026</span>
+      </div>
+
+      <div>
+        <div class="cover-name">Mateo<br>Arce</div>
+      </div>
+
+      <p class="cover-tagline">
+        Designer, illustrator, and programmer based in Santiago, Chile.
+        Co-founder of Rafita Studio, where I mix brand design,
+        generative code, and way too many dog drawings.
+      </p>
+
+      <div class="cover-bottom">
+        <div class="cover-contact">
+          <div><span>Email</span> mateo.arce28@gmail.com</div>
+          <div><span>Location</span> Santiago, Chile</div>
+          <div><span>Instagram</span> @matbutom</div>
+          <div><span>GitHub</span> github.com/matbutom</div>
+        </div>
+        <div style="font-size:8pt;color:#ccc;letter-spacing:0.05em;">Portfolio</div>
+      </div>
+    </div>
+
+
+    <!-- ========================================
+         PARLA — cover: DSC_6407 | gallery: 3 unique
+    ========================================= -->
+    <div class="page project-page">
+      <img class="proj-cover" src="assets/parla/DSC_6407.jpg" alt="Parla" />
+      <div class="proj-info-bar">
+        <div class="proj-info-bar-left">
+          <div class="proj-title">Parla</div>
+          <div class="proj-date">2025 — Electrónica / Objeto sonoro</div>
+        </div>
+        <p class="proj-desc">Parla es un parlante de escritorio con amplificador mono construido alrededor del circuito integrado LM386. Un proyecto de electrónica que explora el diseño de objetos sonoros análogos, desde el esquema del circuito hasta el enclosure físico.</p>
+      </div>
+      <div class="proj-gallery" data-count="3">
+        <img src="assets/parla/DSC_6395.jpg" alt="" />
+        <img src="assets/parla/DSC_6417.jpg" alt="" />
+        <img src="assets/parla/DSC_6433.jpg" alt="" />
+      </div>
+      <span class="page-num">2</span>
+    </div>
+
+
+    <!-- ========================================
+         GO SKATE DAY — cover: thumb | gallery: 5 unique
+    ========================================= -->
+    <div class="page project-page">
+      <img class="proj-cover" src="assets/GoSkateDay/thumb/gsd thumb design.png" alt="Go Skate Day" />
+      <div class="proj-info-bar">
+        <div class="proj-info-bar-left">
+          <div class="proj-title">Go Skate Day</div>
+          <div class="proj-date">Junio 2023 — Identidad visual / Ilustración</div>
+        </div>
+        <p class="proj-desc">GoSkateDay es una celebración internacional del skateboarding. En esta edición en Santiago, Chile, fuimos responsables de la identidad visual y las ilustraciones del evento, desarrollando afiches, stickers y gráficos para camisetas. El trabajo combinó estética urbana y elementos propios de la cultura skate.</p>
+      </div>
+      <div class="proj-gallery" data-count="5">
+        <img src="assets/GoSkateDay/assets/GSD_IG-03.jpg" alt="" />
+        <img src="assets/GoSkateDay/assets/GSD_IG_Mesa de trabajo 1.jpg" alt="" />
+        <img src="assets/GoSkateDay/thumb/GSD_IG-02.jpg" alt="" />
+        <img src="assets/GoSkateDay/assets/GSD_IG-05.jpg" alt="" />
+        <img src="assets/GoSkateDay/assets/GSD_IG-04.jpg" alt="" />
+      </div>
+      <span class="page-num">3</span>
+    </div>
+
+
+    <!-- ========================================
+         SÚBELA NEWS — cover: 001 | gallery: 7 unique (002–008)
+    ========================================= -->
+    <div class="page project-page">
+      <img class="proj-cover" src="assets/SubelaNews/Subela_OK.001.jpeg" alt="Súbela News" />
+      <div class="proj-info-bar">
+        <div class="proj-info-bar-left">
+          <div class="proj-title">Súbela News</div>
+          <div class="proj-date">Mayo 2023 — Branding / Identidad</div>
+        </div>
+        <p class="proj-desc">Fuimos preseleccionados por Súbela para el rebranding de Súbela Radio. Se desarrollaron variedad de logos, entre ellos el logo principal de la radio y distintos programas que vendrían durante el año: El Chile que Viene y Elecciones Súbela 2024.</p>
+      </div>
+      <div class="proj-gallery" data-count="7">
+        <img src="assets/SubelaNews/Subela_OK.002.jpeg" alt="" />
+        <img src="assets/SubelaNews/Subela_OK.003.jpeg" alt="" />
+        <img src="assets/SubelaNews/Subela_OK.004.jpeg" alt="" />
+        <img src="assets/SubelaNews/Subela_OK.005.jpeg" alt="" />
+        <img src="assets/SubelaNews/Subela_OK.006.jpeg" alt="" />
+        <img src="assets/SubelaNews/Subela_OK.007.jpeg" alt="" />
+        <img src="assets/SubelaNews/Subela_OK.008.jpeg" alt="" />
+      </div>
+      <span class="page-num">4</span>
+    </div>
+
+
+    <!-- ========================================
+         RADIO REGALÓN — cover: Mesa de trabajo 1 | gallery: 3 unique
+    ========================================= -->
+    <div class="page project-page">
+      <img class="proj-cover" src="assets/radio-regalon/LOGO DEMOS/radio_regalon_demo_Mesa de trabajo 1.jpg" alt="Radio Regalón" />
+      <div class="proj-info-bar">
+        <div class="proj-info-bar-left">
+          <div class="proj-title">Radio Regalón</div>
+          <div class="proj-date">Enero 2025 – Actualidad — Branding / Código generativo</div>
+        </div>
+        <p class="proj-desc">Radio Regalón es un proyecto de Aarón Montoya-Moraga desde Santiago de Chile para el mundo. Brand design by Mateo Arce. Hecho completamente con código: diagramación programada en p5.js con visuales para conciertos y pantallas interactivas.</p>
+      </div>
+      <div class="proj-gallery" data-count="3">
+        <img src="assets/radio-regalon/LOGO DEMOS/radio_regalon_demo-02.jpg" alt="" />
+        <img src="assets/radio-regalon/LOGO DEMOS/radio_regalon_demo-03.png" alt="" />
+        <img src="assets/radio-regalon/LOGO DEMOS/Captura de pantalla 2025-06-01 a la(s) 18.22.58.png" alt="" />
+      </div>
+      <span class="page-num">5</span>
+    </div>
+
+
+    <!-- ========================================
+         LATERAL IMAGE EDITOR — cover: logo | gallery: 6 unique
+    ========================================= -->
+    <div class="page project-page">
+      <img class="proj-cover" src="assets/Lateral Image Editor/Logo/LIE_logo.png" alt="Lateral Image Editor" />
+      <div class="proj-info-bar">
+        <div class="proj-info-bar-left">
+          <div class="proj-title">Lateral Image Editor</div>
+          <div class="proj-date">Agosto – Diciembre 2024 — UX/UI / Programación</div>
+        </div>
+        <p class="proj-desc">Proyecto realizado para criti.ca y su medio digital Lateral. Se programó una herramienta en mechanic.design para editar imágenes de forma fácil, diseñando una interfaz con filtros activables para ver los efectos en tiempo real.</p>
+      </div>
+      <div class="proj-gallery" data-count="6">
+        <img src="assets/Lateral Image Editor/Imagenes con efectos/captura01.png" alt="" />
+        <img src="assets/Lateral Image Editor/Imagenes con efectos/captura02.png" alt="" />
+        <img src="assets/Lateral Image Editor/Imagenes con efectos/captura03.png" alt="" />
+        <img src="assets/Lateral Image Editor/Imagenes con efectos/blendColors-2024-09-23-18-08 (1).png" alt="" />
+        <img src="assets/Lateral Image Editor/Imagenes con efectos/halftonePruebas-2024-09-23-18-08 (1).png" alt="" />
+        <img src="assets/Lateral Image Editor/Imagenes con efectos/imagen-bitmap (1).png" alt="" />
+      </div>
+      <span class="page-num">6</span>
+    </div>
+
+
+    <!-- ========================================
+         COLONIA DIGNIDAD — cover: Marca.001 | gallery: 5 unique (copias)
+    ========================================= -->
+    <div class="page project-page">
+      <img class="proj-cover" src="assets/Colonia-Dignidad/Colonia Dignidad Marca.001.png" alt="Colonia Dignidad" />
+      <div class="proj-info-bar">
+        <div class="proj-info-bar-left">
+          <div class="proj-title">Colonia Dignidad</div>
+          <div class="proj-date">Junio 2022 — Diseño editorial / Infografía</div>
+        </div>
+        <p class="proj-desc">Para el encargo, se escogió un hito histórico chileno que pudiera dar pie a diseñar una marca, infografías y baldosas de cerámica, con el objetivo de recordar este acontecimiento.</p>
+      </div>
+      <div class="proj-gallery" data-count="5">
+        <img src="assets/Colonia-Dignidad/Arce-Salamanca-Sepulveda_Mesa de trabajo 1 copia 2.jpg" alt="" />
+        <img src="assets/Colonia-Dignidad/Arce-Salamanca-Sepulveda_Mesa de trabajo 1 copia 3.jpg" alt="" />
+        <img src="assets/Colonia-Dignidad/Arce-Salamanca-Sepulveda_Mesa de trabajo 1 copia 4.jpg" alt="" />
+        <img src="assets/Colonia-Dignidad/Arce-Salamanca-Sepulveda_Mesa de trabajo 1 copia 5.jpg" alt="" />
+        <img src="assets/Colonia-Dignidad/Arce-Salamanca-Sepulveda_Mesa de trabajo 1 copia.jpg" alt="" />
+      </div>
+      <span class="page-num">7</span>
+    </div>
+
+
+    <!-- ========================================
+         TYPO*GRÁFICA (tall — cover estático)
+    ========================================= -->
+    <div class="page project-page-tall">
+      <img class="proj-cover-tall" src="assets/typografica-propagandistica/13.jpeg" alt="Typo*gráfica Propagandística" />
+      <div class="proj-info-bottom">
+        <div class="proj-info-bar-left">
+          <div class="proj-title">Typo*gráfica<br>Propagandística</div>
+          <div class="proj-date" style="margin-top:3mm;">Diciembre 2025 — Proyecto de Título / Código generativo / GANs</div>
+          <p class="proj-desc" style="margin-top:3mm;">Investiga cómo la tipografía en afiches políticos latinoamericanos comunica ideas y emociones, apropiándonos de ella y dándole una nueva identidad generativa. Se curó un dataset de afiches, extrayendo tipografías representativas transformadas por algoritmos basados en GANs.</p>
+          <p style="margin-top:4mm; font-size:8pt; color:#ff85ee; font-weight:500;">matbutom.github.io/typ-web</p>
+        </div>
+      </div>
+      <span class="page-num">8</span>
+    </div>
+
+
+    <!-- ========================================
+         INTERACTIVE LETTERS — cover: frame02a | gallery: 5 unique
+    ========================================= -->
+    <div class="page project-page">
+      <img class="proj-cover" src="assets/interactive-letters/il_frame02a.jpg" alt="Interactive Letters" />
+      <div class="proj-info-bar">
+        <div class="proj-info-bar-left">
+          <div class="proj-title">Interactive Letters</div>
+          <div class="proj-date">Mayo 2025 — Programación creativa / Arte interactivo</div>
+        </div>
+        <p class="proj-desc">Exploración visual interactiva con letras y animación generativa. Proyecto para la convocatoria de obras del Museo Interactivo Mirador. Programado con p5.js y mechanic.design, combina cámara en tiempo real con letras tipográficas generativas. Expuesto en VOLCÁN, MIM 2025.</p>
+      </div>
+      <div class="proj-gallery" data-count="5">
+        <img src="assets/interactive-letters/il_frame01a.jpg" alt="" />
+        <img src="assets/interactive-letters/il_frame02c.jpg" alt="" />
+        <img src="assets/interactive-letters/il_frame01c.jpg" alt="" />
+        <img src="assets/interactive-letters/il_frame03c.jpg" alt="" />
+        <img src="assets/interactive-letters/il_frame03a.jpg" alt="" />
+      </div>
+      <span class="page-num">9</span>
+    </div>
+
+
+    <!-- ========================================
+         CV
+    ========================================= -->
+    <div class="page cv-page">
+      <div class="cv-page-title">CV</div>
+
+      <div class="cv-grid">
+
+        <!-- Info + Tools -->
+        <div>
+          <div class="cv-block-title">Info</div>
+          <div class="cv-info-item"><span>Email</span> mateo.arce28@gmail.com</div>
+          <div class="cv-info-item"><span>Location</span> Santiago, Chile</div>
+          <div class="cv-links-row" style="margin-top:3mm;">
+            <a href="#">instagram.com/matbutom</a>
+            <a href="#">github.com/matbutom</a>
+            <a href="#">linkedin.com/in/mateo-arce</a>
+          </div>
+
+          <div class="cv-block-title" style="margin-top:6mm;">Software & Tools</div>
+          <div class="cv-tools">
+            <div>Illustrator</div>
+            <div>Photoshop</div>
+            <div>InDesign</div>
+            <div>After Effects</div>
+            <div>Premier Pro</div>
+            <div>Figma</div>
+            <div>p5.js / Processing</div>
+            <div>HTML / CSS / JS</div>
+            <div>Procreate</div>
+            <div>GitHub</div>
+            <div>Fusion 360</div>
+            <div>VS Code</div>
+            <div>Wordpress</div>
+            <div>Canvas</div>
+            <div>Cargo Collective</div>
+            <div>Ready Mag</div>
+          </div>
+        </div>
+
+        <!-- Work & Education -->
+        <div>
+          <div class="cv-block-title">Work Experience</div>
+
+          <div class="cv-entry">
+            <div class="cv-entry-name">Otra Ciudad — Estudio de Arquitectura</div>
+            <div class="cv-entry-date">2025 – Actualidad</div>
+            <div class="cv-entry-desc">Diseño, programación y hosteo de página web.</div>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-entry-name">Rafita Studio — Estudio Personal</div>
+            <div class="cv-entry-date">2023 – Actualidad</div>
+            <div class="cv-entry-desc">Diseño de merchandising e ilustración.</div>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-entry-name">Exposición — Museo Interactivo Mirador</div>
+            <div class="cv-entry-date">2025</div>
+            <div class="cv-entry-desc">Obras personales expuestas en MIM.</div>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-entry-name">Práctica Profesional — criti.ca</div>
+            <div class="cv-entry-date">2024</div>
+            <div class="cv-entry-desc">Diseño sistematizado de imágenes | UX/UI.</div>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-entry-name">Teatro Municipal de Santiago</div>
+            <div class="cv-entry-date">2022 – 2024</div>
+            <div class="cv-entry-desc">Mapping de animaciones en Sala Arrau.</div>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-entry-name">Alameda Beer Company</div>
+            <div class="cv-entry-date">2023</div>
+            <div class="cv-entry-desc">Branding y diseño de carteles.</div>
+          </div>
+
+          <div class="cv-block-title" style="margin-top:5mm;">Education</div>
+
+          <div class="cv-entry">
+            <div class="cv-entry-name">Escuela de Diseño — Univ. Diego Portales</div>
+            <div class="cv-entry-date">2020 – 2025</div>
+            <div class="cv-entry-desc">Santiago, Chile.</div>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-entry-name">Serigrafía — Patricio Albornoz</div>
+            <div class="cv-entry-date">2023</div>
+            <div class="cv-entry-desc">Santiago, Chile, UDP.</div>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-entry-name">Risografía — Rata Estudio</div>
+            <div class="cv-entry-date">2023</div>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-entry-name">Tipos Móviles — Coto Mendoza</div>
+            <div class="cv-entry-date">2023</div>
+          </div>
+          <div class="cv-entry">
+            <div class="cv-entry-name">Just JavaScript Course</div>
+            <div class="cv-entry-date">2023 — Online</div>
+          </div>
+        </div>
+
+      </div>
+      <span class="page-num">10</span>
+    </div>
+
+  </body>
+</html>

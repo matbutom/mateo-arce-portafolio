@@ -3,7 +3,10 @@
     "allow": [
       "WebFetch(domain:github.com)",
       "WebFetch(domain:piruetas.xyz)",
-      "Bash(git rm:*)"
+      "Bash(git rm:*)",
+      "Bash(pip3 install:*)",
+      "Bash(python3:*)",
+      "Read(//private/tmp/**)"
     ]
   }
 }
