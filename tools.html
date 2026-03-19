@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tools - Mateo Arce</title>
+    <link rel="stylesheet" href="https://use.typekit.net/lhe1ara.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/android-chrome-192x192.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="assets/android-chrome-192x192.png" />
+    <style>
+      .tools-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 32px;
+        justify-content: center;
+        padding: 40px 32px 60px;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .tool-card {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: 240px;
+      }
+
+      .tool-preview {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+        border: 2px solid #111;
+      }
+
+      .tool-preview iframe {
+        width: 200%;
+        height: 200%;
+        transform: scale(0.5);
+        transform-origin: top left;
+        pointer-events: none;
+        border: none;
+      }
+
+      .tool-card-label {
+        font-size: 1rem;
+        font-weight: 400;
+        color: #111;
+        text-decoration: none;
+        transition: color 0.2s, font-weight 0.2s;
+      }
+
+      .tool-card-label:hover {
+        color: #ff85ee;
+        font-weight: 700;
+      }
+
+      .tool-card-desc {
+        font-size: 0.85rem;
+        color: #555;
+        margin: 0;
+        line-height: 1.4;
+      }
+
+      @media (max-width: 600px) {
+        .tool-card {
+          width: 100%;
+        }
+        .tools-grid {
+          padding: 24px 16px 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ASCII Loading Overlay -->
+    <div class="ascii-overlay"><div class="ascii-grid"></div></div>
+
+    <a href="index.html" class="home-link">Home</a>
+
+    <main style="padding-top: 60px;">
+      <h1 class="about-title" style="text-align:center; margin-bottom: 8px;">Tools</h1>
+
+      <div class="tools-grid">
+
+        <div class="tool-card">
+          <div class="tool-preview">
+            <iframe
+              src="https://matbutom.github.io/design-modular-tools/"
+              title="Design Modular Tools"
+              loading="lazy"
+              scrolling="no"
+            ></iframe>
+          </div>
+          <a
+            href="https://matbutom.github.io/design-modular-tools/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="tool-card-label"
+          >Design Modular Tools ↗</a>
+          <p class="tool-card-desc">Herramienta para crear composiciones visuales con módulos geométricos.</p>
+        </div>
+
+        <div class="tool-card">
+          <div class="tool-preview">
+            <iframe
+              src="https://matbutom.github.io/digital-thermal-printer/"
+              title="Digital Thermal Printer"
+              loading="lazy"
+              scrolling="no"
+            ></iframe>
+          </div>
+          <a
+            href="https://matbutom.github.io/digital-thermal-printer/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="tool-card-label"
+          >Digital Thermal Printer ↗</a>
+          <p class="tool-card-desc">Simulador de impresora térmica digital para generar tickets e imágenes en estilo papel.</p>
+        </div>
+
+      </div>
+    </main>
+    <script src="transition.js"></script>
+  </body>
+</html>

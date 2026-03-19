@@ -55,6 +55,35 @@ body {
   max-width: 900px;
 }
 
+.tools-nav {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  margin: 0;
+  align-self: unset;
+}
+
+.tools-nav ul {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tools-nav li a {
+  color: #111;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 400;
+  transition: color 0.2s, font-weight 0.2s;
+}
+
+.tools-nav li a:hover {
+  color: #ff85ee;
+  font-weight: 700;
+}
+
 .main-nav {
   position: absolute;
   top: 20px;
