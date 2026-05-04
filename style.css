@@ -222,6 +222,26 @@ body {
   transform: scale(1.018);
 }
 
+.gallery-2col {
+  display: block;
+  columns: 2;
+  column-gap: 20px;
+}
+
+.gallery-2col img,
+.gallery-2col video {
+  width: 100%;
+  display: block;
+  margin: 0 0 20px 0;
+  break-inside: avoid;
+}
+
+@media (max-width: 600px) {
+  .gallery-2col {
+    columns: 1;
+  }
+}
+
 /* ===== SECCION ABOUT ===== */
 .about-page {
   max-width: 900px;

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PCD Visualizer | Mateo Arce</title>
+    <link rel="stylesheet" href="https://use.typekit.net/lhe1ara.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="../assets/android-chrome-192x192.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="192x192"
+      href="../assets/android-chrome-192x192.png"
+    />
+  </head>
+  <body>
+    <!-- ASCII Loading Overlay -->
+    <div class="ascii-overlay"><div class="ascii-grid"></div></div>
+
+    <!-- Portada -->
+    <img class="project-cover" src="../assets/PCD-visualizer/banner.png" alt="PCD Visualizer — portada" />
+
+    <main class="project-page">
+      <a class="home-link" href="../index.html">← home</a>
+      <h1 class="project-title">Processing Community Day - Instagram Post Generator</h1>
+      <div class="project-subtitle">Abril 2026</div>
+      <div class="project-description">
+        Web diseñada y programada para generar posts de Instagram a invitar a la comunidad de Processing a participar en el evento anual "Processing Community Day" en la FaAAD, Universidad Diego portales. El sitio permite a los usuarios personalizar el post con animaciones de fondo, videos, grillas, etc. Las animaciones de fondo son creadas con p5.js, generando una imagen que pueden compartir en sus redes sociales para promover el evento. Proyecto realizado en Github, con ayuda de Claude Code.
+      </div>
+      <div class="project-description" style="margin-bottom: 34px;">
+        Puedes ver el código fuente
+        <a href="https://github.com/matbutom/PCD-graficas-2026" class="pink-link" target="_blank" rel="noopener"><strong>aquí</strong></a>.
+      </div>
+      <div class="project-description" style="margin-bottom: 34px;">
+        Puedes experimentar con el generador 
+        <a href="https://matbutom.github.io/PCD-graficas-2026/" class="pink-link" target="_blank" rel="noopener"><strong>aquí</strong></a>.
+      </div>
+      <div class="project-gallery gallery-2col">
+        <img src="../assets/PCD-visualizer/pcd2026-01.png" alt="PCD Visualizer captura 01" />
+        <img src="../assets/PCD-visualizer/pcd2026-02.png" alt="PCD Visualizer captura 02" />
+        <video src="../assets/PCD-visualizer/pcd2026-01.mp4" autoplay loop muted playsinline></video>
+        <video src="../assets/PCD-visualizer/pcd2026-02.mp4" autoplay loop muted playsinline></video>
+        <video src="../assets/PCD-visualizer/pcd2026-03.mp4" autoplay loop muted playsinline></video>
+        <video src="../assets/PCD-visualizer/pcd2026-04.mp4" autoplay loop muted playsinline></video>
+        <video src="../assets/PCD-visualizer/pcd2026-05.mp4" autoplay loop muted playsinline></video>
+        <video src="../assets/PCD-visualizer/pcd2026-06.mp4" autoplay loop muted playsinline></video>
+        <video src="../assets/PCD-visualizer/pcd2026-07.mp4" autoplay loop muted playsinline></video>
+        <video src="../assets/PCD-visualizer/pcd2026-08.mp4" autoplay loop muted playsinline></video>
+        <video src="../assets/PCD-visualizer/pcd2026-09.mp4" autoplay loop muted playsinline></video>
+        <video src="../assets/PCD-visualizer/pcd2026-10.mp4" autoplay loop muted playsinline></video>
+      </div>
+    </main>
+
+    <!-- Lightbox HTML -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+      <span class="lightbox-close" id="lightboxClose">&times;</span>
+      <img src="" alt="" class="lightbox-img" id="lightboxImg" />
+    </div>
+
+    <!-- Lightbox JS -->
+    <script>
+      document.querySelectorAll('.project-gallery img').forEach(img => {
+        img.style.cursor = "zoom-in";
+        img.addEventListener('click', function () {
+          const overlay = document.getElementById('lightboxOverlay');
+          const lightboxImg = document.getElementById('lightboxImg');
+          lightboxImg.src = this.src;
+          lightboxImg.alt = this.alt || "";
+          overlay.classList.add('active');
+        });
+      });
+
+      document.getElementById('lightboxOverlay').addEventListener('click', function (e) {
+        if (e.target === this || e.target.id === 'lightboxClose') {
+          this.classList.remove('active');
+          document.getElementById('lightboxImg').src = "";
+        }
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === "Escape") {
+          document.getElementById('lightboxOverlay').classList.remove('active');
+          document.getElementById('lightboxImg').src = "";
+        }
+      });
+    </script>
+    <script src="../transition.js"></script>
+  </body>
+</html>
