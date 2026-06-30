@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Best Friends | Mateo Arce</title>
+    <title>Inter-Ferencia | Mateo Arce</title>
     <link rel="stylesheet" href="https://use.typekit.net/lhe1ara.css" />
     <link rel="stylesheet" href="../styles/style.css" />
     <link
@@ -23,23 +23,44 @@
     <div class="ascii-overlay"><div class="ascii-grid"></div></div>
 
     <!-- Portada -->
-    <img class="project-cover" src="../assets/Coloring-Book/ColouringBook_v1.jpg" alt="Coloring Book — portada" />
+    <img
+      class="project-cover"
+      src="../assets/inter-ferencia/DSC_8134.jpg"
+      alt="Inter-Ferencia — portada"
+    />
 
     <main class="project-page">
       <a class="home-link" href="../index.html">← home</a>
-      <h1 class="project-title">Your Best Friends - Coloring Book</h1>
-      <div class="project-subtitle">Junio 2025</div>
+      <h1 class="project-title">Inter-Ferencia</h1>
+      <div class="project-subtitle">2026</div>
       <div class="project-description">
-        Libro para colorear ilustrado, impreso y diseñado para los amantes de
-        los perritos. 🐶❤️
+        Instalacion interactiva hecha en Processing con webcam, vision computacional
+        y sonido. El sistema captura el fondo, detecta la silueta de las personas
+        como diferencia de imagen, la traduce a caracteres ASCII y dispara notas
+        cuando el cuerpo cruza seis barras invisibles en la pantalla.
+        <br />
+        Codigo fuente
+        <a
+          href="https://github.com/matbutom/inter-ferencia"
+          class="pink-link"
+          target="_blank"
+          rel="noopener noreferrer"
+          >aqui</a
+        >.
       </div>
+
       <div class="project-gallery gallery-2col">
-        <img src="../assets/Coloring-Book/ColouringBook_v1.jpg" />
-        <img src="../assets/Coloring-Book/ColouringBook_v12.jpg" />
-        <img src="../assets/Coloring-Book/ColouringBook_v13.jpg" />
-        <img src="../assets/Coloring-Book/ColouringBook_v14.jpg" />
-        <img src="../assets/Coloring-Book/ColouringBook_v15.jpg" />
-        <img src="../assets/Coloring-Book/ColouringBook_v16.jpg" />
+        <img src="../assets/inter-ferencia/DSC_8134.jpg" alt="Inter-Ferencia 01" />
+        <img src="../assets/inter-ferencia/DSC_8137.jpg" alt="Inter-Ferencia 02" />
+        <img src="../assets/inter-ferencia/DSC_8157.jpg" alt="Inter-Ferencia 03" />
+        <img src="../assets/inter-ferencia/DSC_8158.jpg" alt="Inter-Ferencia 04" />
+        <img src="../assets/inter-ferencia/DSC_8166.jpg" alt="Inter-Ferencia 05" />
+        <img src="../assets/inter-ferencia/DSC_8169.jpg" alt="Inter-Ferencia 06" />
+        <img src="../assets/inter-ferencia/DSC_8170.jpg" alt="Inter-Ferencia 07" />
+        <img src="../assets/inter-ferencia/DSC_8173.jpg" alt="Inter-Ferencia 08" />
+        <img src="../assets/inter-ferencia/DSC_8247.jpg" alt="Inter-Ferencia 09" />
+        <img src="../assets/inter-ferencia/DSC_8248.jpg" alt="Inter-Ferencia 10" />
+        <img src="../assets/inter-ferencia/DSC_8250.jpg" alt="Inter-Ferencia 11" />
       </div>
     </main>
 
@@ -51,7 +72,6 @@
 
     <!-- Lightbox JS -->
     <script>
-      // Lightbox para imágenes en .project-gallery
       document.querySelectorAll(".project-gallery img").forEach((img) => {
         img.style.cursor = "zoom-in";
         img.addEventListener("click", function () {
@@ -63,7 +83,6 @@
         });
       });
 
-      // Cerrar lightbox al hacer click en overlay o botón cerrar
       document
         .getElementById("lightboxOverlay")
         .addEventListener("click", function (e) {
@@ -73,7 +92,6 @@
           }
         });
 
-      // Cerrar lightbox con Escape
       document.addEventListener("keydown", function (e) {
         if (e.key === "Escape") {
           document.getElementById("lightboxOverlay").classList.remove("active");

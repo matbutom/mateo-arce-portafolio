@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Your Best Friends | Mateo Arce</title>
+    <title>DIY Cheap Camera | Mateo Arce</title>
     <link rel="stylesheet" href="https://use.typekit.net/lhe1ara.css" />
     <link rel="stylesheet" href="../styles/style.css" />
     <link
@@ -23,23 +23,44 @@
     <div class="ascii-overlay"><div class="ascii-grid"></div></div>
 
     <!-- Portada -->
-    <img class="project-cover" src="../assets/Coloring-Book/ColouringBook_v1.jpg" alt="Coloring Book — portada" />
+    <img
+      class="project-cover"
+      src="../assets/diy-cheap-camera/DSC_8152.jpg"
+      alt="DIY Cheap Camera — portada"
+    />
 
     <main class="project-page">
       <a class="home-link" href="../index.html">← home</a>
-      <h1 class="project-title">Your Best Friends - Coloring Book</h1>
-      <div class="project-subtitle">Junio 2025</div>
+      <h1 class="project-title">DIY Cheap Camera</h1>
+      <div class="project-subtitle">Mayo — 2026</div>
       <div class="project-description">
-        Libro para colorear ilustrado, impreso y diseñado para los amantes de
-        los perritos. 🐶❤️
+        Camara digital experimental hecha con una Seeed Studio XIAO ESP32S3 Sense,
+        una pantalla redonda GC9A01, botones fisicos y un receptor en Python. El
+        sistema muestra una vista en vivo pixelada, permite cambiar paletas
+        cromaticas y envia capturas por USB/Serial al computador para guardarlas
+        como imagenes escaladas.
+        <br />
+        Codigo fuente
+        <a
+          href="https://github.com/matbutom/cheap-diy-camera"
+          class="pink-link"
+          target="_blank"
+          rel="noopener noreferrer"
+          >aqui</a
+        >.
       </div>
+
       <div class="project-gallery gallery-2col">
-        <img src="../assets/Coloring-Book/ColouringBook_v1.jpg" />
-        <img src="../assets/Coloring-Book/ColouringBook_v12.jpg" />
-        <img src="../assets/Coloring-Book/ColouringBook_v13.jpg" />
-        <img src="../assets/Coloring-Book/ColouringBook_v14.jpg" />
-        <img src="../assets/Coloring-Book/ColouringBook_v15.jpg" />
-        <img src="../assets/Coloring-Book/ColouringBook_v16.jpg" />
+        <img src="../assets/diy-cheap-camera/DSC_8149.jpg" alt="DIY Cheap Camera 01" />
+        <img src="../assets/diy-cheap-camera/DSC_8152.jpg" alt="DIY Cheap Camera 02" />
+        <img src="../assets/diy-cheap-camera/foto_esp32_20260529_120309.jpg" alt="DIY Cheap Camera captura 01" />
+        <img src="../assets/diy-cheap-camera/foto_esp32_20260529_121009_HD.jpg" alt="DIY Cheap Camera captura 02" />
+        <img src="../assets/diy-cheap-camera/foto_esp32_20260529_122152_HD.png" alt="DIY Cheap Camera captura 03" />
+        <img src="../assets/diy-cheap-camera/foto_esp32_20260529_124516_HD.png" alt="DIY Cheap Camera captura 04" />
+        <img src="../assets/diy-cheap-camera/foto_esp32_20260529_124531_HD.png" alt="DIY Cheap Camera captura 05" />
+        <img src="../assets/diy-cheap-camera/foto_esp32_20260529_124544_HD.png" alt="DIY Cheap Camera captura 06" />
+        <img src="../assets/diy-cheap-camera/foto_esp32_20260529_124554_HD.png" alt="DIY Cheap Camera captura 07" />
+        <img src="../assets/diy-cheap-camera/foto_esp32_20260529_124608_HD.png" alt="DIY Cheap Camera captura 08" />
       </div>
     </main>
 
@@ -51,7 +72,6 @@
 
     <!-- Lightbox JS -->
     <script>
-      // Lightbox para imágenes en .project-gallery
       document.querySelectorAll(".project-gallery img").forEach((img) => {
         img.style.cursor = "zoom-in";
         img.addEventListener("click", function () {
@@ -63,7 +83,6 @@
         });
       });
 
-      // Cerrar lightbox al hacer click en overlay o botón cerrar
       document
         .getElementById("lightboxOverlay")
         .addEventListener("click", function (e) {
@@ -73,7 +92,6 @@
           }
         });
 
-      // Cerrar lightbox con Escape
       document.addEventListener("keydown", function (e) {
         if (e.key === "Escape") {
           document.getElementById("lightboxOverlay").classList.remove("active");

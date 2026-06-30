@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mateo Arce</title>
     <link rel="stylesheet" href="https://use.typekit.net/lhe1ara.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="styles/style.css" />
     <link
       rel="icon"
       type="image/png"
@@ -23,7 +23,28 @@
     <!-- ASCII Loading Overlay -->
     <div class="ascii-overlay"><div class="ascii-grid"></div></div>
 
-    <div id="bg-illustrations"></div>
+    <div id="bg-illustrations" aria-hidden="true">
+      <canvas id="ascii-background"></canvas>
+    </div>
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      aria-controls="site-menu"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav class="site-menu" id="site-menu" aria-hidden="true">
+      <pre class="site-menu-code" aria-hidden="true"></pre>
+      <ul>
+        <li><a href="pages/about.html">about me</a></li>
+        <li><a href="pages/tools.html">tools</a></li>
+        <li><a href="pages/projects.html">projects</a></li>
+      </ul>
+    </nav>
 <!-- Hero section: header starts centered in viewport -->
     <div class="hero-section">
       <header class="main-header">
@@ -56,16 +77,6 @@
               into creativity, and dogs into... well, even cooler dogs.
             </p>
           </div>
-          <nav class="tools-nav">
-            <ul>
-              <li><a href="tools.html">Tools</a></li>
-            </ul>
-          </nav>
-          <nav class="main-nav">
-            <ul>
-              <li><a href="about.html">About</a></li>
-            </ul>
-          </nav>
         </div>
       </header>
     </div>
@@ -76,7 +87,7 @@
         <div class="gallery">
 
           <!-- INTERACTIVE LETTERS -->
-          <a href="projects/interactive-letters.html">
+          <a href="projects/interactive-letters.html" data-project-title="Interactive Letters">
             <video
               src="assets/interactive-letters/interactive_letters01.mp4"
               autoplay
@@ -87,7 +98,7 @@
           </a>
 
           <!-- LATERAL IMAGE EDITOR -->
-          <a href="projects/lateral-image-editor.html">
+          <a href="projects/lateral-image-editor.html" data-project-title="Lateral Image Editor">
             <img
               src="assets/Lateral Image Editor/Logo/LIE_logo.png"
               alt="Lateral Image Editor"
@@ -95,7 +106,7 @@
           </a>
 
           <!-- GOSKATEDAY -->
-          <a href="projects/GoSkateDay.html">
+          <a href="projects/GoSkateDay.html" data-project-title="Go Skate Day">
             <img
               src="assets/GoSkateDay/thumb/gsd thumb design.png"
               alt="GoSkateDay"
@@ -103,7 +114,7 @@
           </a>
 
           <!-- TIPOGRAFICA PROPAGANDISTICA -->
-          <a href="projects/typografica-propagandistica.html">
+          <a href="projects/typografica-propagandistica.html" data-project-title="Typografica Propagandistica">
             <video
               src="assets/typografica-propagandistica/capturas.mp4"
               autoplay
@@ -114,7 +125,7 @@
           </a>
 
           <!-- RADIO REGALON -->
-          <a href="projects/radioregalon.html">
+          <a href="projects/radioregalon.html" data-project-title="Radio Regalon">
             <img
               src="assets/radio-regalon/logo_animado.gif"
               alt="Radio Regalon"
@@ -122,7 +133,7 @@
           </a>
 
           <!-- SUBELA NEWS -->
-          <a href="projects/Subela-News.html">
+          <a href="projects/Subela-News.html" data-project-title="Subela News">
             <img
               src="assets/SubelaNews/Subela_OK.001.jpeg"
               alt="Subela News"
@@ -130,7 +141,7 @@
           </a>
 
           <!-- COLONIA DIGNIDAD -->
-          <a href="projects/Colonia-Dignidad copy.html">
+          <a href="projects/Colonia-Dignidad copy.html" data-project-title="Colonia Dignidad">
             <img
               src="assets/Colonia-Dignidad/Colonia Dignidad Marca.001.png"
               alt="Colonia Dignidad"
@@ -138,7 +149,7 @@
           </a>
 
           <!-- COLORING BOOK -->
-          <a href="projects/Coloring-Book.html">
+          <a href="projects/Coloring-Book.html" data-project-title="Coloring Book">
             <img
               src="assets/Coloring-Book/ColouringBook_v1.jpg"
               alt="Coloring Book"
@@ -146,7 +157,7 @@
           </a>
 
           <!-- RAFITA CODING -->
-          <a href="projects/rafita-coding-projects.html">
+          <a href="projects/rafita-coding-projects.html" data-project-title="Rafita Coding Projects">
             <img
               src="assets/rafita-coding-projects/Rafita_coding_pro_thumb.jpg"
               alt="Rafita coding projects"
@@ -154,7 +165,7 @@
           </a>
 
           <!-- PARLA -->
-          <a href="projects/parla.html">
+          <a href="projects/parla.html" data-project-title="Parla">
             <img
               src="assets/parla/DSC_6407.jpg"
               alt="Parla"
@@ -162,7 +173,7 @@
           </a>
 
           <!-- ANIMACIONES BENNY -->
-          <a href="projects/animaciones-benny.html">
+          <a href="projects/animaciones-benny.html" data-project-title="Animaciones Benny">
             <video
               src="assets/animaciones-benny/arce_salamanca_animacion_digital.mp4"
               autoplay
@@ -173,7 +184,7 @@
           </a>
 
           <!-- PCD VISUALIZER -->
-          <a href="projects/PCD-visualizer.html">
+          <a href="projects/PCD-visualizer.html" data-project-title="PCD Visualizer">
             <video
               src="assets/PCD-visualizer/thumb.mp4"
               autoplay
@@ -183,13 +194,123 @@
             ></video>
           </a>
 
+          <!-- DIY CHEAP CAMERA -->
+          <a href="projects/diy-cheap-camera.html" data-project-title="DIY Cheap Camera">
+            <img
+              src="assets/diy-cheap-camera/DSC_8152.jpg"
+              alt="DIY Cheap Camera"
+            />
+          </a>
+
+          <!-- INTER-FERENCIA -->
+          <a href="projects/inter-ferencia.html" data-project-title="Inter-Ferencia">
+            <img
+              class="gallery-slideshow"
+              src="assets/inter-ferencia/DSC_8134.jpg"
+              alt="Inter-Ferencia"
+              data-slideshow-images="assets/inter-ferencia/DSC_8134.jpg|assets/inter-ferencia/DSC_8137.jpg|assets/inter-ferencia/DSC_8157.jpg|assets/inter-ferencia/DSC_8158.jpg|assets/inter-ferencia/DSC_8166.jpg|assets/inter-ferencia/DSC_8169.jpg|assets/inter-ferencia/DSC_8170.jpg|assets/inter-ferencia/DSC_8173.jpg|assets/inter-ferencia/DSC_8247.jpg|assets/inter-ferencia/DSC_8248.jpg|assets/inter-ferencia/DSC_8250.jpg"
+            />
+          </a>
+
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      hope to see you again :)
+      <img
+        class="footer-illustration"
+        src="assets/mateoarce_logo.png"
+        alt="Mateo Arce"
+      />
+      <span class="footer-message">hope to see you again :)</span>
+      <span class="footer-credit">
+        made with &lt;3 by
+        <a
+          class="footer-instagram"
+          href="https://www.instagram.com/matbutom"
+          target="_blank"
+          rel="noopener noreferrer"
+          >@matbutom</a
+        >
+      </span>
     </footer>
+
+    <!-- ==== CODING MENU ==== -->
+    <script>
+      (function () {
+        const toggle = document.querySelector(".menu-toggle");
+        const menu = document.getElementById("site-menu");
+        const code = document.querySelector(".site-menu-code");
+        if (!toggle || !menu || !code) return;
+
+        const chars = "{}[]<>()=>/\\|_-$#@%&01";
+        const fragments = [
+          "const route =",
+          "render(menu)",
+          "while(open)",
+          "querySelector",
+          "hover:hover",
+          "return home",
+          "grid-template",
+          "mix-blend-mode",
+          "requestFrame",
+          "ascii.draw()"
+        ];
+        let codeTimer = null;
+
+        function randomChar() {
+          return chars[Math.floor(Math.random() * chars.length)];
+        }
+
+        function makeCodeFrame() {
+          const lines = [];
+          for (let i = 0; i < 18; i++) {
+            const fragment = fragments[Math.floor(Math.random() * fragments.length)];
+            let line = "";
+            for (let j = 0; j < 24; j++) {
+              line += Math.random() > 0.72 ? randomChar() : " ";
+            }
+            lines.push(fragment + " " + line);
+          }
+          code.textContent = lines.join("\n");
+        }
+
+        function startCode() {
+          makeCodeFrame();
+          clearInterval(codeTimer);
+          codeTimer = setInterval(makeCodeFrame, 70);
+          setTimeout(function () {
+            clearInterval(codeTimer);
+          }, 520);
+        }
+
+        function setMenu(open) {
+          toggle.classList.toggle("is-open", open);
+          menu.classList.toggle("is-open", open);
+          toggle.setAttribute("aria-expanded", String(open));
+          toggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+          menu.setAttribute("aria-hidden", String(!open));
+          document.body.classList.toggle("menu-open", open);
+          startCode();
+        }
+
+        toggle.addEventListener("click", function () {
+          setMenu(!menu.classList.contains("is-open"));
+        });
+
+        menu.querySelectorAll("a").forEach(function (link) {
+          link.addEventListener("click", function () {
+            setMenu(false);
+          });
+        });
+
+        document.addEventListener("keydown", function (event) {
+          if (event.key === "Escape" && menu.classList.contains("is-open")) {
+            setMenu(false);
+          }
+        });
+      })();
+    </script>
 
     <!-- ==== SHUFFLE GALLERY ORDER ==== -->
     <script>
@@ -202,102 +323,393 @@
       }
     </script>
 
-    <!-- ==== ILUSTRACIONES DE FONDO ANIMADAS ==== -->
+    <!-- ==== ROTATING PROJECT THUMBNAILS ==== -->
     <script>
-      const ilustraciones = [
-        "basket.png",
-        "dogger.png",
-        "Ilustración_sin_título 79.png",
-        "Ilustración_sin_título 80.png",
-        "Ilustración_sin_título 81.png",
-        "Ilustración_sin_título 86.png",
-        "Ilustración_sin_título 87.png",
-        "Ilustración_sin_título 88.png",
-        "Ilustración_sin_título 89.png",
-        "Recurso 11.png",
-        "Recurso 12.png",
-        "Recurso 13.png",
-        "Recurso 14.png",
-        "Recurso 15.png",
-        "Recurso 16.png",
-        "Recurso 17.png",
-        "Recurso 18.png",
-        "Recurso 19.png",
-        "Recurso 20.png",
-        "Recurso 21.png",
-        "Recurso 22.png",
-        "Recurso 23.png",
-        "Recurso 24.png",
-        "Recurso 25.png",
-        "Recurso 26.png",
-        "salchi_trompeta.png",
-        "skater 2.png",
-        "skater.png"
-      ];
+      (function () {
+        const slideshows = document.querySelectorAll(".gallery-slideshow[data-slideshow-images]");
 
-const fondoFolder = "assets/ilustraciones/";
+        slideshows.forEach(function (img) {
+          const images = img.dataset.slideshowImages.split("|");
+          if (images.length < 2) return;
 
-function randomBetween(a, b) {
-  return Math.random() * (b - a) + a;
-}
+          images.forEach(function (src) {
+            const preload = new Image();
+            preload.src = src;
+          });
 
-function showRandomIllustration() {
-  // Tamaños aleatorios
-  const minSize = 80;
-  const maxSize = 260;
-  const size = randomBetween(minSize, maxSize);
+          let current = 0;
+          setInterval(function () {
+            let next = Math.floor(Math.random() * images.length);
+            if (next === current) next = (next + 1) % images.length;
+            current = next;
+            img.src = images[current];
+          }, 520);
+        });
+      })();
+    </script>
 
-  // Elige ilustración y posición aleatoria (puede salirse un poco de los bordes)
-  const filename = ilustraciones[Math.floor(Math.random() * ilustraciones.length)];
-  const img = document.createElement('img');
-  img.src = fondoFolder + filename;
-  img.className = "bg-illustration";
-  img.style.opacity = "0";
-  img.style.width = `${size}px`;
-  img.style.height = "auto";
+    <!-- ==== ASCII PROJECT TITLES ==== -->
+    <script>
+      (function () {
+        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/\\|_-+=*#%@&!?";
+        const projectLinks = document.querySelectorAll(".gallery a[data-project-title]");
 
-  // Permitir que parte de la ilustración se salga de la ventana:
-  const vw = window.innerWidth;
-  const vh = window.innerHeight;
-  const offset = size * 0.5;
-  let x = randomBetween(-offset, vw - (size * 0.5) + offset);
-  let y = randomBetween(-offset, vh - (size * 0.5) + offset);
+        function randomChar() {
+          return chars[Math.floor(Math.random() * chars.length)];
+        }
 
-  // Para mobile, menor tamaño y menos desborde
-  if (vw < 700) {
-    img.style.width = `${randomBetween(50, 100)}px`;
-    x = randomBetween(-30, vw - 70);
-    y = randomBetween(-30, vh - 70);
-  }
+        function formatTitle(title) {
+          return "/* " + title.toUpperCase();
+        }
 
-  img.style.left = `${x}px`;
-  img.style.top = `${y}px`;
+        function scrambleTitle(label, title) {
+          const finalText = formatTitle(title);
+          let frame = 0;
+          const totalFrames = 18;
 
-  // Animación más rápida
-  img.style.transition = "opacity 0.6s, transform 0.6s";
-  img.style.transform = "scale(0.6) rotate(" + randomBetween(-20, 20) + "deg)";
+          clearInterval(label.asciiTimer);
+          label.textContent = finalText
+            .split("")
+            .map((char) => (char === " " ? " " : randomChar()))
+            .join("");
 
-  document.getElementById('bg-illustrations').appendChild(img);
+          label.asciiTimer = setInterval(function () {
+            frame++;
+            label.textContent = finalText
+              .split("")
+              .map(function (char, index) {
+                if (char === " ") return " ";
+                return index < frame * 2 ? char : randomChar();
+              })
+              .join("");
 
-  setTimeout(() => {
-    img.style.opacity = "1";
-    img.style.transform = "scale(1) rotate(" + randomBetween(-10, 10) + "deg)";
-  }, 50);
+            if (frame >= totalFrames) {
+              clearInterval(label.asciiTimer);
+              label.textContent = finalText;
+            }
+          }, 32);
+        }
 
-  // Desaparece más rápido y elimina el nodo
-  setTimeout(() => {
-    img.style.opacity = "0";
-    img.style.transform = "scale(0.7) rotate(" + randomBetween(-60, 60) + "deg)";
-    setTimeout(() => img.remove(), 700);
-  }, randomBetween(2000, 2500)); 
-}
+        projectLinks.forEach(function (link) {
+          const title = link.dataset.projectTitle;
+          const label = document.createElement("span");
+          label.className = "project-ascii-title";
+          label.setAttribute("aria-hidden", "true");
+          label.textContent = formatTitle(title);
+          link.appendChild(label);
 
-// Lanzar varias ilustraciones al cargar la página para evitar fondo vacío
-for(let i=0; i<8; i++) setTimeout(showRandomIllustration, i*200);
+          link.addEventListener("mouseenter", function () {
+            scrambleTitle(label, title);
+          });
+          link.addEventListener("focus", function () {
+            scrambleTitle(label, title);
+          });
+          link.addEventListener("mouseleave", function () {
+            clearInterval(label.asciiTimer);
+          });
+          link.addEventListener("blur", function () {
+            clearInterval(label.asciiTimer);
+          });
+        });
+      })();
+    </script>
 
-// Lanza ilustraciones muy frecuentemente para mantener la pantalla llena
-setInterval(showRandomIllustration, 300); // cada 0.3 segundos
-</script>
+    <!-- ==== ASCII ILLUSTRATION BACKGROUND ==== -->
+    <script>
+      (function () {
+        const canvas = document.getElementById("ascii-background");
+        if (!canvas) return;
+
+        const ctx = canvas.getContext("2d");
+        const sourceFolder = "assets/ilustraciones/";
+        const illustrationFiles = [
+          "basket.png",
+          "dogger.png",
+          "Ilustración_sin_título 79.png",
+          "Ilustración_sin_título 80.png",
+          "Ilustración_sin_título 81.png",
+          "Ilustración_sin_título 86.png",
+          "Ilustración_sin_título 87.png",
+          "Ilustración_sin_título 88.png",
+          "Ilustración_sin_título 89.png",
+          "Recurso 11.png",
+          "Recurso 12.png",
+          "Recurso 13.png",
+          "Recurso 14.png",
+          "Recurso 15.png",
+          "Recurso 16.png",
+          "Recurso 17.png",
+          "Recurso 18.png",
+          "Recurso 19.png",
+          "Recurso 20.png",
+          "Recurso 21.png",
+          "Recurso 22.png",
+          "Recurso 23.png",
+          "Recurso 24.png",
+          "Recurso 25.png",
+          "Recurso 26.png",
+          "salchi_trompeta.png",
+          "skater 2.png",
+          "skater.png"
+        ];
+        const density = " .,:;i!lI?xvYVOM8B@";
+        const glyphs = "/\\|_-+=<>ivx.,'`";
+        const loadedImages = [];
+        const sprites = [];
+        const maxSprites = 14;
+        const frameMs = 1000 / 30;
+
+        let dpr = 1;
+        let lastFrame = 0;
+        let spawnTimer = 0;
+        let running = false;
+        let settledImages = 0;
+
+        function randomBetween(min, max) {
+          return Math.random() * (max - min) + min;
+        }
+
+        function resizeCanvas() {
+          dpr = Math.min(window.devicePixelRatio || 1, 2);
+          canvas.width = Math.ceil(window.innerWidth * dpr);
+          canvas.height = Math.ceil(window.innerHeight * dpr);
+          canvas.style.width = window.innerWidth + "px";
+          canvas.style.height = window.innerHeight + "px";
+          ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        }
+
+        function makeAsciiSprite(image, width, cellSize) {
+          const ratio = image.height / image.width;
+          const height = width * ratio;
+          const cols = Math.max(10, Math.round(width / cellSize));
+          const rows = Math.max(10, Math.round(height / cellSize));
+          const sample = document.createElement("canvas");
+          const sampleCtx = sample.getContext("2d", { willReadFrequently: true });
+          const sprite = document.createElement("canvas");
+          const spriteCtx = sprite.getContext("2d");
+
+          sample.width = cols;
+          sample.height = rows;
+          sprite.width = Math.ceil(cols * cellSize);
+          sprite.height = Math.ceil(rows * cellSize);
+
+          sampleCtx.clearRect(0, 0, cols, rows);
+          sampleCtx.drawImage(image, 0, 0, cols, rows);
+
+          const pixels = sampleCtx.getImageData(0, 0, cols, rows).data;
+          spriteCtx.clearRect(0, 0, sprite.width, sprite.height);
+          spriteCtx.font = `${cellSize * 1.22}px "Courier New", Courier, monospace`;
+          spriteCtx.textBaseline = "top";
+
+          for (let y = 0; y < rows; y++) {
+            for (let x = 0; x < cols; x++) {
+              const index = (y * cols + x) * 4;
+              const r = pixels[index];
+              const g = pixels[index + 1];
+              const b = pixels[index + 2];
+              const a = pixels[index + 3];
+
+              if (a < 36) continue;
+
+              const luminance = (r * 0.299 + g * 0.587 + b * 0.114) / 255;
+              const glyphIndex = Math.floor((1 - luminance) * (density.length - 1));
+              const useDirectionalGlyph = Math.random() > 0.78;
+              const char = useDirectionalGlyph
+                ? glyphs[(x + y + glyphIndex) % glyphs.length]
+                : density[glyphIndex];
+
+              spriteCtx.fillStyle = `rgba(${r}, ${g}, ${b}, ${Math.min(0.9, a / 255)})`;
+              spriteCtx.fillText(char, x * cellSize, y * cellSize);
+            }
+          }
+
+          return sprite;
+        }
+
+        function getSpriteBounds(x, y, width, height, scale) {
+          const scaledWidth = width * scale;
+          const scaledHeight = height * scale;
+          const padding = window.innerWidth < 700 ? 12 : 22;
+
+          return {
+            left: x + (width - scaledWidth) / 2 - padding,
+            right: x + (width + scaledWidth) / 2 + padding,
+            top: y + (height - scaledHeight) / 2 - padding,
+            bottom: y + (height + scaledHeight) / 2 + padding
+          };
+        }
+
+        function boundsOverlap(a, b) {
+          return a.left < b.right && a.right > b.left && a.top < b.bottom && a.bottom > b.top;
+        }
+
+        function pickAvailableImage() {
+          const activeSources = new Set(sprites.map((sprite) => sprite.source));
+          const availableImages = loadedImages.filter((item) => !activeSources.has(item.source));
+          if (!availableImages.length) return null;
+          return availableImages[Math.floor(Math.random() * availableImages.length)];
+        }
+
+        function findOpenPosition(spriteImage, scale) {
+          const margin = Math.max(spriteImage.width, spriteImage.height) * 0.18;
+          const attempts = 90;
+
+          for (let i = 0; i < attempts; i++) {
+            const x = randomBetween(-margin, window.innerWidth - spriteImage.width + margin);
+            const y = randomBetween(-margin, window.innerHeight - spriteImage.height + margin);
+            const bounds = getSpriteBounds(x, y, spriteImage.width, spriteImage.height, scale);
+            const isOpen = sprites.every((sprite) => !boundsOverlap(bounds, sprite.bounds));
+
+            if (isOpen) return { x, y, bounds };
+          }
+
+          return null;
+        }
+
+        function spawnSprite(initial) {
+          if (!loadedImages.length) return;
+
+          const sourceImage = pickAvailableImage();
+          if (!sourceImage) return;
+
+          const isMobile = window.innerWidth < 700;
+          const width = randomBetween(isMobile ? 72 : 110, isMobile ? 260 : 560);
+          const cellSize = randomBetween(isMobile ? 5 : 6, isMobile ? 12 : 15);
+          const spriteImage = makeAsciiSprite(sourceImage.image, width, cellSize);
+          const startScale = randomBetween(0.82, 0.94);
+          const scale = randomBetween(0.98, 1.12);
+          const placement = findOpenPosition(spriteImage, scale);
+
+          if (!placement) return;
+
+          sprites.push({
+            image: spriteImage,
+            source: sourceImage.source,
+            x: placement.x,
+            y: placement.y,
+            bounds: placement.bounds,
+            vx: randomBetween(-1.4, 1.4),
+            vy: randomBetween(-1.1, 1.1),
+            rotation: 0,
+            startRotation: 0,
+            rotationSpeed: 0,
+            scale,
+            startScale,
+            age: initial ? randomBetween(0, 9000) : 0,
+            duration: randomBetween(5200, 10500),
+            alpha: randomBetween(0.86, 1)
+          });
+
+          if (sprites.length > maxSprites) sprites.shift();
+        }
+
+        function drawFrame(timestamp) {
+          if (!lastFrame) lastFrame = timestamp;
+          const delta = Math.min(80, timestamp - lastFrame);
+
+          if (delta < frameMs) {
+            requestAnimationFrame(drawFrame);
+            return;
+          }
+
+          lastFrame = timestamp;
+          spawnTimer += delta;
+          ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+
+          if (spawnTimer > 720) {
+            spawnSprite(false);
+            spawnTimer = 0;
+          }
+
+          for (let i = sprites.length - 1; i >= 0; i--) {
+            const sprite = sprites[i];
+            const previousX = sprite.x;
+            const previousY = sprite.y;
+
+            sprite.age += delta;
+            sprite.x += sprite.vx * (delta / 1000);
+            sprite.y += sprite.vy * (delta / 1000);
+            sprite.rotation += sprite.rotationSpeed * (delta / 1000);
+
+            let nextBounds = getSpriteBounds(
+              sprite.x,
+              sprite.y,
+              sprite.image.width,
+              sprite.image.height,
+              sprite.scale
+            );
+            const collides = sprites.some(function (otherSprite, otherIndex) {
+              return otherIndex !== i && boundsOverlap(nextBounds, otherSprite.bounds);
+            });
+
+            if (collides) {
+              sprite.x = previousX;
+              sprite.y = previousY;
+              sprite.vx *= -0.72;
+              sprite.vy *= -0.72;
+              nextBounds = getSpriteBounds(
+                sprite.x,
+                sprite.y,
+                sprite.image.width,
+                sprite.image.height,
+                sprite.scale
+              );
+            }
+
+            sprite.bounds = nextBounds;
+
+            const enterProgress = Math.min(1, sprite.age / 280);
+            const fadeIn = sprite.age < 80 ? 0 : 1;
+            const fadeOut = Math.min(1, (sprite.duration - sprite.age) / 900);
+            const alpha = Math.max(0, Math.min(fadeIn, fadeOut)) * sprite.alpha;
+            const snap = enterProgress < 1 ? 1 - Math.pow(1 - enterProgress, 3) : 1;
+            const scale = sprite.startScale + (sprite.scale - sprite.startScale) * snap;
+            const rotation = sprite.startRotation + (sprite.rotation - sprite.startRotation) * snap;
+
+            if (sprite.age > sprite.duration) {
+              sprites.splice(i, 1);
+              continue;
+            }
+
+            ctx.save();
+            ctx.globalAlpha = alpha;
+            ctx.translate(sprite.x + sprite.image.width / 2, sprite.y + sprite.image.height / 2);
+            ctx.scale(scale, scale);
+            ctx.drawImage(sprite.image, -sprite.image.width / 2, -sprite.image.height / 2);
+            ctx.restore();
+          }
+
+          requestAnimationFrame(drawFrame);
+        }
+
+        function start() {
+          if (running) return;
+          running = true;
+          resizeCanvas();
+          for (let i = 0; i < maxSprites; i++) spawnSprite(true);
+          requestAnimationFrame(drawFrame);
+        }
+
+        illustrationFiles.forEach(function (filename) {
+          const image = new Image();
+          image.onload = function () {
+            loadedImages.push({
+              image,
+              source: filename
+            });
+            settledImages++;
+            if (settledImages === illustrationFiles.length) start();
+          };
+          image.onerror = function () {
+            settledImages++;
+            if (settledImages === illustrationFiles.length) start();
+          };
+          image.src = sourceFolder + filename;
+        });
+
+        window.addEventListener("resize", resizeCanvas);
+      })();
+    </script>
     <!-- ==== HERO SCROLL ANIMATION ==== -->
     <script>
       (function () {
@@ -324,6 +736,6 @@ setInterval(showRandomIllustration, 300); // cada 0.3 segundos
         });
       })();
     </script>
-    <script src="transition.js"></script>
+    <script src="scripts/transition.js"></script>
   </body>
 </html>

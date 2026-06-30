@@ -5,18 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About - Mateo Arce</title>
     <link rel="stylesheet" href="https://use.typekit.net/lhe1ara.css" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" type="image/png" sizes="192x192" href="assets/android-chrome-192x192.png" />
-    <link rel="apple-touch-icon" sizes="192x192" href="assets/android-chrome-192x192.png" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/android-chrome-192x192.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="../assets/android-chrome-192x192.png" />
   </head>
   <body>
     <!-- ASCII Loading Overlay -->
     <div class="ascii-overlay"><div class="ascii-grid"></div></div>
 
-    <a href="index.html" class="home-link">Home</a>
+    <nav class="page-top-nav" aria-label="Page navigation">
+      <a href="../index.html">home</a>
+      <div class="page-top-nav-group">
+        <a href="about.html" aria-current="page">about me</a>
+        <a href="tools.html">tools</a>
+        <a href="projects.html">projects</a>
+      </div>
+    </nav>
     <main class="about-page">
       <div class="about-container">
-        <img src="assets/avatar_matbutom.png" alt="Avatar Mateo" class="about-avatar" />
+        <img src="../assets/avatar_matbutom.png" alt="Avatar Mateo" class="about-avatar" />
         <section class="about-text-content">
           <h1 class="about-title">About me :)</h1>
           <p>
@@ -146,6 +153,24 @@
 
       </section>
     </main>
-    <script src="transition.js"></script>
+    <footer class="site-footer">
+      <img
+        class="footer-illustration"
+        src="../assets/mateoarce_logo.png"
+        alt="Mateo Arce"
+      />
+      <span class="footer-message">hope to see you again :)</span>
+      <span class="footer-credit">
+        made with &lt;3 by
+        <a
+          class="footer-instagram"
+          href="https://www.instagram.com/matbutom"
+          target="_blank"
+          rel="noopener noreferrer"
+          >@matbutom</a
+        >
+      </span>
+    </footer>
+    <script src="../scripts/transition.js"></script>
   </body>
 </html>
