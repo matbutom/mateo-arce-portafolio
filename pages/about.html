@@ -9,52 +9,67 @@
     <link rel="icon" type="image/png" sizes="192x192" href="../assets/android-chrome-192x192.png" />
     <link rel="apple-touch-icon" sizes="192x192" href="../assets/android-chrome-192x192.png" />
   </head>
-  <body>
-    <!-- ASCII Loading Overlay -->
-    <div class="ascii-overlay"><div class="ascii-grid"></div></div>
-
-    <nav class="page-top-nav" aria-label="Page navigation">
-      <a href="../index.html">home</a>
-      <div class="page-top-nav-group">
-        <a href="about.html" aria-current="page">about me</a>
-        <a href="tools.html">tools</a>
-        <a href="projects.html">projects</a>
-      </div>
+  <body class="about-body">
+    <nav class="about-nav" aria-label="About navigation">
+      <a class="about-nav-home" href="../index.html">mateo*arce</a>
+      <a class="about-nav-work" href="../selected-work.html">selected*work</a>
     </nav>
+
     <main class="about-page">
-      <div class="about-container">
-        <img src="../assets/avatar_matbutom.png" alt="Avatar Mateo" class="about-avatar" />
-        <section class="about-text-content">
-          <h1 class="about-title">About me :)</h1>
-          <p>
-            My name is
-            <a
-              href="https://www.instagram.com/matbutom"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="insta-link mateo-arce"
-              >Mateo Arce</a
-            >, a graphic designer based in Santiago de Chile and co-founder of
-            <a
-              href="https://www.instagram.com/rafita.studio"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="insta-link rafita-studio"
-              >Rafita Studio</a
-            >.
-            I have experience in branding, generative art, programming, merchandising, and many other creative things.
+      <section class="about-hero" aria-label="About Mateo">
+        <section class="about-poem" aria-label="About Mateo">
+          <p class="about-poem-line">
+            Hi! I’m
+            <a href="https://www.instagram.com/matbutom" target="_blank" rel="noopener noreferrer">Mateo Arce</a>
+            <img src="../assets/ilustraciones/Recurso 11.png" alt="" />
           </p>
-          <p>
-            Rafita Studio is a space created to share our love for illustration and dogs with the world. We make stickers, prints, shirts and totebags of anything you could imagine related to dogs.
+          <p class="about-poem-line">
+            designer,
+            <img src="../assets/ilustraciones/Recurso 12.png" alt="" />
+          </p>
+          <p class="about-poem-line">
+            illustrator,
+            <img src="../assets/ilustraciones/skater.png" alt="" />
+          </p>
+          <p class="about-poem-line">
+            programmer
+            <img src="../assets/ilustraciones/Recurso 13.png" alt="" />
+          </p>
+          <p class="about-poem-line">
+            based in Chile
+            <img src="../assets/ilustraciones/Recurso 18.png" alt="" />
+          </p>
+          <p class="about-poem-line">
+            co-founder of
+            <img src="../assets/ilustraciones/Recurso 14.png" alt="" />
+          </p>
+          <p class="about-poem-line">
+            <a href="https://www.instagram.com/rafita.studio" target="_blank" rel="noopener noreferrer">Rafita Studio</a>
+            <img src="../assets/ilustraciones/Recurso 15.png" alt="" />
+          </p>
+          <p class="about-poem-line">
+            where branding meets
+            <img src="../assets/ilustraciones/dogger.png" alt="" />
+          </p>
+          <p class="about-poem-line">
+            creative code
+            <img src="../assets/ilustraciones/Recurso 16.png" alt="" />
+          </p>
+          <p class="about-poem-line">
+            and many, many
+            <img src="../assets/ilustraciones/salchi_trompeta.png" alt="" />
+          </p>
+          <p class="about-poem-line">
+            dog drawings
+            <img src="../assets/ilustraciones/Recurso 17.png" alt="" />
           </p>
         </section>
-      </div>
+      </section>
 
-      <!-- CV Section -->
-      <section class="cv-section">
+      <section class="cv-section" aria-label="Curriculum">
 
-        <div class="cv-block">
-          <h2 class="cv-heading">Info</h2>
+        <details class="cv-block">
+          <summary class="cv-heading">Info</summary>
           <ul class="cv-info">
             <li><span class="cv-info-label">Email</span> <a href="mailto:tu@email.com">mateo.arce28@gmail.com</a></li>
             <li><span class="cv-info-label">Location</span> Santiago, Chile</li>
@@ -64,10 +79,10 @@
             <li><a href="https://github.com/matbutom" target="_blank" rel="noopener noreferrer">GitHub</a></li>
             <li><a href="https://www.linkedin.com/in/mateo-arce/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cv-block">
-          <h2 class="cv-heading">Software & Tools</h2>
+        <details class="cv-block">
+          <summary class="cv-heading">Software & Tools</summary>
           <ul class="cv-list">
             <li>Illustrator</li>
             <li>Photoshop</li>
@@ -86,10 +101,10 @@
             <li>Cargo Collective</li>
             <li>Ready Mag</li>
           </ul>
-        </div>
+        </details>
 
-        <div class="cv-block">
-          <h2 class="cv-heading">Work Experience</h2>
+        <details class="cv-block">
+          <summary class="cv-heading">Work Experience</summary>
           <div class="cv-entry">
             <span class="cv-entry-title">Otra Ciudad — Estudio de Arquitectura</span>
             <span class="cv-entry-date">2025 – Actualidad</span>
@@ -120,10 +135,10 @@
             <span class="cv-entry-date">2023</span>
             <p>Branding y diseño de carteles.</p>
           </div>
-        </div>
+        </details>
 
-        <div class="cv-block">
-          <h2 class="cv-heading">Education</h2>
+        <details class="cv-block">
+          <summary class="cv-heading">Education</summary>
           <div class="cv-entry">
             <span class="cv-entry-title">Escuela de Diseño — Universidad Diego Portales</span>
             <span class="cv-entry-date">2020 – 2025</span>
@@ -149,28 +164,113 @@
             <span class="cv-entry-date">2023</span>
             <p>Santiago, Chile - Online.</p>
           </div>
-        </div>
+        </details>
 
       </section>
     </main>
-    <footer class="site-footer">
-      <img
-        class="footer-illustration"
-        src="../assets/mateoarce_logo.png"
-        alt="Mateo Arce"
-      />
-      <span class="footer-message">hope to see you again :)</span>
-      <span class="footer-credit">
-        made with &lt;3 by
-        <a
-          class="footer-instagram"
-          href="https://www.instagram.com/matbutom"
-          target="_blank"
-          rel="noopener noreferrer"
-          >@matbutom</a
-        >
-      </span>
-    </footer>
-    <script src="../scripts/transition.js"></script>
+    <script>
+      (function () {
+        const poem = document.querySelector(".about-poem");
+        if (!poem) return;
+
+        const illustrations = [
+          "../assets/ilustraciones/Ilustración_sin_título 79.png",
+          "../assets/ilustraciones/Ilustración_sin_título 80.png",
+          "../assets/ilustraciones/Ilustración_sin_título 81.png",
+          "../assets/ilustraciones/Ilustración_sin_título 86.png",
+          "../assets/ilustraciones/Ilustración_sin_título 87.png",
+          "../assets/ilustraciones/Ilustración_sin_título 88.png",
+          "../assets/ilustraciones/Ilustración_sin_título 89.png",
+          "../assets/ilustraciones/Recurso 11.png",
+          "../assets/ilustraciones/Recurso 12.png",
+          "../assets/ilustraciones/Recurso 13.png",
+          "../assets/ilustraciones/Recurso 14.png",
+          "../assets/ilustraciones/Recurso 15.png",
+          "../assets/ilustraciones/Recurso 16.png",
+          "../assets/ilustraciones/Recurso 17.png",
+          "../assets/ilustraciones/Recurso 18.png",
+          "../assets/ilustraciones/Recurso 19.png",
+          "../assets/ilustraciones/Recurso 20.png",
+          "../assets/ilustraciones/Recurso 21.png",
+          "../assets/ilustraciones/Recurso 22.png",
+          "../assets/ilustraciones/Recurso 23.png",
+          "../assets/ilustraciones/Recurso 24.png",
+          "../assets/ilustraciones/Recurso 25.png",
+          "../assets/ilustraciones/Recurso 26.png",
+          "../assets/ilustraciones/basket.png",
+          "../assets/ilustraciones/dogger.png",
+          "../assets/ilustraciones/salchi_trompeta.png",
+          "../assets/ilustraciones/skater 2.png",
+          "../assets/ilustraciones/skater.png"
+        ];
+
+        function shuffle(items) {
+          return items
+            .map(function (item) {
+              return { item: item, order: Math.random() };
+            })
+            .sort(function (a, b) {
+              return a.order - b.order;
+            })
+            .map(function (entry) {
+              return entry.item;
+            });
+        }
+
+        const randomIllustrations = shuffle(illustrations);
+        let nextIllustration = 0;
+        let index = 0;
+
+        function setDelay(element) {
+          element.style.setProperty("--about-delay", 140 + index * 42 + "ms");
+          index += 1;
+        }
+
+        poem.querySelectorAll(".about-poem-line").forEach(function (line) {
+          const fragment = document.createDocumentFragment();
+
+          Array.from(line.childNodes).forEach(function (node) {
+            if (node.nodeType === Node.TEXT_NODE) {
+              const pieces = node.textContent.match(/\S+|\s+/g) || [];
+
+              pieces.forEach(function (piece) {
+                if (/^\s+$/.test(piece)) {
+                  fragment.appendChild(document.createTextNode(piece));
+                  return;
+                }
+
+                const span = document.createElement("span");
+                span.className = "about-token";
+                span.textContent = piece;
+                setDelay(span);
+                fragment.appendChild(span);
+              });
+
+              return;
+            }
+
+            if (node.nodeType === Node.ELEMENT_NODE) {
+              if (node.tagName === "A") {
+                node.classList.add("about-token");
+                setDelay(node);
+              }
+
+              if (node.tagName === "IMG") {
+                node.classList.add("about-sticker");
+                node.src = randomIllustrations[nextIllustration % randomIllustrations.length];
+                node.style.setProperty("--about-rotate", Math.random() * 18 - 9 + "deg");
+                node.style.setProperty("--about-shift", Math.random() * 0.28 - 0.14 + "em");
+                nextIllustration += 1;
+                setDelay(node);
+              }
+
+              fragment.appendChild(node);
+            }
+          });
+
+          line.replaceChildren(fragment);
+        });
+      })();
+    </script>
   </body>
 </html>
