@@ -189,15 +189,15 @@ body.menu-open {
   line-height: 1;
   font-weight: 400;
   white-space: nowrap;
-  animation: landing-selected-enter 640ms cubic-bezier(0.19, 1, 0.22, 1) 1450ms both;
+  animation: landing-selected-enter 640ms cubic-bezier(0.19, 1, 0.22, 1) 120ms both;
 }
 
 .selected-work-arrow {
   position: relative;
   display: inline-grid;
   place-items: center;
-  width: clamp(43px, 2.42vw, 51px);
-  height: clamp(43px, 2.42vw, 51px);
+  width: clamp(36px, 2.05vw, 43px);
+  height: clamp(36px, 2.05vw, 43px);
   box-sizing: border-box;
   border: 2px solid currentColor;
   border-radius: 50%;
@@ -741,6 +741,7 @@ body.menu-open {
 }
 
 .work-project-description {
+  max-width: calc(50% - 7px);
   margin: 0 0 17px;
 }
 
@@ -962,6 +963,10 @@ body.menu-open {
     font-size: clamp(0.92rem, 4.4vw, 1.08rem);
     line-height: 1.16;
     word-spacing: 0.06em;
+  }
+
+  .work-project-description {
+    max-width: none;
   }
 
   .work-footer {
@@ -1754,6 +1759,12 @@ body.work-mode {
 }
 
 .about-sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.about-sidebar-nav a {
   display: block;
 }
 
@@ -1771,14 +1782,14 @@ body.work-mode {
 
 .about-portrait {
   width: 190px;
-  aspect-ratio: 190 / 256;
+  aspect-ratio: 1519 / 2048;
   margin-bottom: 32px;
-  background: #f2f2f2;
+  background: #fff;
   line-height: 0;
   overflow: hidden;
 }
 
-.about-portrait-canvas {
+.about-portrait canvas {
   display: block;
   width: 100%;
   height: auto;
@@ -1807,7 +1818,7 @@ body.work-mode {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0;
-  margin: 32px -14px 0 -34px;
+  margin: 32px -14px 0 -15px;
   padding: 7px;
   box-sizing: border-box;
   border-top: 1px solid #050505;
@@ -1836,6 +1847,8 @@ body.work-mode {
   list-style: none;
   padding: 0 8px 12px;
   margin: 0;
+  column-count: 2;
+  column-gap: 16px;
 }
 
 .cv-list li,

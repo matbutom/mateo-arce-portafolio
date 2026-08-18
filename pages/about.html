@@ -21,17 +21,15 @@
         <hr class="about-sidebar-divider" aria-hidden="true" />
 
         <nav class="about-sidebar-nav" aria-label="Enlaces">
-          <a href="https://www.instagram.com/matbutom" target="_blank" rel="noopener noreferrer">instagram</a> //
-          <a href="https://github.com/matbutom" target="_blank" rel="noopener noreferrer">github</a> //
-          <a href="mailto:mateo.arce28@gmail.com">mail</a> //
-          <a href="https://www.instagram.com/rafita.studio" target="_blank" rel="noopener noreferrer">rafita studio</a>
+          <a href="https://www.instagram.com/matbutom" target="_blank" rel="noopener noreferrer">// instagram</a>
+          <a href="https://github.com/matbutom" target="_blank" rel="noopener noreferrer">// github</a>
+          <a href="mailto:mateo.arce28@gmail.com">// mail</a>
+          <a href="https://www.instagram.com/rafita.studio" target="_blank" rel="noopener noreferrer">// rafita.studio</a>
         </nav>
       </aside>
 
       <main class="about-main">
-        <div class="about-portrait" data-portrait role="img" aria-label="Retrato pixelado de Mateo Arce">
-          <canvas class="about-portrait-canvas" data-portrait-canvas aria-hidden="true"></canvas>
-        </div>
+        <div class="about-portrait" data-portrait role="img" aria-label="Retrato de Mateo Arce con efecto riso"></div>
 
         <div class="about-bio">
           <p>
@@ -53,8 +51,7 @@
           </p>
           <p>
             He's as interested in teaching and sharing process as he is in making — breaking
-            design and code down into something playable, mostly through p5.js and Processing. Always up
-            for talking dogs, typefaces, or weird little tools. Say hello~
+            design and code down into something playable, mostly through p5.js and Processing.
           </p>
         </div>
 
@@ -152,105 +149,155 @@
       </main>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/antiboredom/p5.riso@master/lib/p5.riso.js"></script>
     <script>
-      (function () {
+      var portraitImg;
+      var PORTRAIT_TARGET_W = 360;
+
+      var scaledPortrait;
+      var risoLayers = {};
+
+      var currentFreq = 3;
+      var currentAngle = 45;
+
+      var PALETTE = [
+        { name: "FLUORESCENTPINK", rgb: [255, 72, 176] },
+        { name: "BLUE", rgb: [0, 120, 191] },
+        { name: "BLACK", rgb: [0, 0, 0] },
+        { name: "YELLOW", rgb: [255, 232, 0] },
+        { name: "GREEN", rgb: [0, 169, 92] },
+        { name: "ORANGE", rgb: [255, 108, 47] },
+        { name: "PURPLE", rgb: [118, 91, 167] }
+      ];
+
+      var currentStep = { type: "single", colors: [PALETTE[0]] };
+
+      var reduceMotion =
+        window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      function preload() {
+        portraitImg = loadImage("../assets/pics/webp/33915824_Unknown.webp");
+      }
+
+      function getRisoLayer(name) {
+        if (!risoLayers[name]) risoLayers[name] = new Riso(name);
+        return risoLayers[name];
+      }
+
+      function pickTwoDistinct() {
+        var i = Math.floor(Math.random() * PALETTE.length);
+        var j;
+        do {
+          j = Math.floor(Math.random() * PALETTE.length);
+        } while (j === i);
+        return [PALETTE[i], PALETTE[j]];
+      }
+
+      function pickRandomStep() {
+        var roll = Math.random();
+        if (roll < 0.45) {
+          return { type: "single", colors: [PALETTE[Math.floor(Math.random() * PALETTE.length)]] };
+        } else if (roll < 0.8) {
+          return { type: "duo", colors: pickTwoDistinct() };
+        }
+        return { type: "cmyk", colors: [] };
+      }
+
+      function stepKey(step) {
+        return step.type + ":" + step.colors.map(function (c) { return c.name; }).join(",");
+      }
+
+      function setup() {
         var wrap = document.querySelector("[data-portrait]");
-        var canvas = document.querySelector("[data-portrait-canvas]");
-        if (!wrap || !canvas || !canvas.getContext) return;
+        if (!wrap) return;
 
-        var reduceMotion =
-          window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        pixelDensity(1);
 
-        var ctx = canvas.getContext("2d");
-        var COLS = 24;
-        var img = new Image();
+        var targetW = PORTRAIT_TARGET_W;
+        var targetH = Math.round(targetW * (portraitImg.height / portraitImg.width));
+        var cnv = createCanvas(targetW, targetH);
+        cnv.parent(wrap);
+        // Deliberately not using cnv.style(): p5's Element.style() special-cases
+        // "width"/"height" and overwrites the renderer's internal width/height
+        // (used by background()'s fillRect) with the CSS-computed display size,
+        // corrupting it away from the real drawing-buffer size. Setting the
+        // inline style directly avoids that.
+        cnv.elt.style.width = "100%";
+        cnv.elt.style.height = "auto";
+        noLoop();
 
-        img.onload = function () {
-          var rows = Math.max(1, Math.round(COLS * (img.naturalHeight / img.naturalWidth)));
+        scaledPortrait = createImage(targetW, targetH);
+        scaledPortrait.copy(portraitImg, 0, 0, portraitImg.width, portraitImg.height, 0, 0, targetW, targetH);
 
-          var sample = document.createElement("canvas");
-          sample.width = COLS;
-          sample.height = rows;
-          var sctx = sample.getContext("2d");
-          sctx.drawImage(img, 0, 0, COLS, rows);
-          var data = sctx.getImageData(0, 0, COLS, rows).data;
+        renderPortrait();
 
-          var cellSize = wrap.clientWidth / COLS;
-          var dpr = window.devicePixelRatio || 1;
+        if (reduceMotion) return;
 
-          canvas.width = COLS * cellSize * dpr;
-          canvas.height = rows * cellSize * dpr;
-          canvas.style.width = COLS * cellSize + "px";
-          canvas.style.height = rows * cellSize + "px";
-          ctx.scale(dpr, dpr);
+        window.setInterval(function () {
+          var next = pickRandomStep();
+          if (stepKey(next) === stepKey(currentStep)) next = pickRandomStep();
+          currentStep = next;
+          renderPortrait();
+        }, 4000);
+      }
 
-          var cells = [];
-          for (var y = 0; y < rows; y++) {
-            for (var x = 0; x < COLS; x++) {
-              var idx = (y * COLS + x) * 4;
-              var r = data[idx];
-              var g = data[idx + 1];
-              var b = data[idx + 2];
-              var lum = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
-              cells.push({
-                x: x * cellSize + cellSize / 2,
-                y: y * cellSize + cellSize / 2,
-                dark: Math.min(1, (1 - lum) * 1.15),
-                scale: 1
-              });
-            }
-          }
+      function tintAndDraw(halftonedImg, rgb) {
+        var out = halftonedImg.get();
+        out.loadPixels();
+        for (var i = 0; i < out.pixels.length; i += 4) {
+          var ink = 255 - out.pixels[i];
+          out.pixels[i] = rgb[0];
+          out.pixels[i + 1] = rgb[1];
+          out.pixels[i + 2] = rgb[2];
+          out.pixels[i + 3] = ink;
+        }
+        out.updatePixels();
+        image(out, 0, 0);
+      }
 
-          var mouse = null;
-          var RADIUS = cellSize * 5;
+      function toRad(deg) {
+        // halftoneImage() calls rotate() without angleMode(DEGREES), so it
+        // expects radians even though its param is documented as an angle in
+        // degrees. Converting here keeps currentAngle/the +15/+45/+75 screen
+        // offsets human-readable as degrees while giving the library what it
+        // actually expects, so the rotation stays smooth and predictable
+        // instead of wrapping through the full circle many times.
+        return (deg * Math.PI) / 180;
+      }
 
-          wrap.addEventListener("mousemove", function (event) {
-            var rect = canvas.getBoundingClientRect();
-            mouse = { x: event.clientX - rect.left, y: event.clientY - rect.top };
-          });
-          wrap.addEventListener("mouseleave", function () {
-            mouse = null;
-          });
+      function renderPortrait() {
+        background(255);
 
-          function draw() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = "#050505";
+        if (currentStep.type === "single") {
+          var halftoned = halftoneImage(scaledPortrait, "line", currentFreq, toRad(currentAngle), 90);
+          tintAndDraw(halftoned, currentStep.colors[0].rgb);
+        } else if (currentStep.type === "duo") {
+          clearRiso();
 
-            cells.forEach(function (cell) {
-              if (cell.dark <= 0.02) return;
-              var size = cellSize * 0.86 * cell.scale;
-              ctx.globalAlpha = cell.dark;
-              ctx.fillRect(cell.x - size / 2, cell.y - size / 2, size, size);
-            });
+          var colorA = currentStep.colors[0];
+          var colorB = currentStep.colors[1];
 
-            ctx.globalAlpha = 1;
-          }
+          getRisoLayer(colorA.name).image(halftoneImage(scaledPortrait, "line", currentFreq, toRad(currentAngle), 90), 0, 0);
+          getRisoLayer(colorB.name).image(halftoneImage(scaledPortrait, "line", currentFreq, toRad(currentAngle + 45), 90), 0, 0);
 
-          if (reduceMotion) {
-            draw();
-            return;
-          }
+          drawRiso();
+        } else if (currentStep.type === "cmyk") {
+          clearRiso();
 
-          function tick() {
-            cells.forEach(function (cell) {
-              var target = 1;
-              if (mouse) {
-                var dx = cell.x - mouse.x;
-                var dy = cell.y - mouse.y;
-                var dist = Math.sqrt(dx * dx + dy * dy);
-                var influence = Math.max(0, 1 - dist / RADIUS);
-                target = 1 + influence * 0.9;
-              }
-              cell.scale += (target - cell.scale) * 0.18;
-            });
-            draw();
-            window.requestAnimationFrame(tick);
-          }
-          window.requestAnimationFrame(tick);
-        };
+          var cyan = extractCMYKChannel(scaledPortrait, "cyan");
+          var magenta = extractCMYKChannel(scaledPortrait, "magenta");
+          var yellow = extractCMYKChannel(scaledPortrait, "yellow");
+          var black = extractCMYKChannel(scaledPortrait, "black");
 
-        img.src = "../assets/pics/webp/33915824_Unknown.webp";
-      })();
+          getRisoLayer("BLUE").image(halftoneImage(cyan, "line", currentFreq, toRad(currentAngle + 15), 90), 0, 0);
+          getRisoLayer("FLUORESCENTPINK").image(halftoneImage(magenta, "line", currentFreq, toRad(currentAngle + 75), 90), 0, 0);
+          getRisoLayer("YELLOW").image(halftoneImage(yellow, "line", currentFreq, toRad(currentAngle), 90), 0, 0);
+          getRisoLayer("BLACK").image(halftoneImage(black, "line", currentFreq, toRad(currentAngle + 45), 90), 0, 0);
+
+          drawRiso();
+        }
+      }
     </script>
   </body>
 </html>
