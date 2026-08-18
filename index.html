@@ -3,57 +3,224 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mateo Arce</title>
+    <title>**//**//**//**</title>
     <link rel="stylesheet" href="https://use.typekit.net/lhe1ara.css" />
     <link rel="stylesheet" href="styles/style.css" />
     <link
       rel="icon"
       type="image/png"
       sizes="192x192"
-      href="assets/android-chrome-192x192.png"
+      href="assets/pixel-asterisk-favicon.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="192x192"
-      href="assets/android-chrome-192x192.png"
+      href="assets/pixel-asterisk-favicon.png"
     />
   </head>
 
-  <body class="home-page">
+  <body class="home-page is-preloading">
+    <noscript>
+      <style>
+        .preload-screen {
+          display: none !important;
+        }
+        body.is-preloading .landing-topbar,
+        body.is-preloading .landing-intro .bio-token,
+        body.is-preloading .landing-intro .bio-illustration,
+        body.is-preloading .selected-work-link {
+          animation-play-state: running !important;
+        }
+      </style>
+    </noscript>
+
+    <div class="preload-screen" id="preload-screen" aria-hidden="true">
+      <div class="preload-stage"></div>
+      <div class="preload-bar"><div class="preload-bar-fill"></div></div>
+    </div>
+
+    <script>
+      (function () {
+        var screen = document.getElementById("preload-screen");
+        if (!screen) return;
+
+        if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          document.body.classList.remove("is-preloading");
+          screen.remove();
+          return;
+        }
+
+        var stage = screen.querySelector(".preload-stage");
+        var barFill = screen.querySelector(".preload-bar-fill");
+        var FILL_MS = 2000;
+
+        barFill.style.transitionDuration = FILL_MS + "ms";
+
+        var illustrations = [
+          "assets/ilustraciones/Ilustración_sin_título 79.png",
+          "assets/ilustraciones/Ilustración_sin_título 80.png",
+          "assets/ilustraciones/Ilustración_sin_título 81.png",
+          "assets/ilustraciones/Ilustración_sin_título 86.png",
+          "assets/ilustraciones/Ilustración_sin_título 87.png",
+          "assets/ilustraciones/Ilustración_sin_título 88.png",
+          "assets/ilustraciones/Ilustración_sin_título 89.png",
+          "assets/ilustraciones/Recurso 11.png",
+          "assets/ilustraciones/Recurso 12.png",
+          "assets/ilustraciones/Recurso 13.png",
+          "assets/ilustraciones/Recurso 14.png",
+          "assets/ilustraciones/Recurso 15.png",
+          "assets/ilustraciones/Recurso 16.png",
+          "assets/ilustraciones/Recurso 17.png",
+          "assets/ilustraciones/Recurso 18.png",
+          "assets/ilustraciones/Recurso 19.png",
+          "assets/ilustraciones/Recurso 20.png",
+          "assets/ilustraciones/Recurso 21.png",
+          "assets/ilustraciones/Recurso 22.png",
+          "assets/ilustraciones/Recurso 23.png",
+          "assets/ilustraciones/Recurso 24.png",
+          "assets/ilustraciones/Recurso 25.png",
+          "assets/ilustraciones/Recurso 26.png",
+          "assets/ilustraciones/basket.png",
+          "assets/ilustraciones/dogger.png",
+          "assets/ilustraciones/salchi_trompeta.png",
+          "assets/ilustraciones/skater 2.png",
+          "assets/ilustraciones/skater.png"
+        ];
+
+        var img = document.createElement("img");
+        img.className = "preload-illustration";
+        img.alt = "";
+        stage.appendChild(img);
+
+        var lastSrc = "";
+        function pickRandom() {
+          var next = lastSrc;
+          while (next === lastSrc) {
+            next = illustrations[Math.floor(Math.random() * illustrations.length)];
+          }
+          lastSrc = next;
+          return next;
+        }
+
+        var STEP_MS = 340;
+
+        function nextFrame() {
+          img.src = pickRandom();
+          img.classList.remove("is-popping");
+          void img.offsetWidth;
+          img.classList.add("is-popping");
+        }
+        nextFrame();
+        var cycleTimer = window.setInterval(nextFrame, STEP_MS);
+
+        var revealed = false;
+        function reveal() {
+          if (revealed) return;
+          revealed = true;
+          window.clearInterval(cycleTimer);
+          document.body.classList.remove("is-preloading");
+          screen.classList.add("is-hidden");
+          window.setTimeout(function () {
+            screen.remove();
+          }, 520);
+        }
+
+        barFill.addEventListener("transitionend", function (event) {
+          if (event.propertyName === "width") reveal();
+        });
+        window.setTimeout(reveal, FILL_MS + 400);
+
+        window.requestAnimationFrame(function () {
+          window.requestAnimationFrame(function () {
+            barFill.style.width = "100%";
+          });
+        });
+      })();
+    </script>
+
     <section class="landing-hero" aria-labelledby="landing-intro-title">
       <header class="landing-topbar" aria-label="Landing navigation" data-enter-top>
         <div class="landing-identity">
           <a class="landing-logo-link" href="index.html" aria-label="Mateo Arce home">
-            <img
-              class="landing-logo"
-              src="assets/mateoarce_logo.png"
-              alt="Mateo Arce"
-            />
+            <span class="pixel-mark" aria-hidden="true">
+              <span class="pixel-mark-cell" style="animation-delay:390ms"></span>
+              <span class="pixel-mark-cell is-empty"></span>
+              <span class="pixel-mark-cell" style="animation-delay:390ms"></span>
+              <span class="pixel-mark-cell" style="animation-delay:390ms"></span>
+              <span class="pixel-mark-cell" style="animation-delay:390ms"></span>
+              <span class="pixel-mark-cell is-empty"></span>
+              <span class="pixel-mark-cell" style="animation-delay:390ms"></span>
+              <span class="pixel-mark-cell is-empty"></span>
+              <span class="pixel-mark-cell" style="animation-delay:260ms"></span>
+              <span class="pixel-mark-cell is-empty"></span>
+              <span class="pixel-mark-cell" style="animation-delay:260ms"></span>
+              <span class="pixel-mark-cell is-empty"></span>
+              <span class="pixel-mark-cell" style="animation-delay:260ms"></span>
+              <span class="pixel-mark-cell is-empty"></span>
+              <span class="pixel-mark-cell" style="animation-delay:390ms"></span>
+              <span class="pixel-mark-cell is-empty"></span>
+              <span class="pixel-mark-cell is-empty"></span>
+              <span class="pixel-mark-cell" style="animation-delay:130ms"></span>
+              <span class="pixel-mark-cell is-empty"></span>
+              <span class="pixel-mark-cell is-empty"></span>
+              <span class="pixel-mark-cell" style="animation-delay:390ms"></span>
+              <span class="pixel-mark-cell" style="animation-delay:390ms"></span>
+              <span class="pixel-mark-cell" style="animation-delay:260ms"></span>
+              <span class="pixel-mark-cell" style="animation-delay:130ms"></span>
+              <span class="pixel-mark-cell is-empty"></span>
+              <span class="pixel-mark-cell" style="animation-delay:130ms"></span>
+              <span class="pixel-mark-cell" style="animation-delay:260ms"></span>
+              <span class="pixel-mark-cell" style="animation-delay:390ms"></span>
+              <span class="pixel-mark-cell" style="animation-delay:390ms"></span>
+              <span class="pixel-mark-cell is-empty"></span>
+              <span class="pixel-mark-cell is-empty"></span>
+              <span class="pixel-mark-cell" style="animation-delay:130ms"></span>
+              <span class="pixel-mark-cell is-empty"></span>
+              <span class="pixel-mark-cell is-empty"></span>
+              <span class="pixel-mark-cell" style="animation-delay:390ms"></span>
+              <span class="pixel-mark-cell is-empty"></span>
+              <span class="pixel-mark-cell" style="animation-delay:260ms"></span>
+              <span class="pixel-mark-cell is-empty"></span>
+              <span class="pixel-mark-cell" style="animation-delay:260ms"></span>
+              <span class="pixel-mark-cell is-empty"></span>
+              <span class="pixel-mark-cell" style="animation-delay:260ms"></span>
+              <span class="pixel-mark-cell is-empty"></span>
+              <span class="pixel-mark-cell" style="animation-delay:390ms"></span>
+              <span class="pixel-mark-cell is-empty"></span>
+              <span class="pixel-mark-cell" style="animation-delay:390ms"></span>
+              <span class="pixel-mark-cell" style="animation-delay:390ms"></span>
+              <span class="pixel-mark-cell" style="animation-delay:390ms"></span>
+              <span class="pixel-mark-cell is-empty"></span>
+              <span class="pixel-mark-cell" style="animation-delay:390ms"></span>
+            </span>
           </a>
           <nav class="landing-primary-links" aria-label="Primary links">
-            <a href="index.html">mateo*arce</a>*<a href="pages/about.html">about*me</a>
+            <a href="index.html">mateo arce</a> // <a href="pages/about.html">about me</a>
             <p>
               <a
                 href="https://www.instagram.com/matbutom"
                 target="_blank"
                 rel="noopener noreferrer"
                 >instagram</a
-              >*<a
+              >
+              //
+              <a
                 href="https://github.com/matbutom"
                 target="_blank"
                 rel="noopener noreferrer"
                 >github</a
-              >*<a href="mailto:mateo.arce28@gmail.com">mail</a>
+              >
+              // <a href="mailto:mateo.arce28@gmail.com">mail</a>
             </p>
           </nav>
         </div>
         <div class="landing-secondary-links">
-          <p>santiago*chile</p>
+          <p>santiago // chile</p>
           <a
             href="https://www.instagram.com/rafita.studio"
             target="_blank"
             rel="noopener noreferrer"
-            >rafita*studio</a
+            >rafita.studio</a
           >
         </div>
       </header>
@@ -76,12 +243,112 @@
         and dogs into even cooler dogs.
       </h1>
 
-      <a class="selected-work-link" href="selected-work.html">
+      <a class="selected-work-link" href="selected-work.html" data-open-work>
         <span>Selected Work</span>
         <span class="selected-work-arrow" aria-hidden="true"></span>
       </a>
+
+      <div class="work-overlay" data-work-overlay hidden>
+        <div class="work-sidebar" data-work-sidebar>
+          <button class="work-back-arrow" type="button" data-work-close aria-label="Volver al inicio">
+            <span class="selected-work-arrow" aria-hidden="true"></span>
+          </button>
+
+          <div data-bio-slot></div>
+
+          <hr class="work-sidebar-divider" aria-hidden="true" />
+
+          <nav class="work-shortcuts" aria-label="Enlaces">
+            <a href="https://www.instagram.com/matbutom" target="_blank" rel="noopener noreferrer">instagram</a> //
+            <a href="https://github.com/matbutom" target="_blank" rel="noopener noreferrer">github</a> //
+            <a href="mailto:mateo.arce28@gmail.com">mail</a> //
+            <a href="https://www.instagram.com/rafita.studio" target="_blank" rel="noopener noreferrer">rafita studio</a> //
+            <a href="pages/about.html">about me</a>
+          </nav>
+
+          <hr class="work-sidebar-divider" aria-hidden="true" />
+
+          <nav class="folder-work" aria-label="Selected work filters">
+            <details class="work-folder">
+              <summary>electronics</summary>
+              <ul>
+                <li>
+                  <a href="projects/diy-cheap-camera.html" data-project="diy-cheap-camera"
+                    ><span class="work-item-arrow" aria-hidden="true"></span>diy//cheap//camera</a
+                  >
+                </li>
+                <li><a href="projects/parla.html" data-project="parla"><span class="work-item-arrow" aria-hidden="true"></span>parla</a></li>
+                <li><a href="projects/inter-ferencia.html" data-project="inter-ferencia"><span class="work-item-arrow" aria-hidden="true"></span>inter//ferencia</a></li>
+              </ul>
+            </details>
+
+            <details class="work-folder">
+              <summary>design</summary>
+              <ul>
+                <li><a href="projects/GoSkateDay.html" data-project="go-skate-day"><span class="work-item-arrow" aria-hidden="true"></span>go//skate//day</a></li>
+                <li><a href="projects/radioregalon.html" data-project="radio-regalon"><span class="work-item-arrow" aria-hidden="true"></span>radio//regalon</a></li>
+                <li><a href="projects/Subela-News.html" data-project="subela-news"><span class="work-item-arrow" aria-hidden="true"></span>subela//news</a></li>
+                <li>
+                  <a href="projects/Colonia-Dignidad copy.html" data-project="colonia-dignidad"
+                    ><span class="work-item-arrow" aria-hidden="true"></span>colonia//dignidad</a
+                  >
+                </li>
+                <li><a href="projects/Coloring-Book.html" data-project="coloring-book"><span class="work-item-arrow" aria-hidden="true"></span>coloring//book</a></li>
+                <li>
+                  <a href="projects/animaciones-benny.html" data-project="animaciones-benny"
+                    ><span class="work-item-arrow" aria-hidden="true"></span>animaciones//benny</a
+                  >
+                </li>
+              </ul>
+            </details>
+
+            <details class="work-folder">
+              <summary>code</summary>
+              <ul>
+                <li>
+                  <a href="projects/interactive-letters.html" data-project="interactive-letters"
+                    ><span class="work-item-arrow" aria-hidden="true"></span>interactive//letters</a
+                  >
+                </li>
+                <li>
+                  <a href="projects/lateral-image-editor.html" data-project="lateral-image-editor"
+                    ><span class="work-item-arrow" aria-hidden="true"></span>lateral//image//editor</a
+                  >
+                </li>
+                <li><a href="projects/PCD-visualizer.html" data-project="pcd-visualizer"><span class="work-item-arrow" aria-hidden="true"></span>pcd//visualizer</a></li>
+                <li>
+                  <a href="projects/rafita-coding-projects.html" data-project="rafita-coding-projects"
+                    ><span class="work-item-arrow" aria-hidden="true"></span>rafita//coding//projects</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="projects/typografica-propagandistica.html"
+                    data-project="typografica-propagandistica"
+                    ><span class="work-item-arrow" aria-hidden="true"></span>typografica//propagandistica</a
+                  >
+                </li>
+              </ul>
+            </details>
+
+            <a class="work-folder work-folder-link" href="pics.html">pics</a>
+          </nav>
+        </div>
+
+        <section class="work-detail" aria-live="polite" aria-label="Project preview" hidden>
+          <div class="work-detail-inner">
+            <div class="work-project-copy">
+              <h2 class="work-project-title"></h2>
+              <div class="work-project-description"></div>
+              <div class="work-project-source" hidden></div>
+            </div>
+            <div class="work-media-grid"></div>
+          </div>
+        </section>
+      </div>
     </section>
 
+    <script src="scripts/work-panel.js"></script>
     <script>
       (function () {
         const bio = document.querySelector("[data-animated-bio]");
@@ -268,6 +535,100 @@
           fitBio();
           document.body.classList.add("landing-is-ready");
         });
+
+        /* ===== SELECTED WORK OVERLAY ===== */
+        var bioHomeAnchor = document.createComment("bio-home-anchor");
+        bio.after(bioHomeAnchor);
+
+        var openLink = document.querySelector("[data-open-work]");
+        var overlay = document.querySelector("[data-work-overlay]");
+        var bioSlot = document.querySelector("[data-bio-slot]");
+        var closeBtn = document.querySelector("[data-work-close]");
+
+        if (openLink && overlay && bioSlot && closeBtn) {
+          var workApi = window.WorkPanel ? window.WorkPanel.init(overlay, {
+            onOpen: function (key) {
+              history.replaceState(null, "", "#selected-work/" + key);
+            }
+          }) : null;
+
+          var isWorkOpen = false;
+          var closeTimer = null;
+          var OVERLAY_TRANSITION_MS = 700;
+
+          function openWork(initialProject, skipHistory) {
+            if (isWorkOpen) {
+              if (initialProject && workApi) workApi.openProject(initialProject);
+              return;
+            }
+            if (closeTimer) {
+              clearTimeout(closeTimer);
+              closeTimer = null;
+            }
+            isWorkOpen = true;
+            bio.classList.add("is-compact");
+            bioSlot.after(bio);
+            overlay.hidden = false;
+            overlay.offsetHeight;
+            document.body.classList.add("work-mode");
+
+            if (initialProject && workApi) {
+              workApi.openProject(initialProject);
+            }
+
+            if (!skipHistory) {
+              var hash = "#selected-work" + (initialProject ? "/" + initialProject : "");
+              if (location.hash !== hash) {
+                history.pushState({ work: true }, "", hash);
+              }
+            }
+          }
+
+          function closeWork(skipHistory) {
+            if (!isWorkOpen) return;
+            isWorkOpen = false;
+            document.body.classList.remove("work-mode");
+
+            closeTimer = window.setTimeout(function () {
+              overlay.hidden = true;
+              bio.classList.remove("is-compact");
+              bioHomeAnchor.after(bio);
+            }, OVERLAY_TRANSITION_MS);
+
+            if (!skipHistory && location.hash) {
+              history.pushState(null, "", location.pathname);
+            }
+          }
+
+          openLink.addEventListener("click", function (event) {
+            event.preventDefault();
+            openWork();
+          });
+
+          closeBtn.addEventListener("click", function (event) {
+            event.preventDefault();
+            closeWork();
+          });
+
+          document.addEventListener("keydown", function (event) {
+            if (event.key !== "Escape" || !isWorkOpen) return;
+            closeWork();
+          });
+
+          window.addEventListener("popstate", function () {
+            if (location.hash.indexOf("#selected-work") === 0) {
+              var key = location.hash.split("/")[1];
+              openWork(key || null, true);
+            } else if (isWorkOpen) {
+              closeWork(true);
+            }
+          });
+
+          if (location.hash.indexOf("#selected-work") === 0) {
+            var initialKey = location.hash.split("/")[1];
+            openWork(initialKey || null, true);
+          }
+        }
       })();
     </script>
   </body>
