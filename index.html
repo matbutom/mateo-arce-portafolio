@@ -139,9 +139,9 @@
     </script>
 
     <section class="landing-hero" aria-labelledby="landing-intro-title">
-      <header class="landing-topbar" aria-label="Landing navigation" data-enter-top>
+      <header class="landing-topbar" aria-label="Navegación principal" data-enter-top>
         <div class="landing-identity">
-          <a class="landing-logo-link" href="index.html" aria-label="Mateo Arce home">
+          <a class="landing-logo-link" href="index.html" aria-label="Inicio de Mateo Arce">
             <span class="pixel-mark" aria-hidden="true">
               <span class="pixel-mark-cell" style="animation-delay:390ms"></span>
               <span class="pixel-mark-cell is-empty"></span>
@@ -194,9 +194,14 @@
               <span class="pixel-mark-cell" style="animation-delay:390ms"></span>
             </span>
           </a>
-          <nav class="landing-primary-links" aria-label="Primary links">
-            <a href="index.html">mateo arce</a> // <a href="pages/about.html">about me</a>
-            <p>
+          <nav class="landing-primary-links" aria-label="Enlaces principales">
+            <a href="index.html">mateo arce</a
+            ><span class="landing-primary-extra"
+              >
+              //
+              <a href="pages/about.html">sobre mí</a></span
+            >
+            <p class="landing-primary-extra">
               <a
                 href="https://www.instagram.com/matbutom"
                 target="_blank"
@@ -210,7 +215,7 @@
                 rel="noopener noreferrer"
                 >github</a
               >
-              // <a href="mailto:mateo.arce28@gmail.com">mail</a>
+              // <a href="mailto:mateo.arce28@gmail.com">correo</a>
             </p>
           </nav>
         </div>
@@ -225,26 +230,55 @@
         </div>
       </header>
 
+      <div class="landing-mobile-links" aria-hidden="false">
+        <hr class="landing-mobile-divider" aria-hidden="true" />
+        <nav class="landing-mobile-shortcuts" aria-label="Enlaces"
+          ><span class="landing-mobile-shortcuts-inner"
+            ><a href="pages/about.html">sobre mí</a> //
+            <a
+              href="https://www.instagram.com/matbutom"
+              target="_blank"
+              rel="noopener noreferrer"
+              >instagram</a
+            >
+            //
+            <a
+              href="https://github.com/matbutom"
+              target="_blank"
+              rel="noopener noreferrer"
+              >github</a
+            >
+            // <a href="mailto:mateo.arce28@gmail.com">correo</a> //
+            <a
+              href="https://www.instagram.com/rafita.studio"
+              target="_blank"
+              rel="noopener noreferrer"
+              >rafita.studio</a
+            ></span
+          ></nav
+        >
+      </div>
+
       <h1
         class="landing-intro"
         id="landing-intro-title"
-        aria-label="Hi! I’m Mateo Arce, a designer, illustrator, and programmer based in Chile. I co-founded Rafita Studio, where we combine branding, creative coding, and lots of dog drawings. I love turning pixels into personality, code into creativity, and dogs into even cooler dogs."
+        aria-label="¡Hola! Soy Mateo Arce, diseñador, ilustrador y programador radicado en Chile. Cofundé Rafita Studio, donde combinamos branding, programación creativa y muchos dibujos de perros. Me encanta convertir píxeles en personalidad, código en creatividad y perros en perros aún más geniales."
         data-animated-bio
       >
-        Hi! I’m Mateo Arce, a designer, illustrator, and programmer based in
-        Chile. I co-founded
+        Soy Mateo Arce, diseñador, ilustrador y programador radicado en
+        Chile. Cofundé
         <a
           href="https://www.instagram.com/rafita.studio"
           target="_blank"
           rel="noopener noreferrer"
           >Rafita Studio</a
-        >, where we combine branding, creative coding, and lots of dog
-        drawings. I love turning pixels into personality, code into creativity,
-        and dogs into even cooler dogs.
+        >, donde combinamos branding, programación creativa y muchos dibujos
+        de perros. Me encanta convertir píxeles en personalidad, código en
+        creatividad y perros en perros aún más geniales.
       </h1>
 
       <a class="selected-work-link" href="selected-work.html" data-open-work>
-        <span>work</span>
+        <span>trabajo</span>
         <span class="selected-work-arrow" aria-hidden="true"></span>
       </a>
 
@@ -261,16 +295,16 @@
           <nav class="work-shortcuts" aria-label="Enlaces">
             <a href="https://www.instagram.com/matbutom" target="_blank" rel="noopener noreferrer">instagram</a> //
             <a href="https://github.com/matbutom" target="_blank" rel="noopener noreferrer">github</a> //
-            <a href="mailto:mateo.arce28@gmail.com">mail</a> //
+            <a href="mailto:mateo.arce28@gmail.com">correo</a> //
             <a href="https://www.instagram.com/rafita.studio" target="_blank" rel="noopener noreferrer">rafita studio</a> //
-            <a href="pages/about.html">about me</a>
+            <a href="pages/about.html">sobre mí</a>
           </nav>
 
           <hr class="work-sidebar-divider" aria-hidden="true" />
 
-          <nav class="folder-work" aria-label="Selected work filters">
+          <nav class="folder-work" aria-label="Filtros de trabajo">
             <details class="work-folder">
-              <summary>electronics</summary>
+              <summary>electrónica</summary>
               <ul>
                 <li>
                   <a href="projects/diy-cheap-camera.html" data-project="diy-cheap-camera"
@@ -283,7 +317,7 @@
             </details>
 
             <details class="work-folder">
-              <summary>design</summary>
+              <summary>diseño</summary>
               <ul>
                 <li><a href="projects/GoSkateDay.html" data-project="go-skate-day"><span class="work-item-arrow" aria-hidden="true"></span>go//skate//day</a></li>
                 <li><a href="projects/radioregalon.html" data-project="radio-regalon"><span class="work-item-arrow" aria-hidden="true"></span>radio//regalon</a></li>
@@ -303,7 +337,7 @@
             </details>
 
             <details class="work-folder">
-              <summary>code</summary>
+              <summary>código</summary>
               <ul>
                 <li>
                   <a href="projects/interactive-letters.html" data-project="interactive-letters"
@@ -331,11 +365,11 @@
               </ul>
             </details>
 
-            <a class="work-folder work-folder-link" href="pics.html">pics</a>
+            <a class="work-folder work-folder-link" href="pics.html">fotos</a>
           </nav>
         </div>
 
-        <section class="work-detail" aria-live="polite" aria-label="Project preview" hidden>
+        <section class="work-detail" aria-live="polite" aria-label="Vista previa del proyecto" hidden>
           <div class="work-detail-inner">
             <div class="work-project-copy">
               <h2 class="work-project-title"></h2>
@@ -355,38 +389,19 @@
         if (!bio) return;
 
         const lines = [
-          [{ text: "Hi!" }, { text: "I’m" }, { text: "Mateo" }, { text: "Arce," }, { text: "a" }, { text: "designer," }],
-          [{ text: "illustrator," }, { text: "and" }, { text: "programmer" }, { text: "based" }, { text: "in" }, { text: "Chile." }],
+          [{ text: "Soy" }, { text: "Mateo" }, { text: "Arce :-)" }, { text: "diseñador," }, { text: "ilustrador" }, { text: "y" }],
           [
-            { text: "I" },
-            { text: "co-founded" },
+            { text: "programador." },
+            { text: "Cofundé" },
             { text: "Rafita", href: "https://www.instagram.com/rafita.studio" },
-            { text: "Studio,", href: "https://www.instagram.com/rafita.studio" },
-            { text: "where" },
-            { text: "we" },
-            { text: "combine" }
+            { text: "Studio,", href: "https://www.instagram.com/rafita.studio" }
           ],
-          [{ text: "branding," }, { text: "creative" }, { text: "coding," }, { text: "and" }, { text: "lots" }, { text: "of" }, { text: "dog" }],
+          [{ text: "donde" }, { text: "combinamos" }, { text: "branding," }, { text: "programación" }, { text: "creativa" }, { text: "y" }],
           [
-            { text: "drawings." },
-            { text: "I" },
-            { text: "love" },
-            { text: "turning" },
-            { text: "pixels" },
-            { text: "into" },
-            { text: "personality," }
-          ],
-          [
-            { text: "code" },
-            { text: "into" },
-            { text: "creativity," },
-            { text: "and" },
-            { text: "dogs" },
-            { text: "into" },
-            { text: "even" },
-            { text: "cooler" },
-            { text: "dogs." }
-          ]
+            { text: "muchos" },
+            { text: "dibujos" },
+            { text: "de" },
+            { text: "perros!" }]
         ];
 
         const illustrations = [
@@ -517,7 +532,38 @@
         });
 
         bio.appendChild(fragment);
-        window.addEventListener("resize", fitBio);
+
+        const mobileShortcuts = document.querySelector(".landing-mobile-shortcuts");
+        const mobileShortcutsInner = document.querySelector(".landing-mobile-shortcuts-inner");
+
+        function fitMobileShortcuts() {
+          if (!mobileShortcuts || !mobileShortcutsInner) return;
+          if (!window.matchMedia("(max-width: 760px)").matches) {
+            mobileShortcuts.style.fontSize = "";
+            return;
+          }
+
+          mobileShortcuts.style.fontSize = "";
+          const baseSize = parseFloat(window.getComputedStyle(mobileShortcuts).fontSize);
+          const availableWidth = mobileShortcuts.clientWidth;
+          const contentWidth = mobileShortcutsInner.getBoundingClientRect().width;
+          if (!availableWidth || !contentWidth) return;
+
+          const newSize = Math.max(10, Math.min(40, baseSize * (availableWidth / contentWidth)));
+          mobileShortcuts.style.fontSize = newSize + "px";
+        }
+
+        function fitLanding() {
+          fitBio();
+          fitMobileShortcuts();
+        }
+
+        window.addEventListener("resize", fitLanding);
+        window.addEventListener("load", fitLanding);
+
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(fitLanding);
+        }
 
         function replayHomeEntry() {
           document.body.classList.add("replay-home-entry");
@@ -532,7 +578,7 @@
         });
 
         window.requestAnimationFrame(function () {
-          fitBio();
+          fitLanding();
           document.body.classList.add("landing-is-ready");
         });
 

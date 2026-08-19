@@ -7,7 +7,7 @@
         "Camara digital experimental hecha con una Seeed Studio XIAO ESP32S3 Sense, una pantalla redonda GC9A01, botones fisicos y un receptor en Python. El sistema muestra una vista en vivo pixelada, permite cambiar paletas cromaticas y envia capturas por USB/Serial al computador para guardarlas como imagenes escaladas."
       ],
       source: "https://github.com/matbutom/cheap-diy-camera",
-      sourceLabel: "source code",
+      sourceLabel: "código fuente",
       media: [
         { type: "image", src: "assets/diy-cheap-camera/DSC_8149.jpg", alt: "DIY Cheap Camera", w: 1539, h: 2048 },
         { type: "image", src: "assets/diy-cheap-camera/DSC_8152.jpg", alt: "DIY Cheap Camera", w: 1447, h: 2048 },
@@ -26,7 +26,7 @@
         "Parla es un parlante de escritorio con amplificador mono construido alrededor del circuito integrado LM386. Un proyecto de electrónica que explora el diseño de objetos sonoros análogos, desde el esquema del circuito hasta el enclosure físico."
       ],
       source: "projects/parla.html",
-      sourceLabel: "project page",
+      sourceLabel: "página del proyecto",
       media: [
         { type: "image", src: "assets/parla/DSC_6417.jpg", alt: "Parla", w: 1704, h: 2274 },
         { type: "image", src: "assets/parla/DSC_6395.jpg", alt: "Parla", w: 2592, h: 3872 },
@@ -39,7 +39,7 @@
         "GoSkateDay es una celebración internacional del skateboarding. En esta edición en Santiago, Chile, fuimos responsables de la identidad visual y las ilustraciones del evento, desarrollando afiches, stickers y gráficos para camisetas. El trabajo combinó estética urbana y elementos propios de la cultura skate."
       ],
       source: "projects/GoSkateDay.html",
-      sourceLabel: "project page",
+      sourceLabel: "página del proyecto",
       media: [
         { type: "image", src: "assets/GoSkateDay/thumb/gsd thumb design.png", alt: "Go Skate Day", w: 1080, h: 1080 },
         { type: "image", src: "assets/GoSkateDay/thumb/GSD_IG-02.jpg", alt: "Go Skate Day", w: 1080, h: 1350 },
@@ -56,7 +56,7 @@
         "Este proyecto y diseño de marcas fue hecho completamente con código. La diagramación y diseño fueron programados en p5.js. Además, se desarrollaron visuales pensadas para conciertos y pantallas interactivas con sonido."
       ],
       source: "https://github.com/matbutom/radioregalon.github.io",
-      sourceLabel: "source code",
+      sourceLabel: "código fuente",
       media: [
         { type: "image", src: "assets/radio-regalon/logo_animado.gif", alt: "Radio Regalon", w: 1080, h: 1080 },
         { type: "image", src: "assets/radio-regalon/radio regalón tee.png", alt: "Radio Regalon", w: 1024, h: 1440 },
@@ -73,7 +73,7 @@
         "Fuimos preseleccionados por súbela para el rebranding de Súbela Radio. Se desarrollaron variedad de logos, entre ellos el logo principal de la radio, y distintos programas que vendrían durante el año (El Chile que Viene y Elecciones Súbela 2024)."
       ],
       source: "projects/Subela-News.html",
-      sourceLabel: "project page",
+      sourceLabel: "página del proyecto",
       media: [
         { type: "image", src: "assets/SubelaNews/Subela_OK.001.jpeg", alt: "Subela News", w: 1024, h: 768 },
         { type: "image", src: "assets/SubelaNews/Subela_OK.002.jpeg", alt: "Subela News", w: 1024, h: 768 },
@@ -90,7 +90,7 @@
         "Para el encargo, se escogió un hito histórico Chileno, que pudiera dar pie a diseñar una marca, infografías y baldosas de cerámica, con el objetivo de recordar este acontecimiento."
       ],
       source: "projects/Colonia-Dignidad copy.html",
-      sourceLabel: "project page",
+      sourceLabel: "página del proyecto",
       media: [
         { type: "image", src: "assets/Colonia-Dignidad/Colonia Dignidad Marca.001.png", alt: "Colonia Dignidad", w: 586, h: 768 },
         { type: "image", src: "assets/Colonia-Dignidad/Colonia Dignidad Lamina.jpg", alt: "Colonia Dignidad", w: 8268, h: 28346 },
@@ -111,7 +111,7 @@
         "Exploración visual interactiva con letras y animación generativa. Proyecto experimental diseñado para postular a convocatoria de obras en Museo Interactivo Mirador. Utiliza programación creativa para manipular letras de forma interactiva y visualmente atractiva, combinando código y diseño gráfico."
       ],
       source: "https://github.com/matbutom/interactive-letters",
-      sourceLabel: "source code",
+      sourceLabel: "código fuente",
       media: [
         { type: "video", src: "assets/interactive-letters/interactive_letters01.mp4", alt: "Interactive Letters", w: 924, h: 1280 },
         { type: "video", src: "assets/interactive-letters/interactive_letters02.mp4", alt: "Interactive Letters", w: 2842, h: 1474 },
@@ -123,7 +123,7 @@
         "Proyecto realizado para criti.ca y su medio digital Lateral. Se programó una herramienta en mechanic.design para editar imágenes de forma fácil, diseñando una interfaz con filtros activables para ver los efectos en tiempo real."
       ],
       source: "https://github.com/criticaLateral/practica-mateo-2024",
-      sourceLabel: "source code",
+      sourceLabel: "código fuente",
       media: [
         { type: "image", src: "assets/Lateral Image Editor/Logo/LIE_logo.png", alt: "Lateral Image Editor", w: 4500, h: 4500 },
         { type: "image", src: "assets/Lateral Image Editor/Imagenes con efectos/captura01.png", alt: "Lateral Image Editor", w: 1920, h: 942 },
@@ -142,10 +142,10 @@
         "Web diseñada y programada para generar posts de Instagram a invitar a la comunidad de Processing a participar en el evento anual \"Processing Community Day\" en la FaAAD, Universidad Diego portales. El sitio permite a los usuarios personalizar el post con animaciones de fondo, videos, grillas, etc. Las animaciones de fondo son creadas con p5.js, generando una imagen que pueden compartir en sus redes sociales para promover el evento. Proyecto realizado en Github, con ayuda de Claude Code."
       ],
       source: "https://github.com/matbutom/PCD-graficas-2026",
-      sourceLabel: "source code",
+      sourceLabel: "código fuente",
       links: [
-        { href: "https://github.com/matbutom/PCD-graficas-2026", label: "source code" },
-        { href: "https://matbutom.github.io/PCD-graficas-2026/", label: "web" }
+        { href: "https://github.com/matbutom/PCD-graficas-2026", label: "código fuente" },
+        { href: "https://matbutom.github.io/PCD-graficas-2026/", label: "sitio web" }
       ],
       media: [
         { type: "image", src: "assets/PCD-visualizer/banner.png", alt: "PCD Visualizer", w: 1600, h: 400 },
@@ -169,7 +169,7 @@
         "Proyectos realizados para el ramo de Programación Creativa Multimedia, aprendiendo a usar p5.js y programar."
       ],
       source: "projects/rafita-coding-projects.html",
-      sourceLabel: "project page",
+      sourceLabel: "página del proyecto",
       media: [
         { type: "image", src: "assets/rafita-coding-projects/Rafita_coding_pro_thumb.jpg", alt: "Rafita Coding Projects", w: 4500, h: 3910 },
         { type: "video", src: "assets/rafita-coding-projects/Rafita Type Creator.mp4", alt: "Rafita Coding Projects", w: 722, h: 1260 },
@@ -182,10 +182,10 @@
         "Typográfica Propagandística investiga cómo la tipografía en afiches políticos latinoamericanos comunica ideas y emociones, apropiándonos de ella y dándole una nueva identidad generativa."
       ],
       source: "https://github.com/matbutom/typo-grafica-propagandistica",
-      sourceLabel: "source code",
+      sourceLabel: "código fuente",
       links: [
-        { href: "https://github.com/matbutom/typo-grafica-propagandistica", label: "source code" },
-        { href: "https://matbutom.github.io/typ-web/", label: "web" }
+        { href: "https://github.com/matbutom/typo-grafica-propagandistica", label: "código fuente" },
+        { href: "https://matbutom.github.io/typ-web/", label: "sitio web" }
       ],
       media: [
         { type: "video", src: "assets/typografica-propagandistica/capturas.mp4", alt: "Typografica Propagandistica", w: 1080, h: 1350 },
@@ -214,7 +214,7 @@
         "Instalacion interactiva hecha en Processing con webcam, vision computacional y sonido. El sistema captura el fondo, detecta la silueta de las personas como diferencia de imagen, la traduce a caracteres ASCII y dispara notas cuando el cuerpo cruza seis barras invisibles en la pantalla."
       ],
       source: "https://github.com/matbutom/inter-ferencia",
-      sourceLabel: "source code",
+      sourceLabel: "código fuente",
       mediaColumns: 1,
       mediaWidth: "58%",
       media: [
@@ -236,7 +236,7 @@
         "Libro para colorear ilustrado, impreso y diseñado para los amantes de los perritos. 🐶❤️"
       ],
       source: "projects/Coloring-Book.html",
-      sourceLabel: "project page",
+      sourceLabel: "página del proyecto",
       media: [
         { type: "image", src: "assets/Coloring-Book/ColouringBook_v1.jpg", alt: "Coloring Book", w: 1748, h: 2480 },
         { type: "image", src: "assets/Coloring-Book/ColouringBook_v12.jpg", alt: "Coloring Book", w: 3496, h: 2480 },
@@ -252,7 +252,7 @@
         "Hicimos 4 animaciones distintas para una canción de un artista emergente, en este caso, bennytheghost. Los estilos de animación fueron: animación digital, rotoscopía, animación audiovisual y stop motion"
       ],
       source: "projects/animaciones-benny.html",
-      sourceLabel: "project page",
+      sourceLabel: "página del proyecto",
       media: [
         { type: "video", src: "assets/animaciones-benny/arce_salamanca_animacion_digital.mp4", alt: "Animaciones Benny", w: 1920, h: 1080 },
         { type: "video", src: "assets/animaciones-benny/arce_salamanca_rotoscopia.mp4", alt: "Animaciones Benny", w: 1920, h: 1080 }
@@ -336,7 +336,7 @@
       const links =
         project.links ||
         (/^https?:\/\//.test(project.source || "")
-          ? [{ href: project.source, label: project.sourceLabel || "source code" }]
+          ? [{ href: project.source, label: project.sourceLabel || "código fuente" }]
           : []);
 
       source.replaceChildren(
