@@ -6,6 +6,14 @@
     <title>**//**//**//**</title>
     <link rel="stylesheet" href="https://use.typekit.net/lhe1ara.css" />
     <link rel="stylesheet" href="styles/style.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.160.1/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.1/examples/jsm/"
+        }
+      }
+    </script>
     <link
       rel="icon"
       type="image/png"
@@ -382,7 +390,14 @@
       </div>
     </section>
 
+    <div class="dvd-trail-layer" id="dvd-trail-layer" aria-hidden="true"></div>
+
+    <div class="dvd-model" id="dvd-model" aria-hidden="true">
+      <canvas id="dvd-model-canvas"></canvas>
+    </div>
+
     <script src="scripts/work-panel.js"></script>
+    <script type="module" src="scripts/dvd-model.js"></script>
     <script>
       (function () {
         const bio = document.querySelector("[data-animated-bio]");
@@ -421,7 +436,7 @@
           "assets/ilustraciones/Recurso 17.png",
           "assets/ilustraciones/Recurso 18.png",
           "assets/ilustraciones/Recurso 19.png",
-          "assets/ilustraciones/Recurso 20.png",
+          "assets/iqlustraciones/Recurso 20.png",
           "assets/ilustraciones/Recurso 21.png",
           "assets/ilustraciones/Recurso 22.png",
           "assets/ilustraciones/Recurso 23.png",
