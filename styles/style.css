@@ -665,7 +665,6 @@ body.menu-open {
 }
 
 .work-item-arrow {
-  position: relative;
   display: inline-grid;
   place-items: center;
   width: 0.76em;
@@ -675,21 +674,12 @@ body.menu-open {
 }
 
 .work-item-arrow::before {
-  content: "";
-  width: 42%;
-  height: 42%;
-  border-top: 0.095em solid currentColor;
-  border-right: 0.095em solid currentColor;
-  transform: translateX(-8%) rotate(45deg);
+  content: "/";
+  line-height: 1;
 }
 
 .work-item-arrow::after {
-  content: "";
-  position: absolute;
-  width: 45%;
-  height: 0.095em;
-  background: currentColor;
-  transform: translateX(-8%);
+  content: none;
 }
 
 .work-detail {
@@ -1655,6 +1645,15 @@ body.work-mode {
   margin-bottom: 60px;
 }
 
+.project-gallery.gallery-full-width {
+  grid-template-columns: 1fr;
+}
+
+.project-gallery.gallery-full-width img,
+.project-gallery.gallery-full-width video {
+  width: 100%;
+}
+
 .project-gallery img,
 .project-gallery video {
   width: 70%;
@@ -2452,33 +2451,6 @@ body.work-mode {
 .project-gallery img.loaded,
 .project-gallery video.loaded {
   opacity: 1;
-}
-
-/* ===== DVD-BOUNCE TRAIL ===== */
-.dvd-trail-layer {
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  overflow: hidden;
-}
-
-.dvd-trail-mark {
-  position: fixed;
-  pointer-events: none;
-  image-rendering: pixelated;
-  opacity: 0.85;
-  transform: scale(1) rotate(var(--trail-rot, 0deg));
-  transition: opacity 800ms ease, transform 800ms ease;
-}
-
-.dvd-trail-mark.is-fading {
-  opacity: 0;
-  transform: scale(0.45) rotate(var(--trail-rot, 0deg));
-}
-
-.home-page.work-mode .dvd-trail-layer {
-  opacity: 0;
 }
 
 /* ===== DVD-BOUNCE 3D MODEL ===== */

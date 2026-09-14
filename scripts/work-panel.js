@@ -257,6 +257,24 @@
         { type: "video", src: "assets/animaciones-benny/arce_salamanca_animacion_digital.mp4", alt: "Animaciones Benny", w: 1920, h: 1080 },
         { type: "video", src: "assets/animaciones-benny/arce_salamanca_rotoscopia.mp4", alt: "Animaciones Benny", w: 1920, h: 1080 }
       ]
+    },
+    "biblioteca-cuir": {
+      description: ["Texto placeholder para Biblioteca Cuir."],
+      mediaColumns: 1,
+      mediaWidth: "100%",
+      media: []
+    },
+    "otra-ciudad": {
+      description: ["Texto placeholder para Otra Ciudad."],
+      mediaColumns: 1,
+      mediaWidth: "100%",
+      media: []
+    },
+    "rafita-studio": {
+      description: ["Texto placeholder para Rafita Studio."],
+      mediaColumns: 1,
+      mediaWidth: "100%",
+      media: []
     }
   };
 

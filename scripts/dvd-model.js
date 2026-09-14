@@ -128,44 +128,6 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
     cursorY = -9999;
   });
 
-  // ----- Pixelated asterisk trail -----
-  const TRAIL_LIFETIME_MS = 800;
-  const TRAIL_MAX_MARKS = 26;
-  const trailLayer = document.getElementById("dvd-trail-layer");
-  const activeTrailMarks = [];
-  let distSinceTrail = 0;
-
-  function spawnTrailMark(px, py) {
-    if (!trailLayer) return;
-
-    const markSize = size * (0.34 + Math.random() * 0.24);
-    const mark = document.createElement("img");
-    mark.className = "dvd-trail-mark";
-    mark.src = "assets/pixel-asterisk-favicon.png";
-    mark.alt = "";
-    mark.style.width = markSize + "px";
-    mark.style.height = markSize + "px";
-    mark.style.left = px - markSize / 2 + "px";
-    mark.style.top = py - markSize / 2 + "px";
-    mark.style.setProperty("--trail-rot", (Math.random() * 360).toFixed(1) + "deg");
-    trailLayer.appendChild(mark);
-    activeTrailMarks.push(mark);
-
-    void mark.offsetWidth;
-    mark.classList.add("is-fading");
-
-    window.setTimeout(function () {
-      if (mark.parentNode) mark.parentNode.removeChild(mark);
-      const idx = activeTrailMarks.indexOf(mark);
-      if (idx !== -1) activeTrailMarks.splice(idx, 1);
-    }, TRAIL_LIFETIME_MS + 60);
-
-    if (activeTrailMarks.length > TRAIL_MAX_MARKS) {
-      const oldest = activeTrailMarks.shift();
-      if (oldest && oldest.parentNode) oldest.parentNode.removeChild(oldest);
-    }
-  }
-
   container.style.transform = "translate3d(" + x + "px," + y + "px,0)";
 
   let running = false;
@@ -212,13 +174,6 @@ import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
     const bustRadius = size / 2;
     const cx = x + bustRadius;
     const cy = y + bustRadius;
-
-    distSinceTrail += Math.hypot(vx * dt, vy * dt);
-    const spawnEvery = Math.max(24, size * 0.26);
-    if (distSinceTrail >= spawnEvery) {
-      distSinceTrail = 0;
-      spawnTrailMark(cx, cy);
-    }
 
     // Collide with the cursor like it's a solid ball blocking the way.
     const dx = cx - cursorX;
