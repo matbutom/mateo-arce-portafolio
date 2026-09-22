@@ -9,16 +9,39 @@
       source: "https://github.com/matbutom/cheap-diy-camera",
       sourceLabel: "código fuente",
       media: [
-        { type: "image", src: "assets/diy-cheap-camera/DSC_8149.jpg", alt: "DIY Cheap Camera", w: 1539, h: 2048 },
-        { type: "image", src: "assets/diy-cheap-camera/DSC_8152.jpg", alt: "DIY Cheap Camera", w: 1447, h: 2048 },
-        { type: "image", src: "assets/diy-cheap-camera/foto_esp32_20260529_120309.jpg", alt: "DIY Cheap Camera capture", w: 240, h: 240 },
-        { type: "image", src: "assets/diy-cheap-camera/foto_esp32_20260529_121009_HD.jpg", alt: "DIY Cheap Camera capture", w: 1920, h: 1920 },
-        { type: "image", src: "assets/diy-cheap-camera/foto_esp32_20260529_122152_HD.png", alt: "DIY Cheap Camera capture", w: 1920, h: 1920 },
-        { type: "image", src: "assets/diy-cheap-camera/foto_esp32_20260529_124516_HD.png", alt: "DIY Cheap Camera capture", w: 1920, h: 1920 },
-        { type: "image", src: "assets/diy-cheap-camera/foto_esp32_20260529_124531_HD.png", alt: "DIY Cheap Camera capture", w: 1920, h: 1920 },
-        { type: "image", src: "assets/diy-cheap-camera/foto_esp32_20260529_124544_HD.png", alt: "DIY Cheap Camera capture", w: 1920, h: 1920 },
-        { type: "image", src: "assets/diy-cheap-camera/foto_esp32_20260529_124554_HD.png", alt: "DIY Cheap Camera capture", w: 1920, h: 1920 },
-        { type: "image", src: "assets/diy-cheap-camera/foto_esp32_20260529_124608_HD.png", alt: "DIY Cheap Camera capture", w: 1920, h: 1920 }
+        { type: "image", src: "assets/diy-cheap-camera/DSC_8149.webp", alt: "DIY Cheap Camera", w: 1539, h: 2048 },
+        { type: "image", src: "assets/diy-cheap-camera/DSC_8152.webp", alt: "DIY Cheap Camera", w: 1447, h: 2048 },
+        { type: "image", src: "assets/diy-cheap-camera/foto_esp32_20260529_120309.webp", alt: "DIY Cheap Camera capture", w: 240, h: 240 },
+        { type: "image", src: "assets/diy-cheap-camera/foto_esp32_20260529_121009_HD.webp", alt: "DIY Cheap Camera capture", w: 1920, h: 1920 },
+        { type: "image", src: "assets/diy-cheap-camera/foto_esp32_20260529_122152_HD.webp", alt: "DIY Cheap Camera capture", w: 1920, h: 1920 },
+        { type: "image", src: "assets/diy-cheap-camera/foto_esp32_20260529_124516_HD.webp", alt: "DIY Cheap Camera capture", w: 1920, h: 1920 },
+        { type: "image", src: "assets/diy-cheap-camera/foto_esp32_20260529_124531_HD.webp", alt: "DIY Cheap Camera capture", w: 1920, h: 1920 },
+        { type: "image", src: "assets/diy-cheap-camera/foto_esp32_20260529_124544_HD.webp", alt: "DIY Cheap Camera capture", w: 1920, h: 1920 },
+        { type: "image", src: "assets/diy-cheap-camera/foto_esp32_20260529_124554_HD.webp", alt: "DIY Cheap Camera capture", w: 1920, h: 1920 },
+        { type: "image", src: "assets/diy-cheap-camera/foto_esp32_20260529_124608_HD.webp", alt: "DIY Cheap Camera capture", w: 1920, h: 1920 }
+      ]
+    },
+    "pcb-mam": {
+      description: [
+        "Registro del diseño, fabricación, montaje y prueba de placas de circuito impreso desarrolladas en el contexto del Magíster en Artes Mediales.",
+        "Las placas constituyen un circuito del chip integrado 555 en versión astable, con el objetivo de generar un pulso de salida que permita controlar un LED RGB.",
+        "El diseño de las placas se realizó en el software KiCad, y la fabricación se llevó a cabo mediante el proceso de fotograbado. El montaje de los componentes se realizó de manera manual, y finalmente se realizaron pruebas para verificar el correcto funcionamiento del circuito.",
+        "Cuenta también con una placa para un secuenciador usando un chip integrado 4093 que se alimenta del pulso del 555 además de una placa que lleva el 4017 para generar sonidos.",
+        "Las pcbs fueron diseñadas para el curso Aplicaciones Tecnológicas A, dictado por Claudia González y distribuidas y fabricadas por piruetas.xyz"
+      ],
+      source: "projects/pcb-mam.html",
+      sourceLabel: "página del proyecto",
+      media: [
+        { type: "image", src: "assets/pcb-mam/IMG_6040.webp", alt: "PCB MAM", w: 2048, h: 1365 },
+        { type: "image", src: "assets/pcb-mam/IMG_6040-2.webp", alt: "PCB MAM", w: 2382, h: 1588 },
+        { type: "image", src: "assets/pcb-mam/IMG_6056.webp", alt: "PCB MAM", w: 2048, h: 1365 },
+        { type: "image", src: "assets/pcb-mam/IMG_6062.webp", alt: "PCB MAM", w: 2048, h: 1365 },
+        { type: "image", src: "assets/pcb-mam/IMG_6090.webp", alt: "PCB MAM", w: 2048, h: 1365 },
+        { type: "image", src: "assets/pcb-mam/IMG_6093.webp", alt: "PCB MAM", w: 2048, h: 1365 },
+        { type: "image", src: "assets/pcb-mam/IMG_6100-2.webp", alt: "PCB MAM", w: 2231, h: 1487 },
+        { type: "image", src: "assets/pcb-mam/IMG_6129.webp", alt: "PCB MAM", w: 2048, h: 1365 },
+        { type: "image", src: "assets/pcb-mam/IMG_6130.webp", alt: "PCB MAM", w: 2048, h: 1365 },
+        { type: "image", src: "assets/pcb-mam/IMG_6137.webp", alt: "PCB MAM", w: 2048, h: 1365 }
       ]
     },
     parla: {
@@ -28,10 +51,10 @@
       source: "projects/parla.html",
       sourceLabel: "página del proyecto",
       media: [
-        { type: "image", src: "assets/parla/DSC_6417.jpg", alt: "Parla", w: 1704, h: 2274 },
-        { type: "image", src: "assets/parla/DSC_6395.jpg", alt: "Parla", w: 2592, h: 3872 },
-        { type: "image", src: "assets/parla/DSC_6407.jpg", alt: "Parla", w: 2592, h: 3872 },
-        { type: "image", src: "assets/parla/DSC_6433.jpg", alt: "Parla", w: 1531, h: 2144 }
+        { type: "image", src: "assets/parla/DSC_6417.webp", alt: "Parla", w: 1704, h: 2274 },
+        { type: "image", src: "assets/parla/DSC_6395.webp", alt: "Parla", w: 2592, h: 3872 },
+        { type: "image", src: "assets/parla/DSC_6407.webp", alt: "Parla", w: 2592, h: 3872 },
+        { type: "image", src: "assets/parla/DSC_6433.webp", alt: "Parla", w: 1531, h: 2144 }
       ]
     },
     "go-skate-day": {
@@ -41,13 +64,13 @@
       source: "projects/GoSkateDay.html",
       sourceLabel: "página del proyecto",
       media: [
-        { type: "image", src: "assets/GoSkateDay/thumb/gsd thumb design.png", alt: "Go Skate Day", w: 1080, h: 1080 },
-        { type: "image", src: "assets/GoSkateDay/thumb/GSD_IG-02.jpg", alt: "Go Skate Day", w: 1080, h: 1350 },
-        { type: "image", src: "assets/GoSkateDay/assets/GSD_IG-03.jpg", alt: "Go Skate Day", w: 1080, h: 1350 },
-        { type: "image", src: "assets/GoSkateDay/assets/GSD_IG-04.jpg", alt: "Go Skate Day", w: 1080, h: 1350 },
-        { type: "image", src: "assets/GoSkateDay/assets/GSD_IG-05.jpg", alt: "Go Skate Day", w: 1080, h: 1350 },
-        { type: "image", src: "assets/GoSkateDay/assets/GSD_IG-06.jpg", alt: "Go Skate Day", w: 1080, h: 1350 },
-        { type: "image", src: "assets/GoSkateDay/assets/GSD_IG_Mesa de trabajo 1.jpg", alt: "Go Skate Day", w: 1080, h: 1350 }
+        { type: "image", src: "assets/GoSkateDay/thumb/gsd thumb design.webp", alt: "Go Skate Day", w: 1080, h: 1080 },
+        { type: "image", src: "assets/GoSkateDay/thumb/GSD_IG-02.webp", alt: "Go Skate Day", w: 1080, h: 1350 },
+        { type: "image", src: "assets/GoSkateDay/assets/GSD_IG-03.webp", alt: "Go Skate Day", w: 1080, h: 1350 },
+        { type: "image", src: "assets/GoSkateDay/assets/GSD_IG-04.webp", alt: "Go Skate Day", w: 1080, h: 1350 },
+        { type: "image", src: "assets/GoSkateDay/assets/GSD_IG-05.webp", alt: "Go Skate Day", w: 1080, h: 1350 },
+        { type: "image", src: "assets/GoSkateDay/assets/GSD_IG-06.webp", alt: "Go Skate Day", w: 1080, h: 1350 },
+        { type: "image", src: "assets/GoSkateDay/assets/GSD_IG_Mesa de trabajo 1.webp", alt: "Go Skate Day", w: 1080, h: 1350 }
       ]
     },
     "radio-regalon": {
@@ -59,13 +82,13 @@
       sourceLabel: "código fuente",
       media: [
         { type: "image", src: "assets/radio-regalon/logo_animado.gif", alt: "Radio Regalon", w: 1080, h: 1080 },
-        { type: "image", src: "assets/radio-regalon/radio regalón tee.png", alt: "Radio Regalon", w: 1024, h: 1440 },
-        { type: "image", src: "assets/radio-regalon/LOGO DEMOS/Captura de pantalla 2025-06-01 a la(s) 18.22.58.png", alt: "Radio Regalon", w: 1920, h: 913 },
+        { type: "image", src: "assets/radio-regalon/radio regalón tee.webp", alt: "Radio Regalon", w: 1024, h: 1440 },
+        { type: "image", src: "assets/radio-regalon/LOGO DEMOS/Captura de pantalla 2025-06-01 a la(s) 18.22.58.webp", alt: "Radio Regalon", w: 1920, h: 913 },
         { type: "video", src: "assets/radio-regalon/LOGO DEMOS/grabacion01.mp4", alt: "Radio Regalon", w: 1920, h: 932 },
         { type: "video", src: "assets/radio-regalon/LOGO DEMOS/grabacion02.mp4", alt: "Radio Regalon", w: 1920, h: 932 },
-        { type: "image", src: "assets/radio-regalon/LOGO DEMOS/radio_regalon_demo-02.jpg", alt: "Radio Regalon", w: 1080, h: 1080 },
-        { type: "image", src: "assets/radio-regalon/LOGO DEMOS/radio_regalon_demo-03.jpg", alt: "Radio Regalon", w: 1080, h: 1080 },
-        { type: "image", src: "assets/radio-regalon/LOGO DEMOS/radio_regalon_demo_Mesa de trabajo 1.jpg", alt: "Radio Regalon", w: 1080, h: 1080 }
+        { type: "image", src: "assets/radio-regalon/LOGO DEMOS/radio_regalon_demo-02.webp", alt: "Radio Regalon", w: 1080, h: 1080 },
+        { type: "image", src: "assets/radio-regalon/LOGO DEMOS/radio_regalon_demo-03.webp", alt: "Radio Regalon", w: 1080, h: 1080 },
+        { type: "image", src: "assets/radio-regalon/LOGO DEMOS/radio_regalon_demo_Mesa de trabajo 1.webp", alt: "Radio Regalon", w: 1080, h: 1080 }
       ]
     },
     "subela-news": {
@@ -75,14 +98,14 @@
       source: "projects/Subela-News.html",
       sourceLabel: "página del proyecto",
       media: [
-        { type: "image", src: "assets/SubelaNews/Subela_OK.001.jpeg", alt: "Subela News", w: 1024, h: 768 },
-        { type: "image", src: "assets/SubelaNews/Subela_OK.002.jpeg", alt: "Subela News", w: 1024, h: 768 },
-        { type: "image", src: "assets/SubelaNews/Subela_OK.003.jpeg", alt: "Subela News", w: 1024, h: 768 },
-        { type: "image", src: "assets/SubelaNews/Subela_OK.004.jpeg", alt: "Subela News", w: 1024, h: 768 },
-        { type: "image", src: "assets/SubelaNews/Subela_OK.005.jpeg", alt: "Subela News", w: 1024, h: 768 },
-        { type: "image", src: "assets/SubelaNews/Subela_OK.006.jpeg", alt: "Subela News", w: 1024, h: 768 },
-        { type: "image", src: "assets/SubelaNews/Subela_OK.007.jpeg", alt: "Subela News", w: 1024, h: 768 },
-        { type: "image", src: "assets/SubelaNews/Subela_OK.008.jpeg", alt: "Subela News", w: 1024, h: 768 }
+        { type: "image", src: "assets/SubelaNews/Subela_OK.001.webp", alt: "Subela News", w: 1024, h: 768 },
+        { type: "image", src: "assets/SubelaNews/Subela_OK.002.webp", alt: "Subela News", w: 1024, h: 768 },
+        { type: "image", src: "assets/SubelaNews/Subela_OK.003.webp", alt: "Subela News", w: 1024, h: 768 },
+        { type: "image", src: "assets/SubelaNews/Subela_OK.004.webp", alt: "Subela News", w: 1024, h: 768 },
+        { type: "image", src: "assets/SubelaNews/Subela_OK.005.webp", alt: "Subela News", w: 1024, h: 768 },
+        { type: "image", src: "assets/SubelaNews/Subela_OK.006.webp", alt: "Subela News", w: 1024, h: 768 },
+        { type: "image", src: "assets/SubelaNews/Subela_OK.007.webp", alt: "Subela News", w: 1024, h: 768 },
+        { type: "image", src: "assets/SubelaNews/Subela_OK.008.webp", alt: "Subela News", w: 1024, h: 768 }
       ]
     },
     "colonia-dignidad": {
@@ -92,18 +115,18 @@
       source: "projects/Colonia-Dignidad copy.html",
       sourceLabel: "página del proyecto",
       media: [
-        { type: "image", src: "assets/Colonia-Dignidad/Colonia Dignidad Marca.001.png", alt: "Colonia Dignidad", w: 586, h: 768 },
-        { type: "image", src: "assets/Colonia-Dignidad/Colonia Dignidad Lamina.jpg", alt: "Colonia Dignidad", w: 8268, h: 28346 },
-        { type: "image", src: "assets/Colonia-Dignidad/Arce-Salamanca-Sepulveda_Mesa de trabajo 1 copia 2.jpg", alt: "Colonia Dignidad", w: 1080, h: 1080 },
-        { type: "image", src: "assets/Colonia-Dignidad/Arce-Salamanca-Sepulveda_Mesa de trabajo 1 copia 3.jpg", alt: "Colonia Dignidad", w: 1080, h: 1080 },
-        { type: "image", src: "assets/Colonia-Dignidad/Arce-Salamanca-Sepulveda_Mesa de trabajo 1 copia 4.jpg", alt: "Colonia Dignidad", w: 1080, h: 1080 },
-        { type: "image", src: "assets/Colonia-Dignidad/Arce-Salamanca-Sepulveda_Mesa de trabajo 1 copia 5.jpg", alt: "Colonia Dignidad", w: 1080, h: 1080 },
-        { type: "image", src: "assets/Colonia-Dignidad/Arce-Salamanca-Sepulveda_Mesa de trabajo 1 copia.jpg", alt: "Colonia Dignidad", w: 1080, h: 1080 },
-        { type: "image", src: "assets/Colonia-Dignidad/IMG_3526.jpg", alt: "Colonia Dignidad", w: 2268, h: 4032 },
-        { type: "image", src: "assets/Colonia-Dignidad/IMG_3535.JPG", alt: "Colonia Dignidad", w: 4032, h: 3024 },
-        { type: "image", src: "assets/Colonia-Dignidad/IMG_3536.JPG", alt: "Colonia Dignidad", w: 4032, h: 3024 },
-        { type: "image", src: "assets/Colonia-Dignidad/IMG_3540.JPG", alt: "Colonia Dignidad", w: 4032, h: 3024 },
-        { type: "image", src: "assets/Colonia-Dignidad/IMG_3541.jpg", alt: "Colonia Dignidad", w: 2268, h: 4032 }
+        { type: "image", src: "assets/Colonia-Dignidad/Colonia Dignidad Marca.001.webp", alt: "Colonia Dignidad", w: 586, h: 768 },
+        { type: "image", src: "assets/Colonia-Dignidad/Colonia Dignidad Lamina.webp", alt: "Colonia Dignidad", w: 8268, h: 28346 },
+        { type: "image", src: "assets/Colonia-Dignidad/Arce-Salamanca-Sepulveda_Mesa de trabajo 1 copia 2.webp", alt: "Colonia Dignidad", w: 1080, h: 1080 },
+        { type: "image", src: "assets/Colonia-Dignidad/Arce-Salamanca-Sepulveda_Mesa de trabajo 1 copia 3.webp", alt: "Colonia Dignidad", w: 1080, h: 1080 },
+        { type: "image", src: "assets/Colonia-Dignidad/Arce-Salamanca-Sepulveda_Mesa de trabajo 1 copia 4.webp", alt: "Colonia Dignidad", w: 1080, h: 1080 },
+        { type: "image", src: "assets/Colonia-Dignidad/Arce-Salamanca-Sepulveda_Mesa de trabajo 1 copia 5.webp", alt: "Colonia Dignidad", w: 1080, h: 1080 },
+        { type: "image", src: "assets/Colonia-Dignidad/Arce-Salamanca-Sepulveda_Mesa de trabajo 1 copia.webp", alt: "Colonia Dignidad", w: 1080, h: 1080 },
+        { type: "image", src: "assets/Colonia-Dignidad/IMG_3526.webp", alt: "Colonia Dignidad", w: 2268, h: 4032 },
+        { type: "image", src: "assets/Colonia-Dignidad/IMG_3535.webp", alt: "Colonia Dignidad", w: 4032, h: 3024 },
+        { type: "image", src: "assets/Colonia-Dignidad/IMG_3536.webp", alt: "Colonia Dignidad", w: 4032, h: 3024 },
+        { type: "image", src: "assets/Colonia-Dignidad/IMG_3540.webp", alt: "Colonia Dignidad", w: 4032, h: 3024 },
+        { type: "image", src: "assets/Colonia-Dignidad/IMG_3541.webp", alt: "Colonia Dignidad", w: 2268, h: 4032 }
       ]
     },
     "interactive-letters": {
@@ -125,16 +148,16 @@
       source: "https://github.com/criticaLateral/practica-mateo-2024",
       sourceLabel: "código fuente",
       media: [
-        { type: "image", src: "assets/Lateral Image Editor/Logo/LIE_logo.png", alt: "Lateral Image Editor", w: 4500, h: 4500 },
-        { type: "image", src: "assets/Lateral Image Editor/Imagenes con efectos/captura01.png", alt: "Lateral Image Editor", w: 1920, h: 942 },
-        { type: "image", src: "assets/Lateral Image Editor/Imagenes con efectos/captura02.png", alt: "Lateral Image Editor", w: 1920, h: 928 },
-        { type: "image", src: "assets/Lateral Image Editor/Imagenes con efectos/captura03.png", alt: "Lateral Image Editor", w: 1920, h: 1016 },
-        { type: "image", src: "assets/Lateral Image Editor/Imagenes con efectos/blendColors-2024-09-23-18-08 (1).png", alt: "Lateral Image Editor", w: 2214, h: 1476 },
-        { type: "image", src: "assets/Lateral Image Editor/Imagenes con efectos/halftonePruebas-2024-09-23-18-08 (1).png", alt: "Lateral Image Editor", w: 2214, h: 1476 },
-        { type: "image", src: "assets/Lateral Image Editor/Imagenes con efectos/imagen-bitmap (1).png", alt: "Lateral Image Editor", w: 2967, h: 1978 },
-        { type: "image", src: "assets/Lateral Image Editor/Imagenes con efectos/lateralImageEditor-2024-11-15-12-50 (1).png", alt: "Lateral Image Editor", w: 2967, h: 1978 },
-        { type: "image", src: "assets/Lateral Image Editor/Imagenes con efectos/lateralImageEditor-2024-11-15-12-54 (1).png", alt: "Lateral Image Editor", w: 2967, h: 1978 },
-        { type: "image", src: "assets/Lateral Image Editor/Imagenes con efectos/lateralImageEditor-2024-11-15-12-56 (1).png", alt: "Lateral Image Editor", w: 2967, h: 1978 }
+        { type: "image", src: "assets/Lateral Image Editor/Logo/LIE_logo.webp", alt: "Lateral Image Editor", w: 4500, h: 4500 },
+        { type: "image", src: "assets/Lateral Image Editor/Imagenes con efectos/captura01.webp", alt: "Lateral Image Editor", w: 1920, h: 942 },
+        { type: "image", src: "assets/Lateral Image Editor/Imagenes con efectos/captura02.webp", alt: "Lateral Image Editor", w: 1920, h: 928 },
+        { type: "image", src: "assets/Lateral Image Editor/Imagenes con efectos/captura03.webp", alt: "Lateral Image Editor", w: 1920, h: 1016 },
+        { type: "image", src: "assets/Lateral Image Editor/Imagenes con efectos/blendColors-2024-09-23-18-08 (1).webp", alt: "Lateral Image Editor", w: 2214, h: 1476 },
+        { type: "image", src: "assets/Lateral Image Editor/Imagenes con efectos/halftonePruebas-2024-09-23-18-08 (1).webp", alt: "Lateral Image Editor", w: 2214, h: 1476 },
+        { type: "image", src: "assets/Lateral Image Editor/Imagenes con efectos/imagen-bitmap (1).webp", alt: "Lateral Image Editor", w: 2967, h: 1978 },
+        { type: "image", src: "assets/Lateral Image Editor/Imagenes con efectos/lateralImageEditor-2024-11-15-12-50 (1).webp", alt: "Lateral Image Editor", w: 2967, h: 1978 },
+        { type: "image", src: "assets/Lateral Image Editor/Imagenes con efectos/lateralImageEditor-2024-11-15-12-54 (1).webp", alt: "Lateral Image Editor", w: 2967, h: 1978 },
+        { type: "image", src: "assets/Lateral Image Editor/Imagenes con efectos/lateralImageEditor-2024-11-15-12-56 (1).webp", alt: "Lateral Image Editor", w: 2967, h: 1978 }
       ]
     },
     "pcd-visualizer": {
@@ -148,10 +171,10 @@
         { href: "https://matbutom.github.io/PCD-graficas-2026/", label: "sitio web" }
       ],
       media: [
-        { type: "image", src: "assets/PCD-visualizer/banner.png", alt: "PCD Visualizer", w: 1600, h: 400 },
+        { type: "image", src: "assets/PCD-visualizer/banner.webp", alt: "PCD Visualizer", w: 1600, h: 400 },
         { type: "video", src: "assets/PCD-visualizer/thumb.mp4", alt: "PCD Visualizer", w: 1080, h: 1350 },
-        { type: "image", src: "assets/PCD-visualizer/pcd2026-01.png", alt: "PCD Visualizer", w: 3164, h: 2070 },
-        { type: "image", src: "assets/PCD-visualizer/pcd2026-02.png", alt: "PCD Visualizer", w: 1080, h: 1350 },
+        { type: "image", src: "assets/PCD-visualizer/pcd2026-01.webp", alt: "PCD Visualizer", w: 3164, h: 2070 },
+        { type: "image", src: "assets/PCD-visualizer/pcd2026-02.webp", alt: "PCD Visualizer", w: 1080, h: 1350 },
         { type: "video", src: "assets/PCD-visualizer/pcd2026-01.mp4", alt: "PCD Visualizer", w: 1080, h: 1350 },
         { type: "video", src: "assets/PCD-visualizer/pcd2026-02.mp4", alt: "PCD Visualizer", w: 1080, h: 1350 },
         { type: "video", src: "assets/PCD-visualizer/pcd2026-03.mp4", alt: "PCD Visualizer", w: 1080, h: 1350 },
@@ -171,7 +194,7 @@
       source: "projects/rafita-coding-projects.html",
       sourceLabel: "página del proyecto",
       media: [
-        { type: "image", src: "assets/rafita-coding-projects/Rafita_coding_pro_thumb.jpg", alt: "Rafita Coding Projects", w: 4500, h: 3910 },
+        { type: "image", src: "assets/rafita-coding-projects/Rafita_coding_pro_thumb.webp", alt: "Rafita Coding Projects", w: 4500, h: 3910 },
         { type: "video", src: "assets/rafita-coding-projects/Rafita Type Creator.mp4", alt: "Rafita Coding Projects", w: 722, h: 1260 },
         { type: "video", src: "assets/rafita-coding-projects/Grabación de pantalla 2024-07-12 a la(s) 16.47.32.mp4", alt: "Rafita Coding Projects", w: 830, h: 888 },
         { type: "video", src: "assets/rafita-coding-projects/Grabación de pantalla 2024-07-12 a la(s) 16.48.41.mp4", alt: "Rafita Coding Projects", w: 734, h: 1028 }
@@ -190,8 +213,8 @@
       media: [
         { type: "video", src: "assets/typografica-propagandistica/capturas.mp4", alt: "Typografica Propagandistica", w: 1080, h: 1350 },
         { type: "video", src: "assets/typografica-propagandistica/01.mp4", alt: "Typografica Propagandistica", w: 3016, h: 1874 },
-        { type: "image", src: "assets/typografica-propagandistica/12.jpeg", alt: "Typografica Propagandistica", w: 1200, h: 1600 },
-        { type: "image", src: "assets/typografica-propagandistica/13.jpeg", alt: "Typografica Propagandistica", w: 1200, h: 1600 },
+        { type: "image", src: "assets/typografica-propagandistica/12.webp", alt: "Typografica Propagandistica", w: 1200, h: 1600 },
+        { type: "image", src: "assets/typografica-propagandistica/13.webp", alt: "Typografica Propagandistica", w: 1200, h: 1600 },
         { type: "video", src: "assets/typografica-propagandistica/02.mp4", alt: "Typografica Propagandistica", w: 3104, h: 1962 },
         { type: "video", src: "assets/typografica-propagandistica/03.mp4", alt: "Typografica Propagandistica", w: 1920, h: 1212 },
         { type: "video", src: "assets/typografica-propagandistica/04.mp4", alt: "Typografica Propagandistica", w: 1920, h: 1212 },
@@ -218,17 +241,17 @@
       mediaColumns: 1,
       mediaWidth: "58%",
       media: [
-        { type: "image", src: "assets/inter-ferencia/DSC_8134.jpg", alt: "Inter-Ferencia", w: 2048, h: 1375 },
-        { type: "image", src: "assets/inter-ferencia/DSC_8137.jpg", alt: "Inter-Ferencia", w: 2048, h: 1375 },
-        { type: "image", src: "assets/inter-ferencia/DSC_8157.jpg", alt: "Inter-Ferencia", w: 1375, h: 2048 },
-        { type: "image", src: "assets/inter-ferencia/DSC_8158.jpg", alt: "Inter-Ferencia", w: 2048, h: 1375 },
-        { type: "image", src: "assets/inter-ferencia/DSC_8166.jpg", alt: "Inter-Ferencia", w: 2048, h: 1375 },
-        { type: "image", src: "assets/inter-ferencia/DSC_8169.jpg", alt: "Inter-Ferencia", w: 2048, h: 1375 },
-        { type: "image", src: "assets/inter-ferencia/DSC_8170.jpg", alt: "Inter-Ferencia", w: 2048, h: 1375 },
-        { type: "image", src: "assets/inter-ferencia/DSC_8173.jpg", alt: "Inter-Ferencia", w: 2048, h: 1375 },
-        { type: "image", src: "assets/inter-ferencia/DSC_8247.jpg", alt: "Inter-Ferencia", w: 2048, h: 1375 },
-        { type: "image", src: "assets/inter-ferencia/DSC_8248.jpg", alt: "Inter-Ferencia", w: 2048, h: 1375 },
-        { type: "image", src: "assets/inter-ferencia/DSC_8250.jpg", alt: "Inter-Ferencia", w: 1375, h: 2048 }
+        { type: "image", src: "assets/inter-ferencia/DSC_8134.webp", alt: "Inter-Ferencia", w: 2048, h: 1375 },
+        { type: "image", src: "assets/inter-ferencia/DSC_8137.webp", alt: "Inter-Ferencia", w: 2048, h: 1375 },
+        { type: "image", src: "assets/inter-ferencia/DSC_8157.webp", alt: "Inter-Ferencia", w: 1375, h: 2048 },
+        { type: "image", src: "assets/inter-ferencia/DSC_8158.webp", alt: "Inter-Ferencia", w: 2048, h: 1375 },
+        { type: "image", src: "assets/inter-ferencia/DSC_8166.webp", alt: "Inter-Ferencia", w: 2048, h: 1375 },
+        { type: "image", src: "assets/inter-ferencia/DSC_8169.webp", alt: "Inter-Ferencia", w: 2048, h: 1375 },
+        { type: "image", src: "assets/inter-ferencia/DSC_8170.webp", alt: "Inter-Ferencia", w: 2048, h: 1375 },
+        { type: "image", src: "assets/inter-ferencia/DSC_8173.webp", alt: "Inter-Ferencia", w: 2048, h: 1375 },
+        { type: "image", src: "assets/inter-ferencia/DSC_8247.webp", alt: "Inter-Ferencia", w: 2048, h: 1375 },
+        { type: "image", src: "assets/inter-ferencia/DSC_8248.webp", alt: "Inter-Ferencia", w: 2048, h: 1375 },
+        { type: "image", src: "assets/inter-ferencia/DSC_8250.webp", alt: "Inter-Ferencia", w: 1375, h: 2048 }
       ]
     },
     "coloring-book": {
@@ -238,13 +261,13 @@
       source: "projects/Coloring-Book.html",
       sourceLabel: "página del proyecto",
       media: [
-        { type: "image", src: "assets/Coloring-Book/ColouringBook_v1.jpg", alt: "Coloring Book", w: 1748, h: 2480 },
-        { type: "image", src: "assets/Coloring-Book/ColouringBook_v12.jpg", alt: "Coloring Book", w: 3496, h: 2480 },
-        { type: "image", src: "assets/Coloring-Book/ColouringBook_v13.jpg", alt: "Coloring Book", w: 3496, h: 2480 },
-        { type: "image", src: "assets/Coloring-Book/ColouringBook_v14.jpg", alt: "Coloring Book", w: 3496, h: 2480 },
-        { type: "image", src: "assets/Coloring-Book/ColouringBook_v15.jpg", alt: "Coloring Book", w: 3496, h: 2480 },
-        { type: "image", src: "assets/Coloring-Book/ColouringBook_v16.jpg", alt: "Coloring Book", w: 3496, h: 2480 },
-        { type: "image", src: "assets/Coloring-Book/ColouringBook_v17.jpg", alt: "Coloring Book", w: 1748, h: 2480 }
+        { type: "image", src: "assets/Coloring-Book/ColouringBook_v1.webp", alt: "Coloring Book", w: 1748, h: 2480 },
+        { type: "image", src: "assets/Coloring-Book/ColouringBook_v12.webp", alt: "Coloring Book", w: 3496, h: 2480 },
+        { type: "image", src: "assets/Coloring-Book/ColouringBook_v13.webp", alt: "Coloring Book", w: 3496, h: 2480 },
+        { type: "image", src: "assets/Coloring-Book/ColouringBook_v14.webp", alt: "Coloring Book", w: 3496, h: 2480 },
+        { type: "image", src: "assets/Coloring-Book/ColouringBook_v15.webp", alt: "Coloring Book", w: 3496, h: 2480 },
+        { type: "image", src: "assets/Coloring-Book/ColouringBook_v16.webp", alt: "Coloring Book", w: 3496, h: 2480 },
+        { type: "image", src: "assets/Coloring-Book/ColouringBook_v17.webp", alt: "Coloring Book", w: 1748, h: 2480 }
       ]
     },
     "animaciones-benny": {
@@ -262,19 +285,30 @@
       description: ["Texto placeholder para Biblioteca Cuir."],
       mediaColumns: 1,
       mediaWidth: "100%",
-      media: []
+      media: [
+        { type: "video", src: "assets/biblioteca-cuir/biblioteca-cuir-01.mp4", alt: "Biblioteca Cuir", w: 1440, h: 894 },
+        { type: "video", src: "assets/biblioteca-cuir/biblioteca-cuir-02.mp4", alt: "Biblioteca Cuir", w: 1440, h: 894 }
+      ]
     },
     "otra-ciudad": {
       description: ["Texto placeholder para Otra Ciudad."],
       mediaColumns: 1,
       mediaWidth: "100%",
-      media: []
+      media: [
+        { type: "video", src: "assets/otra-ciudad/otra-ciudad-01.mp4", alt: "Otra Ciudad", w: 1440, h: 894 },
+        { type: "video", src: "assets/otra-ciudad/otra-ciudad-02.mp4", alt: "Otra Ciudad", w: 1440, h: 894 },
+        { type: "video", src: "assets/otra-ciudad/otra-ciudad-03.mp4", alt: "Otra Ciudad", w: 1440, h: 894 },
+        { type: "video", src: "assets/otra-ciudad/otra-ciudad-04.mp4", alt: "Otra Ciudad", w: 1440, h: 894 }
+      ]
     },
     "rafita-studio": {
       description: ["Texto placeholder para Rafita Studio."],
       mediaColumns: 1,
       mediaWidth: "100%",
-      media: []
+      media: [
+        { type: "video", src: "assets/rafita-studio/rafita-studio-01.mp4", alt: "Rafita Studio", w: 1440, h: 894 },
+        { type: "video", src: "assets/rafita-studio/rafita-studio-02.mp4", alt: "Rafita Studio", w: 1440, h: 894 }
+      ]
     }
   };
 

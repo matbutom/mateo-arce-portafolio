@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PCB MAM</title>
+    <link rel="stylesheet" href="https://use.typekit.net/lhe1ara.css" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="../assets/pixel-asterisk-favicon.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="192x192"
+      href="../assets/pixel-asterisk-favicon.png"
+    />
+  </head>
+  <body>
+    <div class="ascii-overlay"><div class="ascii-grid"></div></div>
+
+    <img
+      class="project-cover"
+      src="../assets/pcb-mam/IMG_6040.webp"
+      alt="PCB MAM — portada"
+    />
+
+    <main class="project-page">
+      <a class="home-link" href="../index.html">← inicio</a>
+      <h1 class="project-title">PCB MAM</h1>
+      <div class="project-subtitle">Septiembre — 2026</div>
+      <div class="project-description">
+        Registro del diseño, fabricación, montaje y prueba de placas de circuito
+        impreso desarrolladas en el contexto del Magíster en Artes Mediales.
+
+        Las placas constituyen un circuito del chip integrado 555 en versión astable, con el objetivo de generar un pulso de salida que permita controlar un LED RGB.
+
+        El diseño de las placas se realizó en el software KiCad, y la fabricación se llevó a cabo mediante el proceso de fotograbado. El montaje de los componentes se realizó de manera manual, y finalmente se realizaron pruebas para verificar el correcto funcionamiento del circuito.
+        Cuenta también con una placa para un secuenciador usando un chip integrado 4093 que se alimenta del pulso del 555 además de una placa que lleva el 4017 para generar sonidos.
+
+        Las pcbs fueron diseñadas para el curso Aplicaciones Tecnológicas A, dictado por Claudia González y distribuidas y fabricadas por piruetas.xyz
+      </div>
+
+      <div class="project-gallery gallery-2col">
+        <img src="../assets/pcb-mam/IMG_6040.webp" alt="PCB MAM 01" />
+        <img src="../assets/pcb-mam/IMG_6040-2.webp" alt="PCB MAM 02" />
+        <img src="../assets/pcb-mam/IMG_6056.webp" alt="PCB MAM 03" />
+        <img src="../assets/pcb-mam/IMG_6062.webp" alt="PCB MAM 04" />
+        <img src="../assets/pcb-mam/IMG_6090.webp" alt="PCB MAM 05" />
+        <img src="../assets/pcb-mam/IMG_6093.webp" alt="PCB MAM 06" />
+        <img src="../assets/pcb-mam/IMG_6100-2.webp" alt="PCB MAM 07" />
+        <img src="../assets/pcb-mam/IMG_6129.webp" alt="PCB MAM 08" />
+        <img src="../assets/pcb-mam/IMG_6130.webp" alt="PCB MAM 09" />
+        <img src="../assets/pcb-mam/IMG_6137.webp" alt="PCB MAM 10" />
+      </div>
+    </main>
+
+    <div class="lightbox-overlay" id="lightboxOverlay">
+      <span class="lightbox-close" id="lightboxClose">&times;</span>
+      <img src="" alt="" class="lightbox-img" id="lightboxImg" />
+    </div>
+
+    <script>
+      document.querySelectorAll(".project-gallery img").forEach((img) => {
+        img.style.cursor = "zoom-in";
+        img.addEventListener("click", function () {
+          const overlay = document.getElementById("lightboxOverlay");
+          const lightboxImg = document.getElementById("lightboxImg");
+          lightboxImg.src = this.src;
+          lightboxImg.alt = this.alt || "";
+          overlay.classList.add("active");
+        });
+      });
+
+      document
+        .getElementById("lightboxOverlay")
+        .addEventListener("click", function (event) {
+          if (event.target === this || event.target.id === "lightboxClose") {
+            this.classList.remove("active");
+            document.getElementById("lightboxImg").src = "";
+          }
+        });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          document.getElementById("lightboxOverlay").classList.remove("active");
+          document.getElementById("lightboxImg").src = "";
+        }
+      });
+    </script>
+    <script src="../scripts/transition.js"></script>
+  </body>
+</html>
