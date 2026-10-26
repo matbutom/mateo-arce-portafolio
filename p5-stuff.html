@@ -14,7 +14,7 @@
       body.p5-gallery-page { margin:0; min-height:100vh; overflow-x:hidden; background:#fff; color:var(--ink); font-family:"early-sans-variable","early-sans",Arial,sans-serif; }
       .gallery-view { min-height:100vh; padding:14px 18px 12px; display:flex; flex-direction:column; }
       .gallery-view[hidden] { display:none; }
-      .gallery-grid { --cols:6; --gap:12px; width:100%; flex:1; display:flex; flex-wrap:wrap; justify-content:center; align-content:center; gap:var(--gap); }
+      .gallery-grid { --cols:6; --gap:22px; width:100%; max-width:1040px; margin:0 auto; padding:6vh 0; flex:1; display:flex; flex-wrap:wrap; justify-content:center; align-content:center; gap:var(--gap); }
       .gallery-card { flex:0 0 calc((100% - (var(--cols) - 1) * var(--gap)) / var(--cols)); min-width:0; min-height:0; display:flex; flex-direction:column; padding:0; border:0; background:#fff; color:inherit; text-align:left; text-decoration:none; cursor:pointer; outline:none; }
       .gallery-preview { position:relative; display:block; flex:initial; width:100%; aspect-ratio:1/1; min-height:0; overflow:hidden; border:1px solid var(--ink); background:#f3f3f3; transition:border-color .18s,background .18s; }
       .gallery-card:hover .gallery-preview,.gallery-card:focus-visible .gallery-preview { border:2px solid var(--pink); background:#fff5fd; }
@@ -28,14 +28,13 @@
       .gallery-status { margin:0; color:#888; font-size:.78rem; text-align:center; }
       .gallery-status:empty { display:none; }
       .gallery-status.is-error, .editor-hint.is-error, .render-message.is-error { color:#c4008f; }
-      .gallery-footer { min-height:30px; display:grid; grid-template-columns:1fr auto 1fr; align-items:end; gap:14px; font-size:.78rem; }
+      .gallery-footer { min-height:30px; display:flex; justify-content:space-between; align-items:end; gap:14px; padding-top:14px; font-size:.78rem; }
       .gallery-footer a { color:inherit; text-decoration:none; }
       .gallery-footer a:hover { color:var(--pink); }
-      .gallery-footer .gallery-source { justify-self:end; color:#888; }
-      .gallery-pagination { display:flex; justify-content:center; align-items:end; gap:14px; }
-      .gallery-pagination button,.editor-back,.run-button,.reset-button { padding:4px 8px; border:1px solid var(--ink); background:#fff; color:var(--ink); font:inherit; cursor:pointer; }
-      .gallery-pagination button:hover,.editor-back:hover,.run-button:hover,.reset-button:hover { background:var(--pink); }
-      .gallery-pagination button:disabled,.run-button:disabled,.reset-button:disabled { opacity:.3; cursor:default; background:#fff; }
+      .gallery-footer .gallery-source { color:#888; }
+      .editor-back,.run-button,.reset-button { padding:4px 8px; border:1px solid var(--ink); background:#fff; color:var(--ink); font:inherit; cursor:pointer; }
+      .editor-back:hover,.run-button:hover,.reset-button:hover { background:var(--pink); }
+      .run-button:disabled,.reset-button:disabled { opacity:.3; cursor:default; background:#fff; }
       .editor-view { display:none; min-height:100vh; height:100vh; padding:12px 16px 16px; }
       .editor-view.is-open { display:flex; flex-direction:column; }
       .editor-toolbar { min-height:44px; display:flex; align-items:center; justify-content:space-between; gap:16px; border-bottom:1px solid var(--ink); }
@@ -61,14 +60,13 @@
       .editor-open-original:hover { color:#d723aa; }
       @media(max-width:900px) {
         .gallery-view { padding:10px; }
-        .gallery-grid { --cols:3; align-content:start; }
+        .gallery-grid { --cols:3; --gap:16px; max-width:640px; padding:24px 12px; align-content:start; }
         .editor-view { height:auto; min-height:100vh; }
         .editor-layout { grid-template-columns:1fr; grid-template-rows:minmax(340px,55vh) min(100vw,70vh); }
         .code-pane { border-right:0; border-bottom:1px solid var(--ink); }
       }
       @media(max-width:560px) {
-        .gallery-grid { --cols:2; --gap:9px; }
-        .gallery-footer { grid-template-columns:1fr auto; }
+        .gallery-grid { --cols:2; --gap:12px; padding:16px 8px; }
         .gallery-footer .gallery-source { display:none; }
         .gallery-view { min-height:auto; }
         .editor-view { padding:8px; }
@@ -86,7 +84,6 @@
       <section class="gallery-grid" id="gallery-grid" aria-label="Galería de sketches p5"></section>
       <footer class="gallery-footer">
         <a href="index.html">mateo//arce</a>
-        <nav class="gallery-pagination" id="gallery-pagination" aria-label="Páginas de la galería"></nav>
         <a class="gallery-source" href="https://editor.p5js.org/matbutom/sketches" target="_blank" rel="noreferrer">p5.js/matbutom ↗</a>
       </footer>
     </main>

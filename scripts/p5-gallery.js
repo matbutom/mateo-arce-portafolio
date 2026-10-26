@@ -7,11 +7,9 @@
 // un sketch a la vez: el que está abierto en el editor.
 
 const SKETCHES_DIR = "assets/p5-sketches";
-const perPage = 12;
 
 let sketches = [];
 let previewVersion = "";
-let currentPage = 0;
 let current = null; // { sketch, original, indexHtml }
 let selectionRequest = 0;
 let runId = 0;
@@ -20,7 +18,6 @@ let stageWatch = null;
 const gallery = document.querySelector("#gallery-view");
 const grid = document.querySelector("#gallery-grid");
 const galleryStatus = document.querySelector("#gallery-status");
-const pagination = document.querySelector("#gallery-pagination");
 const editor = document.querySelector("#editor-view");
 const title = document.querySelector("#editor-title");
 const textarea = document.querySelector("#code-editor");
@@ -61,7 +58,8 @@ async function loadSketches() {
   galleryStatus.textContent = "Cargando sketches…";
   try {
     const manifest = JSON.parse(await getText(`${SKETCHES_DIR}/sketches.json`));
-    sketches = manifest.sketches;
+    // El manifiesto viene del más nuevo al más antiguo; la galería parte en 001.
+    sketches = [...manifest.sketches].sort((a, b) => a.name.localeCompare(b.name, "es", { numeric: true }));
     previewVersion = manifest.exportedAt || "";
     galleryStatus.textContent = "";
   } catch (error) {
@@ -76,11 +74,11 @@ async function loadSketches() {
 }
 
 function drawGallery() {
-  const start = currentPage * perPage;
   grid.replaceChildren();
 
-  // Las filas incompletas quedan centradas (ver .gallery-grid en el CSS).
-  sketches.slice(start, start + perPage).forEach((sketch, index) => {
+  // Todos en una sola página; la última fila incompleta queda centrada (ver
+  // .gallery-grid en el CSS).
+  sketches.forEach((sketch, index) => {
     const card = document.createElement("a");
     card.className = "gallery-card";
     card.href = `#${sketch.slug}`;
@@ -110,7 +108,7 @@ function drawGallery() {
     name.textContent = sketch.name;
     const itemNumber = document.createElement("span");
     itemNumber.className = "gallery-number";
-    itemNumber.textContent = String(start + index + 1).padStart(2, "0");
+    itemNumber.textContent = String(index + 1).padStart(2, "0");
     label.append(name, itemNumber);
 
     card.append(preview, label);
@@ -123,30 +121,6 @@ function drawGallery() {
     grid.append(card);
   });
 
-  const totalPages = Math.ceil(sketches.length / perPage);
-  pagination.replaceChildren();
-  if (totalPages < 2) return;
-  const previous = document.createElement("button");
-  previous.type = "button";
-  previous.textContent = "←";
-  previous.setAttribute("aria-label", "Página anterior");
-  previous.disabled = currentPage === 0;
-  const pageNumber = document.createElement("span");
-  pageNumber.textContent = `${currentPage + 1} / ${totalPages}`;
-  const next = document.createElement("button");
-  next.type = "button";
-  next.textContent = "→";
-  next.setAttribute("aria-label", "Página siguiente");
-  next.disabled = currentPage >= totalPages - 1;
-  previous.addEventListener("click", () => {
-    currentPage--;
-    drawGallery();
-  });
-  next.addEventListener("click", () => {
-    currentPage++;
-    drawGallery();
-  });
-  pagination.append(previous, pageNumber, next);
 }
 
 /* ---------- editor ---------- */
@@ -209,8 +183,6 @@ function routeFromHash() {
     if (editor.classList.contains("is-open")) closeEditor();
     return;
   }
-  currentPage = Math.floor(index / perPage);
-  drawGallery();
   if (current?.sketch.slug !== slug) openEditor(sketches[index]);
 }
 
